@@ -1,6 +1,8 @@
-import {a,b,fn} from './TreeShaking'
-import json from '../package.json'
-console.log(a,b,fn)
+import Test from './components/Test/index'
+import FullSreen from './components/FullScreen/index'
 
-// 必须输出 否则引用的时候会报错
-export default{}
+let component = function(Vue){
+  Vue.use(Test)
+  Vue.use(FullSreen)
+}
+export default  component;

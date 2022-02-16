@@ -1,11 +1,12 @@
-// 生产环境 压缩
-
 // 开发环境
 const path = require('path')
 const resolve = require("rollup-plugin-node-resolve")
 const commojs = require('rollup-plugin-commonjs')
 const babel = require('rollup-plugin-babel')
 const json = require('rollup-plugin-json')
+const vue = require('rollup-plugin-vue')
+const postcss = require('rollup-plugin-postcss')
+
 const pathFn = function(url){
   return path.resolve(__dirname,url)
 }
@@ -16,28 +17,40 @@ module.exports = {
   output:[
     {
       file:pathFn('./dist/datav.umd.js'),
-      name:"datav",
-      format:'umd'
+      name:"datav", //模块名称
+      format:'umd',
+      globals:{
+        'vue':'Vue'
+      },
+      sourcemap: true,
     },
     {
       file:pathFn('./dist/datav.es.js'),
       name:"datav",
-      format:'es'
-    },
-    {
-      file:pathFn('./dist/datav.cjs.js'),
-      name:"datav",
-      format:'cjs'
+      format:'es',
+      globals:{
+        'vue':'Vue'
+      }
     }
   ],
   plugins:[
-    resolve(),
+    vue(),
+    resolve(
+      { preferBuiltins: true}
+    ),
     commojs(),
     babel({
       // 不进行编译
-      exclude:"node_modules/**"
+      exclude:"node_modules/**",
+      runtimeHelpers: true,
+      plugins: [
+        ['@babel/transform-runtime', {
+          regenerator: true
+        }]
+      ]
     }),
-    json()
+    json(),
+    postcss({plugins:[]})
   ],
   external:['vue']
 }

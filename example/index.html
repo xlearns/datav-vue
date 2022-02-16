@@ -5,9 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://cdn.bootcdn.net/ajax/libs/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
   <script src="../dist/datav.umd.js"></script>
 </head>
 <body>
-  
+   <div id="app">
+     {{message}}
+     <com-test></com-test>
+     <Full-Sreen/>
+   </div>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+         let message = "hello"
+         return {
+           message
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
 </body>
 </html>
