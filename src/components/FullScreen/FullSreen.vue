@@ -5,7 +5,7 @@
 <script>
 import { ref } from "vue";
 export default {
-	name: "FullSreen",
+	name: "VFullSreen",
 	setup() {
 		const a = "hello word";
 		return {

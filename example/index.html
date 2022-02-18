@@ -6,15 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- 引入vue -->
-  <script src='https://cdn.bootcdn.net/ajax/libs/vue/3.2.31/vue.global.js'></script>
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
   <!-- 引用组件库 -->
   <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+      background: black;
+    }
+  </style>
 </head>
 <body>
    <div id="app">
-     {{message}}
-     <com-test></com-test>
-     <Full-Sreen/>
+    <!-- <Icon style="color:blue;width:200px;height:200px" name="icon-saoyisao"> -->
+     <!-- icon -->
+      <!-- <Icon style="color:red;width:50px;height:50px;" name="icon-guanbi" ></Icon>
+      <Icon style="color:yellow;width:20px;height:20px" name="icon-saoyisao"></Icon> -->
+    <!--  -->
+    <!-- <Svg-Animation /> -->
+     <!-- <Full-Sreen/> -->
+     <!-- <V-Loading width='100' height='100'  >
+       数据大屏加载中...
+     </V-Loading> -->
+     <V-Fly-Box/>
    </div>
    <script>
      let app = Vue.createApp({
