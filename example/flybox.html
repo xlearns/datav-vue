@@ -28,17 +28,21 @@
 </head>
 <body>
    <div id="app">
-      <ul>
-        <li v-for="item in message">
-          <a :href="`${item}.html`"  target="_blank">{{item}}</a>
-        </li>
-      </ul>
-      
+     <div class='box' style="width:50%;height:200px">
+      <V-Fly-Box>
+        <span style="color:#fff">hello</span>
+      </V-Fly-Box>
+     </div>
+     <div class='box' style="width:100%;height:200px">
+      <V-Fly-Box>
+        <span style="color:#fff">hello</span>
+      </V-Fly-Box>
+     </div>
    </div>
    <script>
      let app = Vue.createApp({
        setup(){
-         let message = ['flybox','fullscreen','icon','loading']
+         let message = "hello"
          return {
            message
          }

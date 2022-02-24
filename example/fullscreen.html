@@ -7,6 +7,7 @@
   <title>Document</title>
   <!-- 引入vue -->
   <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+
   <!-- 引用组件库 -->
   <script src="../dist/datav.umd.js"></script>
   <!-- 引入iconfont -->
@@ -28,19 +29,17 @@
 </head>
 <body>
    <div id="app">
-      <ul>
-        <li v-for="item in message">
-          <a :href="`${item}.html`"  target="_blank">{{item}}</a>
-        </li>
-      </ul>
-      
+    <!-- <V-Full-Sreen >123</V-Full-Sreen> -->
+    <V-Full-Sreen>
+      <div style="width:200px;height:200px;border:1px solid red" :options="options"></div>
+    </V-Full-Sreen>
    </div>
    <script>
      let app = Vue.createApp({
        setup(){
-         let message = ['flybox','fullscreen','icon','loading']
+         let options = {width:1920,height:969}
          return {
-           message
+          options
          }
        }
      })

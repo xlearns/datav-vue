@@ -20,25 +20,20 @@
       padding:0;
       margin:0;
       height:100vh;
-    }
-    .box{
-      background: black;
+      /* background: black; */
     }
   </style>
 </head>
 <body>
    <div id="app">
-      <ul>
-        <li v-for="item in message">
-          <a :href="`${item}.html`"  target="_blank">{{item}}</a>
-        </li>
-      </ul>
-      
-   </div>
+    <V-Icon style="color:blue;width:200px;height:200px" name="icon-saoyisao"></V-Icon>
+    <V-Icon style="color:red;width:200px;height:200px;" name="icon-guanbi"></V-Icon>
+    <V-Icon style="color:yellow;width:200px;height:200px" name="icon-saoyisao"></V-Icon>
+    </div>
    <script>
      let app = Vue.createApp({
        setup(){
-         let message = ['flybox','fullscreen','icon','loading']
+         let message = "hello"
          return {
            message
          }

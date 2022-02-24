@@ -36,7 +36,7 @@ module.exports = {
   plugins:[
     vue(),
     resolve(
-      { preferBuiltins: true}
+      { preferBuiltins: true,browser: true}
     ),
     commojs(),
     babel({
@@ -50,7 +50,7 @@ module.exports = {
       ]
     }),
     json(),
-    postcss({plugins:[]})
+    postcss({plugins:[]}),
   ],
   external:['vue']
 }

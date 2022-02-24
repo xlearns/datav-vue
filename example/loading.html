@@ -28,17 +28,14 @@
 </head>
 <body>
    <div id="app">
-      <ul>
-        <li v-for="item in message">
-          <a :href="`${item}.html`"  target="_blank">{{item}}</a>
-        </li>
-      </ul>
-      
-   </div>
+    <V-Loading width='100' height='100'  >
+      数据大屏加载中...
+    </V-Loading>
+    </div>
    <script>
      let app = Vue.createApp({
        setup(){
-         let message = ['flybox','fullscreen','icon','loading']
+         let message = "hello"
          return {
            message
          }

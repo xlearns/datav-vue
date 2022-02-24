@@ -21,6 +21,9 @@ output:[
 
 ## 插件
 
+### uuid
+- 生成唯一id
+
 ### rollup-plugin-terser
 - 代码压缩
 
@@ -242,3 +245,8 @@ svg width="200px" height="200px">
 
 ## Loading组件
 ## FlyBox组件
+
+
+# MutationObserver
+-  对DOM、DOM属性监听
+- 使用场景：

@@ -1,4 +1,4 @@
-import { ref, pushScopeId, popScopeId, openBlock, createBlock, withScopeId, createVNode, toDisplayString, onMounted, createCommentVNode, computed, renderSlot } from 'vue';
+import { ref, pushScopeId, popScopeId, openBlock, createBlock, withScopeId, createVNode, onMounted, nextTick, onUnmounted, renderSlot, createCommentVNode, computed } from 'vue';
 
 var script$5 = {
   name: "ComTest",
@@ -10,7 +10,7 @@ var script$5 = {
   }
 };
 
-var _withId$2 = /*#__PURE__*/withScopeId("data-v-7cc4288f");
+var _withId$4 = /*#__PURE__*/withScopeId("data-v-7cc4288f");
 
 pushScopeId("data-v-7cc4288f");
 
@@ -42,7 +42,7 @@ var _hoisted_2$3 = /*#__PURE__*/createVNode("svg", {
 
 popScopeId();
 
-var render$5 = /*#__PURE__*/_withId$2(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$5 = /*#__PURE__*/_withId$4(function (_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("div", _hoisted_1$5, [_hoisted_2$3]);
 });
 
@@ -73,8 +73,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$4 = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
-styleInject(css_248z$4);
+var css_248z$5 = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
+styleInject(css_248z$5);
 
 script$5.render = render$5;
 script$5.__scopeId = "data-v-7cc4288f";
@@ -84,34 +84,142 @@ function Test (Vue) {
   Vue.component(script$5.name, script$5);
 }
 
+function debounce(delay, callback) {
+  var task;
+  return function () {
+    var _arguments = arguments,
+        _this = this;
+
+    clearTimeout(task);
+    task = setTimeout(function () {
+      callback.apply(_this, _arguments);
+    }, delay);
+  };
+}
+
 var script$4 = {
-  name: "VFullSreen",
-  setup: function setup() {
-    var a = "hello word";
-    return {
-      a: a
-    };
-  }
+	name: "VFullSreen",
+	props: {
+		options: Object,
+	},
+	setup(props) {
+		let dom = ref();
+		let width = ref(0);
+		let height = ref(0);
+		let originalWidth = ref(0);
+		let originalHeight = ref(0);
+		let ready = ref(false);
+		let observer;
+		const updateScale = function () {
+			// 获取真实的视口尺寸
+			const currentWidth = document.body.clientWidth;
+			const currentHeight = document.body.clientHeight;
+			// 获取大屏最终的宽高
+			const realWidth = width.value || originalWidth.value;
+			const realHeight = height.value || originalHeight.value;
+			const widthScale = currentWidth / realWidth;
+			const heightScale = currentHeight / realHeight;
+			dom.value &&
+				(dom.value.style.transform = `scale(${widthScale}, ${heightScale})`);
+		};
+		const updateSize = function () {
+			if (width.value && height.value) {
+				dom.value.style.width = `${width.value}px`;
+				dom.value.style.height = `${height.value}px`;
+			} else {
+				dom.value.style.width = `${originalWidth.value}px`;
+				dom.value.style.height = `${originalHeight.value}px`;
+			}
+		};
+		const init = function () {
+			return new Promise((resolve) => {
+				nextTick(() => {
+					if (props.options && props.options.width && props.options.height) {
+						width.value = props.options.width;
+						height.value = props.options.height;
+					} else {
+						console.warn(
+							"props.options.width||props.options.height no defined"
+						);
+						width.value = dom.value.clientWidth;
+						height.value = dom.value.clientHeight;
+					}
+					// 视口宽度
+					if (!originalWidth.value || !originalHeight.value) {
+						originalWidth.value = window.screen.width;
+						originalHeight.value = window.screen.height;
+					}
+					resolve();
+				});
+			});
+		};
+		const onResize = async function () {
+			// 屏幕改变、分辨率改变都会触发
+			await init();
+			updateScale();
+		};
+
+		const initMutationObserver = function () {
+			const MutationObserver = window.MutationObserver;
+			// dom变化执行onResize【callback】
+			observer = new MutationObserver(onResize);
+			observer.observe(dom.value, {
+				attributes: true,
+				attributeFilter: ["style"],
+				attributeOldValue: true,
+			});
+		};
+		const removeMutationObserver = function () {
+			if (observer) {
+				observer.disconnect();
+				observer.takeRecords();
+				observer = null;
+			}
+		};
+
+		onMounted(async () => {
+			ready.value = false;
+			await init();
+			updateSize();
+			updateScale();
+			window.addEventListener("resize", debounce(100, onResize));
+			initMutationObserver();
+			ready.value = true;
+		});
+
+		onUnmounted(() => {
+			window.removeEventListener("resize", onResize);
+			removeMutationObserver();
+		});
+
+		return {
+			ready,
+			dom,
+		};
+	},
 };
 
-var _withId$1 = /*#__PURE__*/withScopeId("data-v-8b5216c8");
+var _withId$3 = /*#__PURE__*/withScopeId("data-v-8b5216c8");
 
 pushScopeId("data-v-8b5216c8");
 
 var _hoisted_1$4 = {
-  "class": "test"
+  ref: "dom",
+  "class": "datav-full-sreen"
 };
 
 popScopeId();
 
-var render$4 = /*#__PURE__*/_withId$1(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", _hoisted_1$4, toDisplayString($setup.a), 1
-  /* TEXT */
+var render$4 = /*#__PURE__*/_withId$3(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock("div", _hoisted_1$4, [$setup.ready ? renderSlot(_ctx.$slots, "default", {
+    key: 0
+  }) : createCommentVNode("v-if", true)], 512
+  /* NEED_PATCH */
   );
 });
 
-var css_248z$3 = ".test[data-v-8b5216c8] {\n  color: red;\n}";
-styleInject(css_248z$3);
+var css_248z$4 = ".datav-full-sreen[data-v-8b5216c8] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  transform-origin: left top;\n  z-index: 999;\n}";
+styleInject(css_248z$4);
 
 script$4.render = render$4;
 script$4.__scopeId = "data-v-8b5216c8";
@@ -190,8 +298,8 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   );
 }
 
-var css_248z$2 = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
-styleInject(css_248z$2);
+var css_248z$3 = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
+styleInject(css_248z$3);
 
 script$3.render = render$3;
 script$3.__file = "src/components/Icon/Icon.vue";
@@ -218,7 +326,7 @@ var script$2 = {
   }
 };
 
-var _withId = /*#__PURE__*/withScopeId("data-v-5a151e4f");
+var _withId$2 = /*#__PURE__*/withScopeId("data-v-5a151e4f");
 
 pushScopeId("data-v-5a151e4f");
 
@@ -265,7 +373,7 @@ var _hoisted_2$2 = /*#__PURE__*/createVNode("div", {
 /* HOISTED */
 );
 
-var _hoisted_3$1 = /*#__PURE__*/createVNode("div", {
+var _hoisted_3$2 = /*#__PURE__*/createVNode("div", {
   "class": "contatiner"
 }, [/*#__PURE__*/createCommentVNode(" 矩形周长：4r"), /*#__PURE__*/createVNode("svg", {
   width: "500px",
@@ -292,7 +400,7 @@ var _hoisted_3$1 = /*#__PURE__*/createVNode("div", {
 /* HOISTED */
 );
 
-var _hoisted_4$1 = /*#__PURE__*/createVNode("div", {
+var _hoisted_4$2 = /*#__PURE__*/createVNode("div", {
   "class": "contatiner"
 }, [/*#__PURE__*/createCommentVNode(" 描边 "), /*#__PURE__*/createVNode("svg", {
   viewBox: "0 0 1024 1024"
@@ -468,12 +576,12 @@ var _hoisted_9 = /*#__PURE__*/createVNode("div", {
 
 popScopeId();
 
-var render$2 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", null, [_hoisted_1$2, _hoisted_2$2, _hoisted_3$1, _hoisted_4$1, _hoisted_5, createCommentVNode(" set "), _hoisted_6, createCommentVNode(" animate "), _hoisted_7, createCommentVNode(" 路径运动 "), _hoisted_8, createCommentVNode(" 翻转效果 "), _hoisted_9]);
+var render$2 = /*#__PURE__*/_withId$2(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock("div", null, [_hoisted_1$2, _hoisted_2$2, _hoisted_3$2, _hoisted_4$2, _hoisted_5, createCommentVNode(" set "), _hoisted_6, createCommentVNode(" animate "), _hoisted_7, createCommentVNode(" 路径运动 "), _hoisted_8, createCommentVNode(" 翻转效果 "), _hoisted_9]);
 });
 
-var css_248z$1 = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
-styleInject(css_248z$1);
+var css_248z$2 = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
+styleInject(css_248z$2);
 
 script$2.render = render$2;
 script$2.__scopeId = "data-v-5a151e4f";
@@ -517,6 +625,10 @@ var script$1 = {
 	},
 };
 
+var _withId$1 = /*#__PURE__*/withScopeId("data-v-416d18c9");
+
+pushScopeId("data-v-416d18c9");
+
 var _hoisted_1$1 = {
   "class": "vdata-loading"
 };
@@ -532,7 +644,7 @@ var _hoisted_2$1 = /*#__PURE__*/createVNode("animateTransform", {
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/createVNode("animateTransform", {
+var _hoisted_3$1 = /*#__PURE__*/createVNode("animateTransform", {
   attributeName: "transform",
   type: "rotate",
   values: "360 25 25;0 25 25",
@@ -542,10 +654,13 @@ var _hoisted_3 = /*#__PURE__*/createVNode("animateTransform", {
 /* HOISTED */
 );
 
-var _hoisted_4 = {
+var _hoisted_4$1 = {
   "class": "vdata-loading-content"
 };
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+
+popScopeId();
+
+var render$1 = /*#__PURE__*/_withId$1(function (_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("div", _hoisted_1$1, [(openBlock(), createBlock("svg", {
     width: $props.width,
     height: $props.height,
@@ -577,7 +692,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     "stroke-width": "3",
     "stroke-linecap": "round",
     "stroke-dasharray": "19 19"
-  }, [_hoisted_3, createVNode("animate", {
+  }, [_hoisted_3$1, createVNode("animate", {
     attributeName: "stroke",
     values: $setup.insideColorAimation,
     dur: "3s",
@@ -588,11 +703,11 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["stroke"])], 8
   /* PROPS */
-  , ["width", "height"])), createVNode("div", _hoisted_4, [renderSlot(_ctx.$slots, "default")])]);
-}
+  , ["width", "height"])), createVNode("div", _hoisted_4$1, [renderSlot(_ctx.$slots, "default")])]);
+});
 
-var css_248z = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
-styleInject(css_248z);
+var css_248z$1 = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
+styleInject(css_248z$1);
 
 script$1.render = render$1;
 script$1.__scopeId = "data-v-416d18c9";
@@ -602,54 +717,209 @@ function Loading (Vue) {
   Vue.component(script$1.name, script$1);
 }
 
+// Unique ID creation requires a high quality random # generator. In the browser we therefore
+// require the crypto API and do not support built-in fallback to lower quality random number
+// generators (like Math.random()).
+// getRandomValues needs to be invoked in a context where "this" is a Crypto implementation. Also,
+// find the complete implementation of crypto (msCrypto) on IE11.
+var getRandomValues = typeof crypto !== 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto) || typeof msCrypto !== 'undefined' && typeof msCrypto.getRandomValues === 'function' && msCrypto.getRandomValues.bind(msCrypto);
+var rnds8 = new Uint8Array(16);
+function rng() {
+  if (!getRandomValues) {
+    throw new Error('crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported');
+  }
+
+  return getRandomValues(rnds8);
+}
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+
+for (var i = 0; i < 256; ++i) {
+  byteToHex.push((i + 0x100).toString(16).substr(1));
+}
+
+function bytesToUuid(buf, offset_) {
+  var offset = offset_ || 0; // Note: Be careful editing this code!  It's been tuned for performance
+  // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+
+  return (byteToHex[buf[offset + 0]] + byteToHex[buf[offset + 1]] + byteToHex[buf[offset + 2]] + byteToHex[buf[offset + 3]] + '-' + byteToHex[buf[offset + 4]] + byteToHex[buf[offset + 5]] + '-' + byteToHex[buf[offset + 6]] + byteToHex[buf[offset + 7]] + '-' + byteToHex[buf[offset + 8]] + byteToHex[buf[offset + 9]] + '-' + byteToHex[buf[offset + 10]] + byteToHex[buf[offset + 11]] + byteToHex[buf[offset + 12]] + byteToHex[buf[offset + 13]] + byteToHex[buf[offset + 14]] + byteToHex[buf[offset + 15]]).toLowerCase();
+}
+
+function v4(options, buf, offset) {
+  options = options || {};
+  var rnds = options.random || (options.rng || rng)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+
+  rnds[6] = rnds[6] & 0x0f | 0x40;
+  rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
+
+  if (buf) {
+    offset = offset || 0;
+
+    for (var i = 0; i < 16; ++i) {
+      buf[offset + i] = rnds[i];
+    }
+
+    return buf;
+  }
+
+  return bytesToUuid(rnds);
+}
+
 var script = {
-	name: "VFlyBox",
-	setup() {
-		return {};
-	},
+  name: "VFlyBox",
+  props: {
+    duration: {
+      type: [Number, String],
+      "default": 3
+    },
+    lineColor: {
+      type: String,
+      "default": "#235fa7"
+    },
+    starColor: {
+      type: String,
+      "default": "#4fd2dd"
+    },
+    starLength: {
+      type: [Number, String],
+      "default": 50
+    }
+  },
+  setup: function setup(props) {
+    var uuid = v4(); // svg适配需要动态获取dom，然后根据dom去计算path
+
+    var width = ref(0);
+    var height = ref(0);
+    var flybox = ref();
+    var borderid = "borderid-".concat(uuid);
+    var maskid = "mask-".concat(uuid);
+    var radialGradientId = "radialGradient-".concat(uuid);
+    var path = computed(function () {
+      return "M5 5 L".concat(width.value - 5, " 5 L").concat(width.value - 5, " ").concat(height.value - 5, " L5 ").concat(height.value - 5, " Z");
+    });
+    var dur = computed(function () {
+      return "".concat(props.duration, "s");
+    });
+
+    var init = function init() {
+      var dom = flybox.value;
+      width.value = dom.clientWidth;
+      height.value = dom.clientHeight;
+    };
+
+    onMounted(function () {
+      init();
+    });
+    return {
+      radialGradientId: radialGradientId,
+      maskid: maskid,
+      borderid: borderid,
+      dur: dur,
+      flybox: flybox,
+      width: width,
+      height: height,
+      path: path
+    };
+  }
 };
+
+var _withId = /*#__PURE__*/withScopeId("data-v-449c7e3b");
+
+pushScopeId("data-v-449c7e3b");
 
 var _hoisted_1 = {
-  "class": "vdata-border-flybox"
+  "class": "vdata-border-flybox",
+  ref: "flybox"
 };
 
-var _hoisted_2 = /*#__PURE__*/createVNode("svg", {
-  width: "400",
-  height: "400"
-}, [/*#__PURE__*/createVNode("defs", null, [/*#__PURE__*/createVNode("path", {
-  id: "border",
-  fill: "none",
-  d: "M 2.5, 2.5 L 2.5, 237.5 L 396.5, 237.5 L 396.5, 2.5 L 2.5, 2.5"
-}), /*#__PURE__*/createVNode("mask", {
-  id: "mask"
-}, [/*#__PURE__*/createVNode("circle", {
-  r: "100",
-  cx: "0",
-  cy: "0",
-  fill: "white"
-}, [/*#__PURE__*/createVNode("animateMotion", {
-  path: "M 2.5, 2.5 L 2.5, 237.5 L 396.5, 237.5 L 396.5, 2.5 L 2.5, 2.5",
-  dur: "1.5s",
-  repeatCount: "indefinite",
-  rotate: "0"
-})])])]), /*#__PURE__*/createCommentVNode(" 背景 "), /*#__PURE__*/createVNode("use", {
-  href: "#border",
-  "stroke-width": "1",
-  stroke: "#235fa7"
-}), /*#__PURE__*/createCommentVNode(" 实际 "), /*#__PURE__*/createVNode("use", {
-  href: "#border",
-  "stroke-width": "3",
-  stroke: "#4fd2dd",
-  mask: "url(#mask)"
-})], -1
+var _hoisted_2 = /*#__PURE__*/createVNode("stop", {
+  offset: "0%",
+  "stop-color": "#fff",
+  "stop-opacity": "1"
+}, null, -1
 /* HOISTED */
 );
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", _hoisted_1, [_hoisted_2]);
-}
+var _hoisted_3 = /*#__PURE__*/createVNode("stop", {
+  offset: "100%",
+  "stop-color": "#fff",
+  "stop-opacity": "0"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_4 = {
+  "class": "content"
+};
+
+popScopeId();
+
+var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock("div", _hoisted_1, [(openBlock(), createBlock("svg", {
+    "width:": $setup.width,
+    "height:": $setup.height
+  }, [createVNode("defs", null, [createVNode("path", {
+    id: $setup.borderid,
+    fill: "none",
+    d: $setup.path
+  }, null, 8
+  /* PROPS */
+  , ["id", "d"]), createVNode("radialGradient", {
+    id: $setup.radialGradientId,
+    r: "50%",
+    cx: "50%",
+    cy: "50%",
+    fx: "100%",
+    fy: "50%"
+  }, [_hoisted_2, _hoisted_3], 8
+  /* PROPS */
+  , ["id"]), createVNode("mask", {
+    id: $setup.maskid
+  }, [createVNode("circle", {
+    r: $props.starLength,
+    cx: "0",
+    cy: "0",
+    fill: "url(#".concat($setup.radialGradientId, ")")
+  }, [createVNode("animateMotion", {
+    path: $setup.path,
+    dur: $setup.dur,
+    repeatCount: "indefinite",
+    rotate: "auto"
+  }, null, 8
+  /* PROPS */
+  , ["path", "dur"])], 8
+  /* PROPS */
+  , ["r", "fill"])], 8
+  /* PROPS */
+  , ["id"])]), createCommentVNode(" 背景 "), createVNode("use", {
+    href: "#".concat($setup.borderid),
+    "stroke-width": "1",
+    stroke: $props.lineColor
+  }, null, 8
+  /* PROPS */
+  , ["href", "stroke"]), createCommentVNode(" 实际 "), createVNode("use", {
+    href: "#".concat($setup.borderid),
+    "stroke-width": "3",
+    stroke: $props.starColor,
+    mask: "url(#".concat($setup.maskid, ")")
+  }, null, 8
+  /* PROPS */
+  , ["href", "stroke", "mask"])], 8
+  /* PROPS */
+  , ["width:", "height:"])), createVNode("div", _hoisted_4, [renderSlot(_ctx.$slots, "default")])], 512
+  /* NEED_PATCH */
+  );
+});
+
+var css_248z = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
+styleInject(css_248z);
 
 script.render = render;
+script.__scopeId = "data-v-449c7e3b";
 script.__file = "src/components/Border/FlyBox.vue";
 
 function Border (Vue) {
