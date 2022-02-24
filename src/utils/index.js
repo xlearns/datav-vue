@@ -1,3 +1,5 @@
+
+
 export function debounce(delay, callback) {
   let task
   return function() {
@@ -6,4 +8,8 @@ export function debounce(delay, callback) {
       callback.apply(this, arguments)
     }, delay)
   }
+}
+
+export function $(el){
+  return document.querySelector(el)
 }

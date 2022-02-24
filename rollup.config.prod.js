@@ -23,7 +23,8 @@ module.exports = {
       name:"datav",
       format:'umd',
       globals:{
-        vue:'vue'
+        vue:'vue',
+        echarts:"echarts"
       }
     },
     {
@@ -60,5 +61,5 @@ module.exports = {
       exclude:"node_modules/**"
     }),
   ],
-  external:['vue']
+  external:['vue',"echarts"]
 }

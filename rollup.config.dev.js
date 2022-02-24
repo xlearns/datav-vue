@@ -20,7 +20,8 @@ module.exports = {
       name:"datav", //模块名称
       format:'umd',
       globals:{
-        'vue':'Vue'
+        'vue':'Vue',
+        'echarts':"echarts"
       },
       sourcemap: true,
     },
@@ -52,5 +53,5 @@ module.exports = {
     json(),
     postcss({plugins:[]}),
   ],
-  external:['vue']
+  external:['vue',"echarts"]
 }

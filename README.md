@@ -249,4 +249,29 @@ svg width="200px" height="200px">
 
 # MutationObserver
 -  对DOM、DOM属性监听
-- 使用场景：
+- 使用场景：组件，监听dom的attribute改变就要动态执行callback
+
+
+# flex
+- flex-grow:伸 【1表示剩余的空间独占100%】
+- flex-shink：缩
+- flex-basis：基本【0%，auto】 0%表示最小
+
+- flex:1 -> flex: 1 1 0%
+- flex:auto -> flex 1 1 auto
+- flex:20% -> flex:1 1 20%
+- flex:2 3 -> flex:2 3 0%
+- flex:2 3px ->flex 2 1 3px
+
+# grad
+- display: grid
+## 左边固定右边自适应的三列布局
+```css
+.content{
+	display:grid;
+	grid-template-column:200px 1fr 2fr;
+	/* 间隔 */
+	gap:10px;
+}
+
+```

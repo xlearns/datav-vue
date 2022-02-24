@@ -22,8 +22,19 @@
       margin:0;
       height:100vh;
     }
-    .box{
-      background: black;
+    .content{
+     display: flex;
+     height:100%;
+    }
+    .left{
+      width:300px;
+      background:red;
+    }
+    .right{
+      background:#333;
+      /* flex-basis:0%; */
+      flex-grow:1;
+      /* flex-shrink: 1; */
     }
   </style>
 </head>
@@ -31,7 +42,10 @@
    <div id="app">
     <!-- <V-Full-Sreen >123</V-Full-Sreen> -->
     <V-Full-Sreen>
-      <div style="width:200px;height:200px;border:1px solid red" :options="options"></div>
+      <div class="content">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
     </V-Full-Sreen>
    </div>
    <script>
