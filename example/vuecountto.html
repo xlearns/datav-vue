@@ -20,7 +20,7 @@
       padding:0;
       margin:0;
       height:100vh;
-    }
+    }l
     .box{
       background: black;
     }
@@ -28,24 +28,33 @@
 </head>
 <body>
    <div id="app">
-     <div class='box' style="width:50%;height:200px">
-      <V-Fly-Box>
-        <span style="color:#fff">hello</span>
-      </V-Fly-Box>
-     </div>
-    
-     <div class='box' style="width:100%;height:200px">
-      <V-Fly-Box>
-        <span style="color:#fff">hello</span>
-      </V-Fly-Box>
-     </div>
-   </div>
+    <Vue-Count-To :startVal="0" :endVal="2022" :duration="20000"  ref="dom" @callback="callback"></Vue-Count-To>
+    </div>
    <script>
+     let {onMounted,ref,reactive} = Vue
      let app = Vue.createApp({
        setup(){
-         let message = "hello"
+         let dom = ref()
+         let state = reactive({
+             trigger:true
+         })
+         const callback = function(){
+           console.log('ok')
+         }
+         onMounted(()=>{
+           let _dom = dom.value
+           window.onclick=function(){
+             if(state.trigger){
+              _dom.pause()
+             }else{
+              _dom.resume()
+             }
+             state.trigger = !state.trigger
+           }
+         })
          return {
-           message
+          callback,
+          dom
          }
        }
      })

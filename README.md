@@ -275,3 +275,7 @@ svg width="200px" height="200px">
 }
 
 ```
+
+## 
+[data-chart](https://github.com/anshengsunshine/data-chart)
+[PROJECT_DEMO_vue-datav-lib](https://github.com/IFreeOvO/PROJECT_DEMO_vue-datav-lib)
