@@ -8,6 +8,7 @@ import VueEcharts from './components/VueEcharts/index'
 import VueCountTo from './components/VueCountTo/index'
 import BaseScrollList from './components/BaseScrollList/index'
 import TransformCategory from './components/TransformCategory/index'
+import Upload from './components/Upload/index'
 let component = function(Vue){
   Vue.use(Test)
   Vue.use(FullSreen)
@@ -19,5 +20,6 @@ let component = function(Vue){
   Vue.use(VueCountTo)
   Vue.use(BaseScrollList)
   Vue.use(TransformCategory)
+  Vue.use(Upload)
 }
 export default  component;

@@ -1,7 +1,7 @@
 import { ref, openBlock, createElementBlock, pushScopeId, popScopeId, createElementVNode, onMounted, nextTick, onUnmounted, renderSlot, createCommentVNode, normalizeStyle, createStaticVNode, computed, watch, reactive, toRefs, toDisplayString, Fragment, renderList } from 'vue';
 import Echarts from 'echarts';
 
-var script$9 = {
+var script$a = {
   name: "ComTest",
   setup: function setup() {
     var a = ref("test");
@@ -44,7 +44,7 @@ var _hoisted_2$5 = /*#__PURE__*/_withScopeId$3(function () {
 });
 
 var _hoisted_3$4 = [_hoisted_2$5];
-function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$8, _hoisted_3$4);
 }
 
@@ -78,12 +78,12 @@ function styleInject(css, ref) {
 var css_248z$7 = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
 styleInject(css_248z$7);
 
-script$9.render = render$9;
-script$9.__scopeId = "data-v-7cc4288f";
-script$9.__file = "src/components/Test/Test.vue";
+script$a.render = render$a;
+script$a.__scopeId = "data-v-7cc4288f";
+script$a.__file = "src/components/Test/Test.vue";
 
 function Test (Vue) {
-  Vue.component(script$9.name, script$9);
+  Vue.component(script$a.name, script$a);
 }
 
 function debounce(delay, callback) {
@@ -118,7 +118,7 @@ function formatNumber(num, decimals, decimal, separator, prefix, suffix) {
   return prefix + x1 + x2 + suffix;
 }
 
-var script$8 = {
+var script$9 = {
 	name: "VFullSreen",
 	props: {
 		options: Object,
@@ -224,7 +224,7 @@ var _hoisted_1$7 = {
   ref: "dom",
   "class": "datav-full-sreen"
 };
-function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$7, [$setup.ready ? renderSlot(_ctx.$slots, "default", {
     key: 0
   }) : createCommentVNode("v-if", true)], 512
@@ -235,16 +235,16 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$6 = ".datav-full-sreen[data-v-8b5216c8] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  transform-origin: left top;\n  z-index: 999;\n}";
 styleInject(css_248z$6);
 
-script$8.render = render$8;
-script$8.__scopeId = "data-v-8b5216c8";
-script$8.__file = "src/components/FullScreen/FullSreen.vue";
+script$9.render = render$9;
+script$9.__scopeId = "data-v-8b5216c8";
+script$9.__file = "src/components/FullScreen/FullSreen.vue";
 
 function FullSreen (Vue) {
-  Vue.component(script$8.name, script$8);
+  Vue.component(script$9.name, script$9);
 }
 
 // 配合iconfont symbol
-var script$7 = {
+var script$8 = {
   name: "VIcon",
   props: {
     name: String,
@@ -302,7 +302,7 @@ var _hoisted_1$6 = {
   "class": "icon"
 };
 var _hoisted_2$4 = ["href"];
-function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     "class": "icon-wrapper",
     style: normalizeStyle(_objectSpread$1({}, $props.style))
@@ -318,14 +318,14 @@ function render$7(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$5 = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
 styleInject(css_248z$5);
 
-script$7.render = render$7;
-script$7.__file = "src/components/Icon/Icon.vue";
+script$8.render = render$8;
+script$8.__file = "src/components/Icon/Icon.vue";
 
 function Icon (Vue) {
-  Vue.component(script$7.name, script$7);
+  Vue.component(script$8.name, script$8);
 }
 
-var script$6 = {
+var script$7 = {
   name: "SvgAnimation",
   props: {
     name: String,
@@ -401,22 +401,22 @@ var _hoisted_8$2 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" dat
 
 var _hoisted_9$2 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 运动的矩形 --><rect x=\"0\" y=\"0\" width=\"10\" height=\"10\" fill=\"red\" data-v-5a151e4f><animateMotion id=\"forward-rect\" path=\"M10 10 L110 10 L110 110 L10 110\" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"0;backward-rect.end+0.5\" data-v-5a151e4f></animateMotion><animateMotion id=\"backward-rect\" path=\"M10 110 L110 110 L110 10 L10 10 \" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"forward-rect.end + 0.5s\" data-v-5a151e4f></animateMotion></rect><path d=\"M10 10 L110 10 L110 110 L10 110\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" data-v-5a151e4f></path></svg></div>", 1);
 
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+function render$7(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", null, [_hoisted_1$5, _hoisted_4$2, _hoisted_5$2, createCommentVNode(" set "), _hoisted_6$2, createCommentVNode(" animate "), _hoisted_7$2, createCommentVNode(" 路径运动 "), _hoisted_8$2, createCommentVNode(" 翻转效果 "), _hoisted_9$2]);
 }
 
 var css_248z$4 = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
 styleInject(css_248z$4);
 
-script$6.render = render$6;
-script$6.__scopeId = "data-v-5a151e4f";
-script$6.__file = "src/components/SvgAnimation/SvgAnimation.vue";
+script$7.render = render$7;
+script$7.__scopeId = "data-v-5a151e4f";
+script$7.__file = "src/components/SvgAnimation/SvgAnimation.vue";
 
 function SvgAnimation (Vue) {
-  Vue.component(script$6.name, script$6);
+  Vue.component(script$7.name, script$7);
 }
 
-var script$5 = {
+var script$6 = {
 	name: "VLoading",
 	props: {
 		width: {
@@ -492,7 +492,7 @@ var _hoisted_8$1 = ["values"];
 var _hoisted_9$1 = {
   "class": "vdata-loading-content"
 };
-function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$4, [(openBlock(), createElementBlock("svg", {
     width: $props.width,
     height: $props.height,
@@ -541,12 +541,12 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$3 = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
 styleInject(css_248z$3);
 
-script$5.render = render$5;
-script$5.__scopeId = "data-v-416d18c9";
-script$5.__file = "src/components/Loading/Loading.vue";
+script$6.render = render$6;
+script$6.__scopeId = "data-v-416d18c9";
+script$6.__file = "src/components/Loading/Loading.vue";
 
 function Loading (Vue) {
-  Vue.component(script$5.name, script$5);
+  Vue.component(script$6.name, script$6);
 }
 
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
@@ -623,7 +623,7 @@ function v4(options, buf, offset) {
   return stringify(rnds);
 }
 
-var script$4 = {
+var script$5 = {
   name: "VFlyBox",
   props: {
     duration: {
@@ -722,7 +722,7 @@ var _hoisted_12 = ["href", "stroke", "mask"];
 var _hoisted_13 = {
   "class": "content"
 };
-function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$3, [(openBlock(), createElementBlock("svg", {
     "width:": $setup.width,
     "height:": $setup.height
@@ -782,15 +782,15 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$2 = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
 styleInject(css_248z$2);
 
-script$4.render = render$4;
-script$4.__scopeId = "data-v-449c7e3b";
-script$4.__file = "src/components/Border/FlyBox.vue";
+script$5.render = render$5;
+script$5.__scopeId = "data-v-449c7e3b";
+script$5.__file = "src/components/Border/FlyBox.vue";
 
 function Border (Vue) {
-  Vue.component(script$4.name, script$4);
+  Vue.component(script$5.name, script$5);
 }
 
-var script$3 = {
+var script$4 = {
   name: "VEcharts",
   props: {
     options: Object,
@@ -854,17 +854,17 @@ var _hoisted_1$2 = {
   "class": "echats",
   ref: "dom"
 };
-function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$2, null, 512
   /* NEED_PATCH */
   );
 }
 
-script$3.render = render$3;
-script$3.__file = "src/components/VueEcharts/VueEcharts.vue";
+script$4.render = render$4;
+script$4.__file = "src/components/VueEcharts/VueEcharts.vue";
 
 function VueEcharts (Vue) {
-  Vue.component(script$3.name, script$3);
+  Vue.component(script$4.name, script$4);
 }
 
 var lastTime = 0;
@@ -912,7 +912,7 @@ if (isServer) {
   }
 }
 
-var script$2 = {
+var script$3 = {
 	name: "VueCountTo",
 	props: {
 		startVal: {
@@ -1111,17 +1111,17 @@ var script$2 = {
 	},
 };
 
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("span", null, toDisplayString(_ctx.displayValue), 1
   /* TEXT */
   );
 }
 
-script$2.render = render$2;
-script$2.__file = "src/components/VueCountTo/VueCountTo.vue";
+script$3.render = render$3;
+script$3.__file = "src/components/VueCountTo/VueCountTo.vue";
 
 function VueCountTo (Vue) {
-  Vue.component(script$2.name, script$2);
+  Vue.component(script$3.name, script$3);
 }
 
 var asyncToGenerator = createCommonjsModule(function (module) {
@@ -4790,7 +4790,7 @@ var assign = _createAssigner(function(object, source) {
 
 var assign_1 = assign;
 
-var defaultConfig = {
+var defaultConfig$1 = {
   // 标题数据
   headerData: [],
   // 标题样式
@@ -4832,7 +4832,7 @@ var defaultConfig = {
   duration: 2000 // 动画间隔
 
 };
-var script$1 = {
+var script$2 = {
   name: "BaseScrollList",
   props: {
     config: {
@@ -5077,7 +5077,7 @@ var script$1 = {
       domWidth.value = width;
       domHeight.value = height;
 
-      var _actualConfig = assign_1(defaultConfig, props.config);
+      var _actualConfig = assign_1(defaultConfig$1, props.config);
 
       rowsData.value = _actualConfig.data || [];
       handleHeader(_actualConfig);
@@ -5124,7 +5124,7 @@ var _hoisted_1$1 = {
 };
 var _hoisted_2$1 = ["align", "innerHTML"];
 var _hoisted_3$1 = ["align", "innerHTML"];
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$1, [createElementVNode("div", {
     "class": "base-scroll-list-header",
     style: normalizeStyle({
@@ -5193,15 +5193,15 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$1 = ".base-scroll-list[data-v-69eed30f] {\n  height: 100%;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-text[data-v-69eed30f] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  box-sizing: border-box;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-header[data-v-69eed30f] {\n  display: flex;\n  font-size: 15px;\n  align-items: center;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] {\n  overflow: hidden;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] {\n  display: flex;\n  align-items: center;\n  transition: all 0.3s linear;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] .base-scroll-list-columns[data-v-69eed30f] {\n  height: 100%;\n}";
 styleInject(css_248z$1);
 
-script$1.render = render$1;
-script$1.__scopeId = "data-v-69eed30f";
-script$1.__file = "src/components/BaseScrollList/BaseScrollList.vue";
+script$2.render = render$2;
+script$2.__scopeId = "data-v-69eed30f";
+script$2.__file = "src/components/BaseScrollList/BaseScrollList.vue";
 
 function BaseScrollList (Vue) {
-  Vue.component(script$1.name, script$1);
+  Vue.component(script$2.name, script$2);
 }
 
-var script = {
+var script$1 = {
   name: "TransformCategory",
   props: {
     data: Array,
@@ -5264,7 +5264,7 @@ var _hoisted_2 = ["onClick", "onMouseenter", "onMouseleave", "onMousemove"];
 var _hoisted_3 = {
   key: 2
 };
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1, [(openBlock(true), createElementBlock(Fragment, null, renderList($props.data, function (item, index) {
     return openBlock(), createElementBlock("div", {
       "class": "category",
@@ -5310,11 +5310,152 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z = ".country-category[data-v-0ce021a5] {\n  display: flex;\n  width: 100%;\n  height: 100%;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] {\n  flex: 1;\n  background: #353941;\n  font-size: 24px;\n  color: #90a0ae;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .hovered[data-v-0ce021a5] {\n  background: #505050;\n  color: #ffffff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .selected[data-v-0ce021a5] {\n  background: #8ca0ad;\n  color: #fff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] div[data-v-0ce021a5] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n}";
 styleInject(css_248z);
 
-script.render = render;
-script.__scopeId = "data-v-0ce021a5";
-script.__file = "src/components/TransformCategory/TransformCategory.vue";
+script$1.render = render$1;
+script$1.__scopeId = "data-v-0ce021a5";
+script$1.__file = "src/components/TransformCategory/TransformCategory.vue";
 
 function TransformCategory (Vue) {
+  Vue.component(script$1.name, script$1);
+}
+
+var request = function request(_ref) {
+  var url = _ref.url,
+      _ref$methods = _ref.methods,
+      methods = _ref$methods === void 0 ? 'post' : _ref$methods,
+      data = _ref.data,
+      _ref$headers = _ref.headers,
+      headers = _ref$headers === void 0 ? {} : _ref$headers;
+  return new Promise(function (resolve) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(methods, url);
+    Object.keys(headers).forEach(function (key) {
+      xhr.setRequestHeader(key, headers[key]);
+    });
+    xhr.send(data);
+
+    xhr.onload = function (e) {
+      resolve({
+        data: e.target.response
+      });
+    };
+  });
+}; //ajax设置请求头 setRequestHeader(key,value)
+// onload和onreadystatechange 区别
+// 只要进入onload请求中，一定是已经到4这个状态
+
+const defaultConfig = {
+	// 切片大小
+	SIZE: 10 * 1024 * 1024,
+	// 上传url
+	url: "",
+	data: [],
+	chunk: "chunk",
+	hash: "hash",
+	filename: "filename",
+	// 合并url
+	urlMerge: "",
+	headerMerge: {
+		"content-type": "application/json",
+	},
+	dataMerge: {},
+};
+var script = {
+	name: "Upload",
+	props: {
+		config: {
+			type: Object,
+		},
+	},
+	emits: ["handleFileChange"],
+	setup(props, { emit }) {
+		const _actualConfig = assign_1(defaultConfig, props.config);
+		const fileRef = ref(null);
+		const data = ref([]);
+		// 生成文件切片
+		const createFileChunk = function (file, size = _actualConfig.SIZE) {
+			const fileChunkList = [];
+			let cur = 0;
+			while (cur < file.size) {
+				fileChunkList.push({ file: file.slice(cur, cur + size) });
+				cur += size;
+			}
+			return fileChunkList;
+		};
+		// 合并切块
+		const mergeRequest = async function () {
+			await request({
+				url: _actualConfig.urlMerge,
+				headers: _actualConfig.headerMerge,
+				data: JSON.stringify({
+					filename: fileRef.value.name,
+					..._actualConfig.dataMerge,
+				}),
+			});
+		};
+		// 上传切片
+		const uploadChunks = async function () {
+			const requestList = data.value
+				.map(({ chunk, hash }) => {
+					const formData = new FormData();
+					formData.append(_actualConfig.chunk, chunk);
+					formData.append(_actualConfig.hash, hash);
+					formData.append(_actualConfig.filename, fileRef.value.name);
+
+					_actualConfig.data.forEach((item) => {
+						formData.append(item.key, item.value);
+					});
+					return { formData };
+				})
+				.map(async ({ formData }) => {
+					request({
+						url: _actualConfig.url,
+						data: formData,
+					});
+				});
+
+			await Promise.all(requestList); // 并发切片
+			//  合并切片
+			await mergeRequest();
+		};
+		const handleUpload = async function () {
+			// 文件不存在
+			if (!fileRef.value) return;
+			// 对文件切片
+			const fileChunkList = createFileChunk(fileRef.value);
+			data.value = fileChunkList.map(({ file }, index) => ({
+				chunk: file,
+				hash: fileRef.value.name + "-" + index, // 文件名 + 数组下标
+			}));
+			await uploadChunks();
+		};
+		const handleFileChange = function (e) {
+			const [file] = e.target.files;
+			if (!file) return;
+			fileRef.value = file;
+			emit("handleFileChange", file);
+		};
+		return {
+			handleFileChange,
+			handleUpload,
+		};
+	},
+};
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [createElementVNode("input", {
+    type: "file",
+    onChange: _cache[0] || (_cache[0] = function () {
+      return $setup.handleFileChange && $setup.handleFileChange.apply($setup, arguments);
+    })
+  }, null, 32
+  /* HYDRATE_EVENTS */
+  )]);
+}
+
+script.render = render;
+script.__file = "src/components/Upload/Upload.vue";
+
+function Upload (Vue) {
   Vue.component(script.name, script);
 }
 
@@ -5329,6 +5470,7 @@ var component = function component(Vue) {
   Vue.use(VueCountTo);
   Vue.use(BaseScrollList);
   Vue.use(TransformCategory);
+  Vue.use(Upload);
 };
 
 export { component as default };
