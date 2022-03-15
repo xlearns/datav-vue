@@ -818,7 +818,7 @@
 	  },
 	  setup: function setup(props) {
 	    var dom = vue.ref();
-	    var charts;
+	    var charts = vue.ref();
 	    vue.watch(function () {
 	      return props.options;
 	    }, function () {
@@ -828,9 +828,9 @@
 	    });
 
 	    var onResize = function onResize() {
-	      var _charts;
+	      var _charts$value;
 
-	      (_charts = charts) === null || _charts === void 0 ? void 0 : _charts.resize();
+	      (_charts$value = charts.value) === null || _charts$value === void 0 ? void 0 : _charts$value.resize();
 	    };
 
 	    vue.onMounted(function () {
@@ -844,15 +844,16 @@
 	        _dom.style.width = "100%";
 	      }
 
-	      charts = Echarts__default["default"].init(_dom, props.theme, props.type);
-	      charts.setOption(props.options);
+	      charts.value = Echarts__default["default"].init(_dom, props.theme, props.type);
+	      charts.value.setOption(props.options);
 	      window.addEventListener("resize", onResize);
 	    });
 	    vue.onUnmounted(function () {
 	      window.removeEventListener("resize", onResize);
 	    });
 	    return {
-	      dom: dom
+	      dom: dom,
+	      charts: charts
 	    };
 	  }
 	};

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+    }l
+    .box{
+      background: black;
+    }
+  </style>
+</head>
+<body>
+   <div id="app">
+      <Upload @handle-File-Change='handleFileChange' ref='upload' :config='config'></Upload>
+      <button @click="submit">上传</button>
+    </div>
+   <script>
+     let {onMounted,ref} = Vue
+     let app = Vue.createApp({
+       setup(){
+         const data = [
+           {
+             key:"test",
+             value:1
+           }
+         ]
+         const url = 'http://localhost:3000'
+         const config = {
+            url:url,
+            urlMerge:url,
+   
+         }
+         const upload = ref()
+         const handleFileChange = function(file){
+           console.log(1,file)
+         }
+         const submit = function(){
+           let {handleUpload} = upload.value
+           handleUpload()
+         }
+         onMounted(()=>{
+           
+         })
+         return {
+          submit,
+           config,
+          upload,
+          handleFileChange
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>

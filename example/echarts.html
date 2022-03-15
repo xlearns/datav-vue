@@ -27,13 +27,14 @@
       </div>
 
       <div class="box">
-        <V-Echarts :options="getOption()" :type="initOptions" open></V-Echarts>
+        <V-Echarts :options="getOption()" ref='dom' :type="initOptions" open></V-Echarts>
       </div>
    </div>
    <script>
      let app = Vue.createApp({
        setup(){
          const initOptions = {renderer: "svg"}
+         const dom  = Vue.ref()
          const getOption = function(){
             return {
               title: {
@@ -56,9 +57,13 @@
               ],
             }
          }
+         Vue.onMounted(()=>{
+           console.log(dom.value)
+         })
          return {
           getOption,
-          initOptions
+          initOptions,
+          dom
          }
        }
      })

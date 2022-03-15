@@ -811,7 +811,7 @@ var script$4 = {
   },
   setup: function setup(props) {
     var dom = ref();
-    var charts;
+    var charts = ref();
     watch(function () {
       return props.options;
     }, function () {
@@ -821,9 +821,9 @@ var script$4 = {
     });
 
     var onResize = function onResize() {
-      var _charts;
+      var _charts$value;
 
-      (_charts = charts) === null || _charts === void 0 ? void 0 : _charts.resize();
+      (_charts$value = charts.value) === null || _charts$value === void 0 ? void 0 : _charts$value.resize();
     };
 
     onMounted(function () {
@@ -837,15 +837,16 @@ var script$4 = {
         _dom.style.width = "100%";
       }
 
-      charts = Echarts.init(_dom, props.theme, props.type);
-      charts.setOption(props.options);
+      charts.value = Echarts.init(_dom, props.theme, props.type);
+      charts.value.setOption(props.options);
       window.addEventListener("resize", onResize);
     });
     onUnmounted(function () {
       window.removeEventListener("resize", onResize);
     });
     return {
-      dom: dom
+      dom: dom,
+      charts: charts
     };
   }
 };

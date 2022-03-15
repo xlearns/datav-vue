@@ -23,7 +23,7 @@ export default {
 	},
 	setup(props) {
 		let dom = ref();
-		let charts;
+		let charts = ref();
 		watch(
 			() => props.options,
 			() => {
@@ -34,7 +34,7 @@ export default {
 			}
 		);
 		const onResize = function () {
-			charts?.resize();
+			charts.value?.resize();
 		};
 		onMounted(() => {
 			let _dom = dom.value;
@@ -45,8 +45,8 @@ export default {
 				_dom.style.height = "100%";
 				_dom.style.width = "100%";
 			}
-			charts = Echarts.init(_dom, props.theme, props.type);
-			charts.setOption(props.options);
+			charts.value = Echarts.init(_dom, props.theme, props.type);
+			charts.value.setOption(props.options);
 			window.addEventListener("resize", onResize);
 		});
 		onUnmounted(() => {
@@ -54,6 +54,7 @@ export default {
 		});
 		return {
 			dom,
+			charts,
 		};
 	},
 };
