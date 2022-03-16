@@ -1,7 +1,7 @@
 import { ref, openBlock, createElementBlock, pushScopeId, popScopeId, createElementVNode, onMounted, nextTick, onUnmounted, renderSlot, createCommentVNode, normalizeStyle, createStaticVNode, computed, watch, reactive, toRefs, toDisplayString, Fragment, renderList } from 'vue';
 import Echarts from 'echarts';
 
-var script$a = {
+var script$b = {
   name: "ComTest",
   setup: function setup() {
     var a = ref("test");
@@ -15,11 +15,11 @@ var _withScopeId$3 = function _withScopeId(n) {
   return pushScopeId("data-v-7cc4288f"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$8 = {
+var _hoisted_1$9 = {
   "class": "test"
 };
 
-var _hoisted_2$5 = /*#__PURE__*/_withScopeId$3(function () {
+var _hoisted_2$6 = /*#__PURE__*/_withScopeId$3(function () {
   return /*#__PURE__*/createElementVNode("svg", {
     width: "20px",
     height: "20px",
@@ -43,9 +43,9 @@ var _hoisted_2$5 = /*#__PURE__*/_withScopeId$3(function () {
   );
 });
 
-var _hoisted_3$4 = [_hoisted_2$5];
-function render$a(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$8, _hoisted_3$4);
+var _hoisted_3$4 = [_hoisted_2$6];
+function render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$9, _hoisted_3$4);
 }
 
 function styleInject(css, ref) {
@@ -75,15 +75,15 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$7 = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
-styleInject(css_248z$7);
+var css_248z$8 = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
+styleInject(css_248z$8);
 
-script$a.render = render$a;
-script$a.__scopeId = "data-v-7cc4288f";
-script$a.__file = "src/components/Test/Test.vue";
+script$b.render = render$b;
+script$b.__scopeId = "data-v-7cc4288f";
+script$b.__file = "src/components/Test/Test.vue";
 
 function Test (Vue) {
-  Vue.component(script$a.name, script$a);
+  Vue.component(script$b.name, script$b);
 }
 
 function debounce(delay, callback) {
@@ -118,7 +118,7 @@ function formatNumber(num, decimals, decimal, separator, prefix, suffix) {
   return prefix + x1 + x2 + suffix;
 }
 
-var script$9 = {
+var script$a = {
 	name: "VFullSreen",
 	props: {
 		options: Object,
@@ -220,31 +220,31 @@ var script$9 = {
 	},
 };
 
-var _hoisted_1$7 = {
+var _hoisted_1$8 = {
   ref: "dom",
   "class": "datav-full-sreen"
 };
-function render$9(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$7, [$setup.ready ? renderSlot(_ctx.$slots, "default", {
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$8, [$setup.ready ? renderSlot(_ctx.$slots, "default", {
     key: 0
   }) : createCommentVNode("v-if", true)], 512
   /* NEED_PATCH */
   );
 }
 
-var css_248z$6 = ".datav-full-sreen[data-v-8b5216c8] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  transform-origin: left top;\n  z-index: 999;\n}";
-styleInject(css_248z$6);
+var css_248z$7 = ".datav-full-sreen[data-v-8b5216c8] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  transform-origin: left top;\n  z-index: 999;\n}";
+styleInject(css_248z$7);
 
-script$9.render = render$9;
-script$9.__scopeId = "data-v-8b5216c8";
-script$9.__file = "src/components/FullScreen/FullSreen.vue";
+script$a.render = render$a;
+script$a.__scopeId = "data-v-8b5216c8";
+script$a.__file = "src/components/FullScreen/FullSreen.vue";
 
 function FullSreen (Vue) {
-  Vue.component(script$9.name, script$9);
+  Vue.component(script$a.name, script$a);
 }
 
 // 配合iconfont symbol
-var script$8 = {
+var script$9 = {
   name: "VIcon",
   props: {
     name: String,
@@ -298,34 +298,34 @@ var _defineProperty$1 = unwrapExports(defineProperty$1);
 function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$1(Object(source), !0).forEach(function (key) { _defineProperty$1(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$1(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-var _hoisted_1$6 = {
+var _hoisted_1$7 = {
   "class": "icon"
 };
-var _hoisted_2$4 = ["href"];
-function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+var _hoisted_2$5 = ["href"];
+function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     "class": "icon-wrapper",
     style: normalizeStyle(_objectSpread$1({}, $props.style))
-  }, [(openBlock(), createElementBlock("svg", _hoisted_1$6, [createElementVNode("use", {
+  }, [(openBlock(), createElementBlock("svg", _hoisted_1$7, [createElementVNode("use", {
     href: $setup.iconName
   }, null, 8
   /* PROPS */
-  , _hoisted_2$4)]))], 4
+  , _hoisted_2$5)]))], 4
   /* STYLE */
   );
 }
 
-var css_248z$5 = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
-styleInject(css_248z$5);
+var css_248z$6 = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
+styleInject(css_248z$6);
 
-script$8.render = render$8;
-script$8.__file = "src/components/Icon/Icon.vue";
+script$9.render = render$9;
+script$9.__file = "src/components/Icon/Icon.vue";
 
 function Icon (Vue) {
-  Vue.component(script$8.name, script$8);
+  Vue.component(script$9.name, script$9);
 }
 
-var script$7 = {
+var script$8 = {
   name: "SvgAnimation",
   props: {
     name: String,
@@ -347,7 +347,7 @@ var _withScopeId$2 = function _withScopeId(n) {
   return pushScopeId("data-v-5a151e4f"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$5 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"200\" viewBox=\"0 0 500 200\" data-v-5a151e4f><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"red\" transform=\"translate(0,0) rotate(30)\" data-v-5a151e4f></rect></svg></div><div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"500\" viewBox=\"0 0 200 200\" transform=\"rotate(270)\" data-v-5a151e4f><!-- 底 --><circle cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#d1d3d7\" fill=\"none\" data-v-5a151e4f></circle><!-- 实际 --><!-- 周长：2*PI*R --><!-- 2*3.14*90 = 566--><!--  --><circle class=\"circle-ring\" cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#00a5e0\" fill=\"none\" data-v-5a151e4f></circle></svg></div><div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 底 --><rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#d1d3d7\" stroke-width=\"10\" data-v-5a151e4f></rect><rect class=\"rectRing\" x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#00a5e0\" stroke-width=\"10\" data-v-5a151e4f></rect></svg></div>", 3);
+var _hoisted_1$6 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"200\" viewBox=\"0 0 500 200\" data-v-5a151e4f><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"red\" transform=\"translate(0,0) rotate(30)\" data-v-5a151e4f></rect></svg></div><div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"500\" viewBox=\"0 0 200 200\" transform=\"rotate(270)\" data-v-5a151e4f><!-- 底 --><circle cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#d1d3d7\" fill=\"none\" data-v-5a151e4f></circle><!-- 实际 --><!-- 周长：2*PI*R --><!-- 2*3.14*90 = 566--><!--  --><circle class=\"circle-ring\" cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#00a5e0\" fill=\"none\" data-v-5a151e4f></circle></svg></div><div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 底 --><rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#d1d3d7\" stroke-width=\"10\" data-v-5a151e4f></rect><rect class=\"rectRing\" x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#00a5e0\" stroke-width=\"10\" data-v-5a151e4f></rect></svg></div>", 3);
 
 var _hoisted_4$2 = /*#__PURE__*/_withScopeId$2(function () {
   return /*#__PURE__*/createElementVNode("div", {
@@ -401,22 +401,22 @@ var _hoisted_8$2 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" dat
 
 var _hoisted_9$2 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 运动的矩形 --><rect x=\"0\" y=\"0\" width=\"10\" height=\"10\" fill=\"red\" data-v-5a151e4f><animateMotion id=\"forward-rect\" path=\"M10 10 L110 10 L110 110 L10 110\" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"0;backward-rect.end+0.5\" data-v-5a151e4f></animateMotion><animateMotion id=\"backward-rect\" path=\"M10 110 L110 110 L110 10 L10 10 \" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"forward-rect.end + 0.5s\" data-v-5a151e4f></animateMotion></rect><path d=\"M10 10 L110 10 L110 110 L10 110\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" data-v-5a151e4f></path></svg></div>", 1);
 
-function render$7(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", null, [_hoisted_1$5, _hoisted_4$2, _hoisted_5$2, createCommentVNode(" set "), _hoisted_6$2, createCommentVNode(" animate "), _hoisted_7$2, createCommentVNode(" 路径运动 "), _hoisted_8$2, createCommentVNode(" 翻转效果 "), _hoisted_9$2]);
+function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [_hoisted_1$6, _hoisted_4$2, _hoisted_5$2, createCommentVNode(" set "), _hoisted_6$2, createCommentVNode(" animate "), _hoisted_7$2, createCommentVNode(" 路径运动 "), _hoisted_8$2, createCommentVNode(" 翻转效果 "), _hoisted_9$2]);
 }
 
-var css_248z$4 = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
-styleInject(css_248z$4);
+var css_248z$5 = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
+styleInject(css_248z$5);
 
-script$7.render = render$7;
-script$7.__scopeId = "data-v-5a151e4f";
-script$7.__file = "src/components/SvgAnimation/SvgAnimation.vue";
+script$8.render = render$8;
+script$8.__scopeId = "data-v-5a151e4f";
+script$8.__file = "src/components/SvgAnimation/SvgAnimation.vue";
 
 function SvgAnimation (Vue) {
-  Vue.component(script$7.name, script$7);
+  Vue.component(script$8.name, script$8);
 }
 
-var script$6 = {
+var script$7 = {
 	name: "VLoading",
 	props: {
 		width: {
@@ -454,10 +454,10 @@ var _withScopeId$1 = function _withScopeId(n) {
   return pushScopeId("data-v-416d18c9"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$4 = {
+var _hoisted_1$5 = {
   "class": "vdata-loading"
 };
-var _hoisted_2$3 = ["width", "height"];
+var _hoisted_2$4 = ["width", "height"];
 var _hoisted_3$3 = ["stroke"];
 
 var _hoisted_4$1 = /*#__PURE__*/_withScopeId$1(function () {
@@ -492,8 +492,8 @@ var _hoisted_8$1 = ["values"];
 var _hoisted_9$1 = {
   "class": "vdata-loading-content"
 };
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$4, [(openBlock(), createElementBlock("svg", {
+function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$5, [(openBlock(), createElementBlock("svg", {
     width: $props.width,
     height: $props.height,
     viewBox: "0 0 50 50"
@@ -535,18 +535,18 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_6$1)], 8
   /* PROPS */
-  , _hoisted_2$3)), createElementVNode("div", _hoisted_9$1, [renderSlot(_ctx.$slots, "default")])]);
+  , _hoisted_2$4)), createElementVNode("div", _hoisted_9$1, [renderSlot(_ctx.$slots, "default")])]);
 }
 
-var css_248z$3 = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
-styleInject(css_248z$3);
+var css_248z$4 = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
+styleInject(css_248z$4);
 
-script$6.render = render$6;
-script$6.__scopeId = "data-v-416d18c9";
-script$6.__file = "src/components/Loading/Loading.vue";
+script$7.render = render$7;
+script$7.__scopeId = "data-v-416d18c9";
+script$7.__file = "src/components/Loading/Loading.vue";
 
 function Loading (Vue) {
-  Vue.component(script$6.name, script$6);
+  Vue.component(script$7.name, script$7);
 }
 
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
@@ -623,7 +623,7 @@ function v4(options, buf, offset) {
   return stringify(rnds);
 }
 
-var script$5 = {
+var script$6 = {
   name: "VFlyBox",
   props: {
     duration: {
@@ -685,11 +685,11 @@ var _withScopeId = function _withScopeId(n) {
   return pushScopeId("data-v-449c7e3b"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$3 = {
+var _hoisted_1$4 = {
   "class": "vdata-border-flybox",
   ref: "flybox"
 };
-var _hoisted_2$2 = ["width:", "height:"];
+var _hoisted_2$3 = ["width:", "height:"];
 var _hoisted_3$2 = ["id", "d"];
 var _hoisted_4 = ["id"];
 
@@ -722,8 +722,8 @@ var _hoisted_12 = ["href", "stroke", "mask"];
 var _hoisted_13 = {
   "class": "content"
 };
-function render$5(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$3, [(openBlock(), createElementBlock("svg", {
+function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$4, [(openBlock(), createElementBlock("svg", {
     "width:": $setup.width,
     "height:": $setup.height
   }, [createElementVNode("defs", null, [createElementVNode("path", {
@@ -774,19 +774,90 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_12)], 8
   /* PROPS */
-  , _hoisted_2$2)), createElementVNode("div", _hoisted_13, [renderSlot(_ctx.$slots, "default")])], 512
+  , _hoisted_2$3)), createElementVNode("div", _hoisted_13, [renderSlot(_ctx.$slots, "default")])], 512
   /* NEED_PATCH */
   );
 }
 
-var css_248z$2 = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
+var css_248z$3 = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
+styleInject(css_248z$3);
+
+script$6.render = render$6;
+script$6.__scopeId = "data-v-449c7e3b";
+script$6.__file = "src/components/Border/FlyBox.vue";
+
+var script$5 = {
+	name: "DoubleBox",
+	props: {
+		leftColor: {
+			type: Array,
+			default: ["#035f3c", " #16f03a"],
+		},
+		rightColor: {
+			type: Array,
+			default: ["#035f3c", " #16f03a"],
+		},
+		topColor: {
+			type: Array,
+			default: ["#035f3c", " #16f03a"],
+		},
+		bottomColor: {
+			type: Array,
+			default: ["#035f3c", " #16f03a"],
+		},
+	},
+	setup() {
+		return {};
+	},
+};
+
+var _hoisted_1$3 = {
+  "class": "btnAnimation"
+};
+var _hoisted_2$2 = {
+  "class": "btnAnimation-box"
+};
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$3, [createElementVNode("span", {
+    "class": "btnAnimation-span",
+    style: normalizeStyle({
+      background: "linear-gradient(to right, ".concat($props.topColor[0], ", ").concat($props.topColor[1], ")")
+    })
+  }, null, 4
+  /* STYLE */
+  ), createElementVNode("span", {
+    "class": "btnAnimation-span",
+    style: normalizeStyle({
+      background: "linear-gradient(to right, ".concat($props.rightColor[0], ", ").concat($props.rightColor[1], ")")
+    })
+  }, null, 4
+  /* STYLE */
+  ), createElementVNode("span", {
+    "class": "btnAnimation-span",
+    style: normalizeStyle({
+      background: "linear-gradient(to right, ".concat($props.bottomColor[0], ", ").concat($props.bottomColor[1], ")")
+    })
+  }, null, 4
+  /* STYLE */
+  ), createElementVNode("span", {
+    "class": "btnAnimation-span",
+    style: normalizeStyle({
+      background: "linear-gradient(to right, ".concat($props.leftColor[0], ", ").concat($props.leftColor[1], ")")
+    })
+  }, null, 4
+  /* STYLE */
+  ), createElementVNode("div", _hoisted_2$2, [renderSlot(_ctx.$slots, "default")])]);
+}
+
+var css_248z$2 = ".btnAnimation[data-v-7289f2a7] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n\n.btnAnimation-box[data-v-7289f2a7] {\n  height: 100%;\n  width: 100%;\n}\n\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(1) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to right, #035f3c, #16f03a);\n  animation: animate1-7289f2a7 2s linear infinite;\n  -webkit-animation: animate1-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate1-7289f2a7 {\n  0% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n  100% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(2) {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to bottom, #035f3c, #16f03a);\n  animation: animate2-7289f2a7 2s linear infinite;\n  -webkit-animation: animate2-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate2-7289f2a7 {\n  0% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n  100% {\n    transform: translateY(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(3) {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to left, #035f3c, #16f03a);\n  animation: animate3-7289f2a7 2s linear infinite;\n  -webkit-animation: animate3-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate3-7289f2a7 {\n  0% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n  100% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(4) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to top, #035f3c, #16f03a);\n  animation: animate4-7289f2a7 2s linear infinite;\n  -webkit-animation: animate4-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate4-7289f2a7 {\n  0% {\n    transform: translateY(100%);\n    -webkit-transform: translateY(100%);\n    -moz-transform: translateY(100%);\n    -ms-transform: translateY(100%);\n    -o-transform: translateY(100%);\n  }\n  100% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n}";
 styleInject(css_248z$2);
 
 script$5.render = render$5;
-script$5.__scopeId = "data-v-449c7e3b";
-script$5.__file = "src/components/Border/FlyBox.vue";
+script$5.__scopeId = "data-v-7289f2a7";
+script$5.__file = "src/components/Border/DoubleBox.vue";
 
 function Border (Vue) {
+  Vue.component(script$6.name, script$6);
   Vue.component(script$5.name, script$5);
 }
 
