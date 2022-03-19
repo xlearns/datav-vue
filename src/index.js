@@ -12,6 +12,7 @@ import Upload from './components/Upload/index'
 import BUtton from './components/Button/index'
 import Switch from './components/Switch/index'
 import Modal from './components/Modal/index'
+import TagCloud from './components/TagCloud/index'
 let component = function(Vue){
   Vue.use(Test)
   Vue.use(FullSreen)
@@ -27,5 +28,6 @@ let component = function(Vue){
   Vue.use(BUtton)
   Vue.use(Switch)
   Vue.use(Modal)
+  Vue.use(TagCloud)
 }
 export default  component;
