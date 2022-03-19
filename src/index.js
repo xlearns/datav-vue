@@ -9,6 +9,9 @@ import VueCountTo from './components/VueCountTo/index'
 import BaseScrollList from './components/BaseScrollList/index'
 import TransformCategory from './components/TransformCategory/index'
 import Upload from './components/Upload/index'
+import BUtton from './components/Button/index'
+import Switch from './components/Switch/index'
+import Modal from './components/Modal/index'
 let component = function(Vue){
   Vue.use(Test)
   Vue.use(FullSreen)
@@ -21,5 +24,8 @@ let component = function(Vue){
   Vue.use(BaseScrollList)
   Vue.use(TransformCategory)
   Vue.use(Upload)
+  Vue.use(BUtton)
+  Vue.use(Switch)
+  Vue.use(Modal)
 }
 export default  component;

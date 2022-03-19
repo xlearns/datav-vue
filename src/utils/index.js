@@ -19,6 +19,10 @@ export function isNumber(val){
   return typeof val == 'number' && !isNaN(val)
 }
 
+export function sleep(timer){
+  return new Promise(resolve=>{setTimeout(resolve,timer)})
+}
+
 export function formatNumber(num,decimals,decimal,separator,prefix,suffix){
   num = num.toFixed(decimals)
   num += ''

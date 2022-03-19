@@ -20,30 +20,41 @@
       padding:0;
       margin:0;
       height:100vh;
+      background: black;
     }
     .box{
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height:100vh;
-      /* background-color: black; */
+      color:#fff
     }
   </style>
 </head>
 <body>
    <div id="app">
      <div class='box' >
-        <V-Button>hello</V-Button>  
-     </div>
+      hello word
+        <button @click='openFN'>hello word</button>
+        <V-Model v-model="open">
+          <div style="padding:100px">hello word</div>
+        </V-Model>
+      </div>
    </div>
    <script>
      let app = Vue.createApp({
        setup(){
-         let message = "hello"
-         let leftColor = ["red",'yellow']
+         let state = Vue.reactive({
+          open:false
+         })
+         Vue.onMounted(()=>{
+           setInterval(()=>{
+            //  state.open = !state.open
+           },2000)
+         })
+         const openFN = function(){
+           state.open  = true
+         }
          return {
-           leftColor,
-           message
+          openFN,
+           ...Vue.toRefs(state)
          }
        }
      })

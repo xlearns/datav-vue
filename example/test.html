@@ -1,9 +1,37 @@
-<html>
-    <body>
-        <div>
-            <input type="file" id="fileInputfield"/>
-            <button id="upload-btn">上传</button>
-        </div>
-    </body>
-    <script src="upload.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        .box{
+            width: 72px;
+            height:80px;
+            background:url("https://user-images.githubusercontent.com/62782792/158926515-f762a71e-6257-4404-beb1-83a0aa79e5a8.png");
+            animation: test 0.3s infinite  steps(6,end);
+        }
+        @keyframes test {
+            0%{ 
+                /* 帧动画的核心 */
+                background-position: right;
+            }
+            100%{
+                background-position: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+</body>
 </html>
