@@ -5772,7 +5772,6 @@ var script$1 = {
 			emit("update:modelValue", false);
 		};
 		const closeFn = async function () {
-			await sleep(400);
 			ready.value = false;
 			openWidth.value = false;
 			await sleep(400);
