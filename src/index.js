@@ -13,8 +13,10 @@ import BUtton from './components/Button/index'
 import Switch from './components/Switch/index'
 import Modal from './components/Modal/index'
 import TagCloud from './components/TagCloud/index'
+import ToolTip from './components/ToolTip/index'
 let component = function(Vue){
   Vue.use(Test)
+  Vue.use(ToolTip)
   Vue.use(FullSreen)
   Vue.use(Icon)
   Vue.use(SvgAnimation)

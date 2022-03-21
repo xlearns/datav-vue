@@ -66,3 +66,16 @@
 
 + 空白5个月
  + 
+
+
+
+首先这个chrome的protocolhandler机制我一开始并不熟悉，但是程序员嘛。碰到问题第一件事就是去找权威文档。
+分析问题：我刚才看你说到了这个是chrome的机制，所以我本能的就去google一下goole的手册。然后找到了它其实是一个[自定义注册自定义协议处理程序](https://developers.google.com/web/updates/2011/06/Registering-a-custom-protocol-handler),ok首先第一个问题解决了。现在的问题就变成了，怎么通过这个自定义程序去打开vscode。这里我用了vscode的timmoverlaan.uri-open-recent插件【这个插件正好实现了vscode的自定义协议和向vscode传递参数】，当然这个插件底层实现也很简单。根据(vscode文档)[https://github.com/microsoft/vscode-docs/blob/master/api/advanced-topics/remote-extensions.md#callbacks-and-uri-handlers]callbacks-and-uri-handlers该 API 允许你的扩展注册自定义 URI，如果在浏览器中打开该 URI，则会在扩展中触发回调函数。考虑到通用性我打算写一个chrome扩展。自从分析完毕。上代码
+
+
+
+
+
+
+
+ 
