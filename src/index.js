@@ -14,6 +14,7 @@ import Switch from './components/Switch/index'
 import Modal from './components/Modal/index'
 import TagCloud from './components/TagCloud/index'
 import ToolTip from './components/ToolTip/index'
+import Transform from './components/Transform/index'
 let component = function(Vue){
   Vue.use(Test)
   Vue.use(ToolTip)
@@ -31,5 +32,6 @@ let component = function(Vue){
   Vue.use(Switch)
   Vue.use(Modal)
   Vue.use(TagCloud)
+  Vue.use(Transform)
 }
 export default  component;

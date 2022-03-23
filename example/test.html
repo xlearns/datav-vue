@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+      <!-- 引入vue -->
+    <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+    <!-- 引用组件库 -->
+    <script src="../dist/datav.umd.js"></script>
+    <!-- 引入iconfont -->
+    <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+    <script src="https://lib.baomitu.com/gsap/3.9.1/gsap.min.js"></script>
     <style>
         .main{
             display: flex;
@@ -30,8 +37,24 @@
     </style>
 </head>
 <body>
-    <div class="main">
-        <div class="box"></div>
+    <div id="app">
+        <div class="box">
+            <V-Trans-Form>123</V-Trans-Form>
+        </div>
     </div>
+    <script>
+        let app = Vue.createApp({
+       setup(){
+         let state = Vue.reactive({
+           test:true
+         })
+         return {
+           ...Vue.toRefs(state)
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+    </script>
 </body>
 </html>

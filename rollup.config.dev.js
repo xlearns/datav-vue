@@ -21,7 +21,8 @@ module.exports = {
       format:'umd',
       globals:{
         'vue':'Vue',
-        'echarts':"echarts"
+        'echarts':"echarts",
+        'gsap':"gsap"
       },
       sourcemap: true,
     },
@@ -53,5 +54,5 @@ module.exports = {
     json(),
     postcss({plugins:[]}),
   ],
-  external:['vue',"echarts"]
+  external:['vue',"echarts","gsap"]
 }

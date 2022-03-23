@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
+  <script src="../../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+    }
+    .box{
+      background: black;
+      transition: all 0.2s;
+      width:500px;
+      height:0;
+    }
+    .box-two{
+      position: absolute;
+      right:0;
+      top:0;
+      background: black;
+      transition: all 0.2s;
+      width:0;
+      height:500px;
+    }
+    .box-three{
+      transition: all 0.2s;
+      position: absolute;
+      bottom:0px;
+      left:50%;
+      transform: translateX(50%);
+      height:0px;
+      width:100px;
+      background: black;
+    }
+    .one{
+      height:500px;
+    }
+    .two{
+      width:500px;
+    }
+    .three{
+      height:100px;
+    }
+  </style>
+</head>
+<body>
+   <div id="app">
+     <button @click="click">open</button>
+    <div class="box" v-if="status" :class="{one:one}"></div>
+
+    <div class="box-two" v-if="status" :class="{two:one}"></div>
+
+    <div class="box-three"  v-if="status" :class="{three:one}"></div>
+   </div>
+   <script>
+     function sleep(timer=3000){
+       return new Promise((resolve)=>{
+         setTimeout(resolve,timer)
+       })
+     }
+   </script>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+       
+         let status = Vue.ref(false)
+         let one = Vue.ref(false)
+         let two = Vue.ref(false)
+         const initOne =async function(){
+          if(!status.value){
+            status.value = !status.value
+            await sleep(300)
+            one.value = !one.value
+           }else{
+            one.value = !one.value 
+            await sleep(300)
+            status.value = !status.value
+          }
+         }
+         const click = async function(){
+                initOne() 
+         }
+         return {
+          one,
+          two,
+          click,
+          status
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>

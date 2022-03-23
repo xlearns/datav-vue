@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
+  <script src="../../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+    }
+    .box{
+      background: black;
+      transition: all 0.2s;
+      width:500px;
+      height:500px;
+    }
+    .list-enter-active,
+    .list-leave-active {
+      
+      transition: all 1s ease;
+    }
+    .list-enter-from,
+    .list-leave-to {
+      height:0px;
+    }
+
+    /*  */
+    .box-two{
+      background: black;
+      position: absolute;
+      right:0;
+      top:0;
+      width:500px;
+      height:500px;
+    }
+    .test-enter-active,
+    .test-leave-active {
+      transition: all 1s ease;
+    }
+
+    .test-enter-from,
+    .test-leave-to {
+      width:0px;
+    }
+  </style>
+</head>
+<body>
+   <div id="app">
+     <button @click="click">open</button>
+     <transition-group name="list" tag="p">
+      <div class="box" v-if="status" class="list-item box"></div>
+     </transition-group>
+
+     <transition name="test">
+       <div class="box-two" v-if="status" ></div>
+     </transition>
+   </div>
+   <script>
+     function sleep(timer=3000){
+       return new Promise((resolve)=>{
+         setTimeout(resolve,timer)
+       })
+     }
+   </script>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+       
+         let status = Vue.ref(false)
+         const click = async function(){
+          status.value = !status.value
+         }
+         return {
+          click,
+          status
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>
