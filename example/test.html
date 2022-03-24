@@ -7,11 +7,12 @@
     <title>Document</title>
       <!-- 引入vue -->
     <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+    <!-- 引入gsap -->
+    <script src="https://lib.baomitu.com/gsap/3.9.1/gsap.js"></script>
     <!-- 引用组件库 -->
     <script src="../dist/datav.umd.js"></script>
     <!-- 引入iconfont -->
     <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
-    <script src="https://lib.baomitu.com/gsap/3.9.1/gsap.min.js"></script>
     <style>
         .main{
             display: flex;
@@ -34,19 +35,53 @@
                 background-position: left;
             }
         }
+        .test{
+            width:500px;
+            height:500px;
+            background: black;
+        }
+        .testTwo{
+            position:absolute;
+            right:0;
+            top:0;
+            width:500px;
+            height:500px;
+            background: black;
+        }
+        .testThree{
+            position:absolute;
+            left:0;
+            bottom:0;
+            width:50px;
+            height:50px;
+            background: black;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <div class="box">
-            <V-Trans-Form>123</V-Trans-Form>
+        <div>
+            <button @click="show=!show">{{show}}</button>
+            <V-Trans-Form  v-model='show' :active="{height:0}" :leave="{height:500}">
+                <div class="test" ></div>
+            </V-Trans-Form>
+
+            <V-Trans-Form  v-model='show' :active="{width:0}" :leave="{width:500}">
+                <div class="testTwo"></div>
+            </V-Trans-Form>
+
+            <V-Trans-Form  v-model='show' :active="{x:500}" :leave="{x:0}">
+                <div class="testThree"></div>
+            </V-Trans-Form>
         </div>
     </div>
     <script>
         let app = Vue.createApp({
        setup(){
          let state = Vue.reactive({
-           test:true
+            show:true,
+            active:{height:500},
+            leave:{height:0}
          })
          return {
            ...Vue.toRefs(state)

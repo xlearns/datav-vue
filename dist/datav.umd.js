@@ -2,12 +2,11 @@
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('vue'), require('echarts'), require('gsap')) :
 	typeof define === 'function' && define.amd ? define(['vue', 'echarts', 'gsap'], factory) :
 	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.datav = factory(global.Vue, global.echarts, global.gsap));
-})(this, (function (vue, Echarts, GP) { 'use strict';
+})(this, (function (vue, Echarts, gsap) { 'use strict';
 
 	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 	var Echarts__default = /*#__PURE__*/_interopDefaultLegacy(Echarts);
-	var GP__default = /*#__PURE__*/_interopDefaultLegacy(GP);
 
 	var script$i = {
 	  name: "ComTest",
@@ -6086,11 +6085,56 @@
 	  Vue.component(script$1.name, script$1);
 	}
 
+	function config(one, two) {
+		return Object.assign(one, two);
+	}
 	var script = {
 		name: "VTransForm",
-		setup() {
-			console.log(GP__default["default"]);
-			return {};
+		props: {
+			modelValue: {
+				type: Boolean,
+			},
+			active: {
+				type: Object,
+			},
+			leave: {
+				type: Object,
+			},
+		},
+		setup(props, { slots }) {
+			let slot = slots.default();
+			let dom = vue.ref();
+			let aniActive = vue.ref();
+			let aniOthre = vue.ref();
+			let defaultConfigActive = {
+				duration: 0.4,
+				ease: "none",
+				paused: true,
+			};
+			let defaultConfigLeave = {
+				duration: 0.4,
+				ease: "none",
+				paused: true,
+			};
+			vue.watch(
+				() => props.modelValue,
+				() => {
+					if (props.modelValue) {
+						aniActive.value.restart();
+					} else {
+						aniOthre.value.restart();
+					}
+				}
+			);
+			vue.onMounted(() => {
+				dom.value = slot[0].el;
+				aniOthre.value = gsap.to(dom.value, config(defaultConfigActive, props.active));
+				aniActive.value = gsap.to(dom.value, config(defaultConfigLeave, props.leave));
+			});
+			return {
+				aniOthre,
+				aniActive,
+			};
 		},
 	};
 

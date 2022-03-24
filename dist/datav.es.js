@@ -1,6 +1,6 @@
 import { ref, openBlock, createElementBlock, pushScopeId, popScopeId, createElementVNode, onMounted, nextTick, onUnmounted, renderSlot, createCommentVNode, normalizeStyle, createStaticVNode, computed, watch, reactive, toRefs, toDisplayString, Fragment, renderList, normalizeClass, resolveComponent, createVNode } from 'vue';
 import Echarts from 'echarts';
-import GP from 'gsap';
+import { to } from 'gsap';
 
 var script$i = {
   name: "ComTest",
@@ -6079,11 +6079,56 @@ function ToolTip (Vue) {
   Vue.component(script$1.name, script$1);
 }
 
+function config(one, two) {
+	return Object.assign(one, two);
+}
 var script = {
 	name: "VTransForm",
-	setup() {
-		console.log(GP);
-		return {};
+	props: {
+		modelValue: {
+			type: Boolean,
+		},
+		active: {
+			type: Object,
+		},
+		leave: {
+			type: Object,
+		},
+	},
+	setup(props, { slots }) {
+		let slot = slots.default();
+		let dom = ref();
+		let aniActive = ref();
+		let aniOthre = ref();
+		let defaultConfigActive = {
+			duration: 0.4,
+			ease: "none",
+			paused: true,
+		};
+		let defaultConfigLeave = {
+			duration: 0.4,
+			ease: "none",
+			paused: true,
+		};
+		watch(
+			() => props.modelValue,
+			() => {
+				if (props.modelValue) {
+					aniActive.value.restart();
+				} else {
+					aniOthre.value.restart();
+				}
+			}
+		);
+		onMounted(() => {
+			dom.value = slot[0].el;
+			aniOthre.value = to(dom.value, config(defaultConfigActive, props.active));
+			aniActive.value = to(dom.value, config(defaultConfigLeave, props.leave));
+		});
+		return {
+			aniOthre,
+			aniActive,
+		};
 	},
 };
 
