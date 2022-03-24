@@ -31,9 +31,6 @@ export default {
 		let dom = ref();
 		let aniActive = ref();
 		let aniOthre = ref();
-		const animation = function () {
-			let tl = timeline();
-		};
 		let defaultConfigActive = {
 			duration: 0.4,
 			ease: "none",
@@ -44,13 +41,20 @@ export default {
 			ease: "none",
 			paused: true,
 		};
+
+		const activeFn = function () {
+			aniActive.value.restart();
+		};
+		const leaveFn = function () {
+			aniOthre.value.restart();
+		};
 		watch(
 			() => props.modelValue,
 			() => {
 				if (props.modelValue) {
-					aniActive.value.restart();
+					activeFn();
 				} else {
-					aniOthre.value.restart();
+					leaveFn();
 				}
 			}
 		);
@@ -60,7 +64,10 @@ export default {
 			aniActive.value = to(dom.value, config(defaultConfigLeave, props.leave));
 		});
 		return {
+			dom,
+			timeline,
 			aniOthre,
+			to,
 			aniActive,
 		};
 	},

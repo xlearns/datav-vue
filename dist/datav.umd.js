@@ -6116,13 +6116,20 @@
 				ease: "none",
 				paused: true,
 			};
+
+			const activeFn = function () {
+				aniActive.value.restart();
+			};
+			const leaveFn = function () {
+				aniOthre.value.restart();
+			};
 			vue.watch(
 				() => props.modelValue,
 				() => {
 					if (props.modelValue) {
-						aniActive.value.restart();
+						activeFn();
 					} else {
-						aniOthre.value.restart();
+						leaveFn();
 					}
 				}
 			);
@@ -6132,7 +6139,10 @@
 				aniActive.value = gsap.to(dom.value, config(defaultConfigLeave, props.leave));
 			});
 			return {
+				dom,
+				timeline: gsap.timeline,
 				aniOthre,
+				to: gsap.to,
 				aniActive,
 			};
 		},

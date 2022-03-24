@@ -1,6 +1,6 @@
 import { ref, openBlock, createElementBlock, pushScopeId, popScopeId, createElementVNode, onMounted, nextTick, onUnmounted, renderSlot, createCommentVNode, normalizeStyle, createStaticVNode, computed, watch, reactive, toRefs, toDisplayString, Fragment, renderList, normalizeClass, resolveComponent, createVNode } from 'vue';
 import Echarts from 'echarts';
-import { to } from 'gsap';
+import { to, timeline } from 'gsap';
 
 var script$i = {
   name: "ComTest",
@@ -6110,13 +6110,20 @@ var script = {
 			ease: "none",
 			paused: true,
 		};
+
+		const activeFn = function () {
+			aniActive.value.restart();
+		};
+		const leaveFn = function () {
+			aniOthre.value.restart();
+		};
 		watch(
 			() => props.modelValue,
 			() => {
 				if (props.modelValue) {
-					aniActive.value.restart();
+					activeFn();
 				} else {
-					aniOthre.value.restart();
+					leaveFn();
 				}
 			}
 		);
@@ -6126,7 +6133,10 @@ var script = {
 			aniActive.value = to(dom.value, config(defaultConfigLeave, props.leave));
 		});
 		return {
+			dom,
+			timeline,
 			aniOthre,
+			to,
 			aniActive,
 		};
 	},
