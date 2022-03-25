@@ -1,113 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <!-- 引入vue -->
-    <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
-    <!-- 引入gsap -->
-    <script src="https://lib.baomitu.com/gsap/3.9.1/gsap.js"></script>
-    <!-- 引用组件库 -->
-    <script src="../dist/datav.umd.js"></script>
-    <!-- 引入iconfont -->
-    <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
-    <style>
-        .main{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height:100vh;
-        }
-        .box{
-            width: 72px;
-            height:80px;
-            background:url("https://user-images.githubusercontent.com/62782792/158926515-f762a71e-6257-4404-beb1-83a0aa79e5a8.png");
-            animation: test 0.3s infinite  steps(6,end);
-        }
-        @keyframes test {
-            0%{ 
-                /* 帧动画的核心 */
-                background-position: right;
-            }
-            100%{
-                background-position: left;
-            }
-        }
-        .test{
-            width:500px;
-            height:500px;
-            background: black;
-        }
-        .testTwo{
-            position:absolute;
-            right:0;
-            top:0;
-            width:500px;
-            height:500px;
-            background: black;
-        }
-        .testThree{
-            position:absolute;
-            left:0;
-            bottom:0;
-            width:50px;
-            height:50px;
-            background: black;
-        }
-        .testFour{
-            position:absolute;
-            right:0;
-            bottom:0;
-            width:50px;
-            height:50px;
-            background: black;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+   
+    }
+    .flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box{
+      /* background-color: black; */
+      width:500px;
+      color:red;
+      height:500px;
+    }
+
+   
+  </style>
 </head>
 <body>
-    <div id="app">
-        <div>
-            <button @click="show=!show">{{show}}</button>
-            <V-Trans-Form  v-model='show' :active="{height:0}" :leave="{height:500}">
-                <div class="test" ></div>
-            </V-Trans-Form>
-
-            <V-Trans-Form  v-model='show' :active="{width:0}" :leave="{width:500}">
-                <div class="testTwo"></div>
-            </V-Trans-Form>
-
-            <V-Trans-Form  v-model='show' :active="{x:500}" :leave="{x:0}">
-                <div class="testThree"></div>
-            </V-Trans-Form>
-
-            <V-Trans-Form  v-model='show' :active="{background:'red'}" :leave="{background:'black'}"  ref="dom">
-                <div class="testFour" ></div>
-            </V-Trans-Form>
-        </div>
-    </div>
-    <script>
-        let {ref,reactive,onMounted} = Vue
-        let app = Vue.createApp({
+   <div id="app">
+     <button @click="click">open</button>
+     <div class="flex">
+      <div>
+        <V-Border-Three>
+          <div class="box"></div>
+        </V-Border-Three>
+      </div>
+     </div>
+   </div>
+   <script>
+     function sleep(timer=3000){
+       return new Promise((resolve)=>{
+         setTimeout(resolve,timer)
+       })
+     }
+   </script>
+   <script>
+     let app = Vue.createApp({
        setup(){
-        let dom = ref()
-         let state = reactive({
-            show:true,
-            active:{height:500},
-            leave:{height:0}
-         })
-         onMounted(()=>{
-            
-         })
+         let status = Vue.ref(false)
+         const click = async function(){
+          status.value = !status.value 
+         }
          return {
-            dom,
-           ...Vue.toRefs(state)
+          click,
+          status
          }
        }
      })
      app.use(datav)
      app.mount('#app')
-    </script>
+   </script>
 </body>
 </html>

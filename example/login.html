@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- 引入vue -->
+    <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+    <!-- 引入gsap -->
+    <script src="https://lib.baomitu.com/gsap/3.9.1/gsap.js"></script>
+    <!-- 引用组件库 -->
+    <script src="../dist/datav.umd.js"></script>
+    <!-- 引入iconfont -->
+    <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+           v
+        </div>
+    </div>
+    <script>
+        let {ref,reactive,onMounted} = Vue
+        let app = Vue.createApp({
+       setup(){
+        let dom = ref()
+         let state = reactive({
+            show:true,
+            active:{height:500},
+            leave:{height:0}
+         })
+         onMounted(()=>{
+            
+         })
+         return {
+            dom,
+           ...Vue.toRefs(state)
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+    </script>
+</body>
+</html>
