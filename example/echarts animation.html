@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引入echarts -->
+  <script src="https://lib.baomitu.com/echarts/5.3.0/echarts.min.js"></script>
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    #app{
+      display: flex;
+      justify-content: space-around;
+      height:100vh;
+      background-color: black;
+    }
+      .box{
+         width:30%;
+        height:500px;
+      }
+  </style>
+</head>
+<body>
+   <div id="app">
+      <div class="box">
+        <V-Echarts :options="getOptionTwo()" ref='domTwo' :type="initOptions" open :animation="'pie'"></V-Echarts>
+      </div>
+      <div class="box">
+        <V-Echarts :options="getOptionTwo()" ref='domTwo' :type="initOptions" open :animation="'pie'"></V-Echarts>
+      </div>
+      <div class="box">
+        <V-Echarts :options="getOptionTwo()" ref='domTwo' :type="initOptions" open :animation="'pie'"></V-Echarts>
+      </div>
+   </div>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+         const initOptions = {renderer: "svg"}
+    
+         const domTwo = Vue.ref()
+         const getOptionTwo = function(){
+            return {
+				textStyle: {
+					fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif',
+				},
+				title: {
+					text: "Traffic Sources",
+					left: "center",
+				},
+				tooltip: {
+					trigger: "item",
+					formatter: "{a} <br/>{b} : {c} ({d}%)",
+				},
+				legend: {
+					show: true,
+					orient: "vertical",
+					left: "left",
+					data: [
+						"Direct",
+						"Email",
+						"Ad Networks",
+						"Video Ads",
+						"Search Engines",
+					],
+				},
+				series: [
+					{
+						name: "Traffic Sources",
+						type: "pie",
+						radius: "55%",
+						center: ["50%", "60%"],
+						data: [
+							{ value: 335, name: "Direct" },
+							{ value: 310, name: "Email" },
+							{ value: 234, name: "Ad Networks" },
+							{ value: 135, name: "Video Ads" },
+							{ value: 1548, name: "Search Engines" },
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: "rgba(0, 0, 0, 0.5)",
+							},
+						},
+					},
+				],
+			}
+         }
+      
+         return {
+          getOptionTwo,
+          initOptions,
+          domTwo,
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>

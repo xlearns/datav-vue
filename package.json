@@ -1,6 +1,6 @@
 {
   "name": "xuxubaobaoui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "datav",
   "main": "dist/datav.umd.js",
   "scripts": {

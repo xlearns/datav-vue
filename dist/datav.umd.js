@@ -1076,24 +1076,39 @@
 	  name: "VEcharts",
 	  props: {
 	    options: Object,
+	    // 主题
 	    theme: {
 	      type: [Object, String],
 	      "default": ""
 	    },
+	    // 适配 默认300*150
 	    open: {
 	      type: Boolean,
 	      "default": false
 	    },
+	    // svg or canvas
 	    type: {
 	      type: Object,
 	      "default": {
 	        renderer: "canvas"
 	      }
+	    },
+	    animation: {
+	      type: String,
+	      validator: function validator(value) {
+	        return ["pie", "bar"].includes(value);
+	      }
+	    },
+	    animationConfig: {
+	      type: Object
 	    }
 	  },
 	  setup: function setup(props) {
 	    var dom = vue.ref();
-	    var charts = vue.ref();
+	    var charts = vue.ref(); //animation
+
+	    var dataIndex = -1;
+	    var timerObj = null;
 	    vue.watch(function () {
 	      return props.options;
 	    }, function () {
@@ -1110,6 +1125,31 @@
 	      (_charts$value2 = charts.value) === null || _charts$value2 === void 0 ? void 0 : _charts$value2.resize();
 	    };
 
+	    var ani = function ani(timer) {
+	      timerObj = setInterval(function () {
+	        if (["pie", "bar"].includes(props.animation)) {
+	          var _charts$value3, _charts$value4, _charts$value5;
+
+	          (_charts$value3 = charts.value) === null || _charts$value3 === void 0 ? void 0 : _charts$value3.dispatchAction({
+	            type: "downplay",
+	            seriesIndex: 0,
+	            dataIndex: dataIndex
+	          });
+	          dataIndex = (dataIndex + 1) % props.options.series[0].data.length;
+	          (_charts$value4 = charts.value) === null || _charts$value4 === void 0 ? void 0 : _charts$value4.dispatchAction({
+	            type: "highlight",
+	            seriesIndex: 0,
+	            dataIndex: dataIndex
+	          });
+	          (_charts$value5 = charts.value) === null || _charts$value5 === void 0 ? void 0 : _charts$value5.dispatchAction({
+	            type: "showTip",
+	            seriesIndex: 0,
+	            dataIndex: dataIndex
+	          });
+	        }
+	      }, timer);
+	    };
+
 	    vue.onMounted(function () {
 	      var _dom = dom.value;
 
@@ -1123,9 +1163,11 @@
 
 	      charts.value = Echarts__default["default"].init(_dom, props.theme, props.type);
 	      charts.value.setOption(props.options);
+	      ani(1000);
 	      window.addEventListener("resize", onResize);
 	    });
 	    vue.onUnmounted(function () {
+	      clearInterval(timerObj);
 	      window.removeEventListener("resize", onResize);
 	    });
 	    return {
