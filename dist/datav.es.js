@@ -1088,54 +1088,63 @@ var script$d = {
       }
     },
     animation: {
-      type: String,
-      validator: function validator(value) {
-        return ["pie", "bar"].includes(value);
-      }
-    },
-    animationConfig: {
       type: Object
     }
   },
   setup: function setup(props) {
     var dom = ref();
-    var charts = ref(); //animation
+    var charts = null; //animation
 
     var dataIndex = -1;
     var timerObj = null;
+    var defaultAnimationConfig = {
+      open: false,
+      time: 3000,
+      highlight: true,
+      showTip: false
+    };
     watch(function () {
       return props.options;
     }, function () {
-      var _charts$value;
+      var _charts;
 
-      (_charts$value = charts.value) === null || _charts$value === void 0 ? void 0 : _charts$value.setOption(props.options);
+      (_charts = charts) === null || _charts === void 0 ? void 0 : _charts.setOption(props.options);
     }, {
       deep: true
     });
 
     var onResize = function onResize() {
-      var _charts$value2;
+      var _charts2;
 
-      (_charts$value2 = charts.value) === null || _charts$value2 === void 0 ? void 0 : _charts$value2.resize();
+      (_charts2 = charts) === null || _charts2 === void 0 ? void 0 : _charts2.resize();
     };
 
     var ani = function ani(timer) {
       timerObj = setInterval(function () {
-        if (["pie", "bar"].includes(props.animation)) {
-          var _charts$value3, _charts$value4, _charts$value5;
+        var _charts3;
 
-          (_charts$value3 = charts.value) === null || _charts$value3 === void 0 ? void 0 : _charts$value3.dispatchAction({
-            type: "downplay",
-            seriesIndex: 0,
-            dataIndex: dataIndex
-          });
-          dataIndex = (dataIndex + 1) % props.options.series[0].data.length;
-          (_charts$value4 = charts.value) === null || _charts$value4 === void 0 ? void 0 : _charts$value4.dispatchAction({
+        (_charts3 = charts) === null || _charts3 === void 0 ? void 0 : _charts3.dispatchAction({
+          type: "downplay",
+          seriesIndex: 0,
+          dataIndex: dataIndex
+        }); // props.options  图例会有问题
+
+        dataIndex = (dataIndex + 1) % props.options.series[0].data.length;
+
+        if (defaultAnimationConfig.highlight) {
+          var _charts4;
+
+          (_charts4 = charts) === null || _charts4 === void 0 ? void 0 : _charts4.dispatchAction({
             type: "highlight",
             seriesIndex: 0,
             dataIndex: dataIndex
           });
-          (_charts$value5 = charts.value) === null || _charts$value5 === void 0 ? void 0 : _charts$value5.dispatchAction({
+        }
+
+        if (defaultAnimationConfig.showTip) {
+          var _charts5;
+
+          (_charts5 = charts) === null || _charts5 === void 0 ? void 0 : _charts5.dispatchAction({
             type: "showTip",
             seriesIndex: 0,
             dataIndex: dataIndex
@@ -1155,10 +1164,14 @@ var script$d = {
         _dom.style.width = "100%";
       }
 
-      charts.value = Echarts.init(_dom, props.theme, props.type);
-      charts.value.setOption(props.options);
-      ani(1000);
+      charts = Echarts.init(_dom, props.theme, props.type);
+      charts.setOption(props.options);
       window.addEventListener("resize", onResize);
+      Object.assign(defaultAnimationConfig, props.animation);
+
+      if (defaultAnimationConfig.open) {
+        ani(defaultAnimationConfig.time);
+      }
     });
     onUnmounted(function () {
       clearInterval(timerObj);
@@ -6497,6 +6510,130 @@ function Notice (Vue) {
   Vue.component(script.name, script);
 }
 
+var EchartsData = {
+  bar: {
+    title: {
+      text: "第一个 ECharts 实例"
+    },
+    tooltip: {},
+    legend: {
+      data: ["销量"]
+    },
+    xAxis: {
+      data: ["衬衫1", "羊毛衫2", "雪纺衫3", "裤子4", "高跟鞋5", "袜子1"]
+    },
+    yAxis: {},
+    series: [{
+      name: "销量",
+      type: "bar",
+      data: [500, 2000, 3600, 1000, 1000, 2000],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 20,
+          shadowOffsetX: 0,
+          shadowColor: "rgba(255, 255, 255,1)"
+        }
+      }
+    }]
+  },
+  pie: {
+    textStyle: {
+      fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif'
+    },
+    title: {
+      text: "Traffic Sources",
+      left: "center"
+    },
+    tooltip: {
+      trigger: "item",
+      formatter: "{a} &lt;br/&gt;{b} : {c} ({d}%)"
+    },
+    legend: {
+      show: true,
+      orient: "vertical",
+      left: "left",
+      data: ["Direct", "Email", "Ad Networks", "Video Ads", "Search Engines"]
+    },
+    series: [{
+      name: "Traffic Sources",
+      type: "pie",
+      radius: "55%",
+      center: ["50%", "60%"],
+      data: [{
+        value: 335,
+        name: "Direct"
+      }, {
+        value: 310,
+        name: "Email"
+      }, {
+        value: 234,
+        name: "Ad Networks"
+      }, {
+        value: 135,
+        name: "Video Ads"
+      }, {
+        value: 1548,
+        name: "Search Engines"
+      }],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: "rgba(0, 0, 0, 0.5)"
+        }
+      }
+    }]
+  },
+  ring: {
+    textStyle: {
+      fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif'
+    },
+    title: {
+      text: "Traffic Sources",
+      left: "center"
+    },
+    tooltip: {
+      trigger: "item",
+      formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+      show: true,
+      orient: "vertical",
+      left: "left",
+      data: ["Direct", "Email", "Ad Networks", "Video Ads", "Search Engines"]
+    },
+    series: [{
+      name: "Traffic Sources",
+      type: "pie",
+      radius: ["55%", "70%"],
+      center: ["50%", "60%"],
+      data: [{
+        value: 335,
+        name: "Direct"
+      }, {
+        value: 310,
+        name: "Email"
+      }, {
+        value: 234,
+        name: "Ad Networks"
+      }, {
+        value: 135,
+        name: "Video Ads"
+      }, {
+        value: 1548,
+        name: "Search Engines"
+      }],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: "rgba(0, 0, 0, 0.5)"
+        }
+      }
+    }]
+  }
+};
+
 var component = function component(Vue) {
   Vue.use(Test);
   Vue.use(ToolTip);
@@ -6517,6 +6654,7 @@ var component = function component(Vue) {
   Vue.use(Transform);
   Vue.use(Reverse);
   Vue.use(Notice);
+  Vue.provide("EchartsData", EchartsData);
 };
 
 export { component as default };
