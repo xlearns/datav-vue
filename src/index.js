@@ -16,6 +16,7 @@ import TagCloud from './components/TagCloud/index'
 import ToolTip from './components/ToolTip/index'
 import Transform from './components/Transform/index'
 import Reverse from './components/Reverse/index'
+import Notice from './components/Notice/index'
 let component = function(Vue){
   Vue.use(Test)
   Vue.use(ToolTip)
@@ -35,5 +36,6 @@ let component = function(Vue){
   Vue.use(TagCloud)
   Vue.use(Transform)
   Vue.use(Reverse)
+  Vue.use(Notice)
 }
 export default  component;

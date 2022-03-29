@@ -27,7 +27,7 @@ export default {
 		watch(
 			() => props.options,
 			() => {
-				charts.setOption(props.options);
+				charts.value?.setOption(props.options);
 			},
 			{
 				deep: true,

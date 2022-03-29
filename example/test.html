@@ -7,10 +7,14 @@
   <title>Document</title>
   <!-- 引入vue -->
   <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
-  <!-- 引用组件库 -->
-  <script src="../dist/datav.umd.js"></script>
   <!-- 引入iconfont -->
   <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <!-- 引入echarts -->
+  <script src="https://lib.baomitu.com/echarts/5.3.0/echarts.min.js"></script>
+
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+
   <style>
     html,body,div{
      padding: 0;
@@ -20,33 +24,24 @@
       padding:0;
       margin:0;
       height:100vh;
-   
     }
-    .flex{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .box{
-      /* background-color: black; */
-      width:500px;
-      color:red;
-      height:500px;
-    }
-
-   
+    .echarts {
+	width: 500px;
+	height: 500px;
+}
   </style>
 </head>
 <body>
    <div id="app">
-     <button @click="click">open</button>
-     <div class="flex">
-      <div>
-        <V-Border-Three>
-          <div class="box"></div>
-        </V-Border-Three>
+    <button @click="boo = !boo">test</button>
+      <div class="content">
+        <div class="echartstest">
+          <V-Echarts :options="getOptionTwo()"  open></V-Echarts>
+        </div>
       </div>
-     </div>
+      <V-Model v-model="boo">
+        <div>hello word</div>
+      </V-Model>
    </div>
    <script>
      function sleep(timer=3000){
@@ -56,15 +51,62 @@
      }
    </script>
    <script>
+     let {ref} = Vue
      let app = Vue.createApp({
        setup(){
-         let status = Vue.ref(false)
-         const click = async function(){
-          status.value = !status.value 
+        let boo = ref(false);
+        const getOptionTwo = function(){
+            return {
+				textStyle: {
+					fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif',
+				},
+				title: {
+					text: "Traffic Sources",
+					left: "center",
+				},
+				tooltip: {
+					trigger: "item",
+					formatter: "{a} <br/>{b} : {c} ({d}%)",
+				},
+				legend: {
+					show: true,
+					orient: "vertical",
+					left: "left",
+					data: [
+						"Direct",
+						"Email",
+						"Ad Networks",
+						"Video Ads",
+						"Search Engines",
+					],
+				},
+				series: [
+					{
+						name: "Traffic Sources",
+						type: "pie",
+						radius: "55%",
+						center: ["50%", "60%"],
+						data: [
+							{ value: 335, name: "Direct" },
+							{ value: 310, name: "Email" },
+							{ value: 234, name: "Ad Networks" },
+							{ value: 135, name: "Video Ads" },
+							{ value: 1548, name: "Search Engines" },
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: "rgba(0, 0, 0, 0.5)",
+							},
+						},
+					},
+				],
+			}
          }
-         return {
-          click,
-          status
+        return {
+          boo,
+          getOptionTwo
          }
        }
      })

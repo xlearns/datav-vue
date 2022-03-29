@@ -2,7 +2,7 @@ import { ref, openBlock, createElementBlock, pushScopeId, popScopeId, createElem
 import Echarts from 'echarts';
 import { to, timeline } from 'gsap';
 
-var script$k = {
+var script$l = {
   name: "ComTest",
   setup: function setup() {
     var a = ref("test");
@@ -12,15 +12,15 @@ var script$k = {
   }
 };
 
-var _withScopeId$5 = function _withScopeId(n) {
+var _withScopeId$6 = function _withScopeId(n) {
   return pushScopeId("data-v-7cc4288f"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$g = {
+var _hoisted_1$h = {
   "class": "test"
 };
 
-var _hoisted_2$b = /*#__PURE__*/_withScopeId$5(function () {
+var _hoisted_2$c = /*#__PURE__*/_withScopeId$6(function () {
   return /*#__PURE__*/createElementVNode("svg", {
     width: "20px",
     height: "20px",
@@ -44,9 +44,9 @@ var _hoisted_2$b = /*#__PURE__*/_withScopeId$5(function () {
   );
 });
 
-var _hoisted_3$7 = [_hoisted_2$b];
-function render$k(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$g, _hoisted_3$7);
+var _hoisted_3$7 = [_hoisted_2$c];
+function render$l(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$h, _hoisted_3$7);
 }
 
 function styleInject(css, ref) {
@@ -76,15 +76,15 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$f = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
-styleInject(css_248z$f);
+var css_248z$g = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
+styleInject(css_248z$g);
 
-script$k.render = render$k;
-script$k.__scopeId = "data-v-7cc4288f";
-script$k.__file = "src/components/Test/Test.vue";
+script$l.render = render$l;
+script$l.__scopeId = "data-v-7cc4288f";
+script$l.__file = "src/components/Test/Test.vue";
 
 function Test (Vue) {
-  Vue.component(script$k.name, script$k);
+  Vue.component(script$l.name, script$l);
 }
 
 function debounce(delay, callback) {
@@ -124,7 +124,7 @@ function formatNumber(num, decimals, decimal, separator, prefix, suffix) {
   return prefix + x1 + x2 + suffix;
 }
 
-var script$j = {
+var script$k = {
 	name: "VFullSreen",
 	props: {
 		options: Object,
@@ -226,31 +226,31 @@ var script$j = {
 	},
 };
 
-var _hoisted_1$f = {
+var _hoisted_1$g = {
   ref: "dom",
   "class": "datav-full-sreen"
 };
-function render$j(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$f, [$setup.ready ? renderSlot(_ctx.$slots, "default", {
+function render$k(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$g, [$setup.ready ? renderSlot(_ctx.$slots, "default", {
     key: 0
   }) : createCommentVNode("v-if", true)], 512
   /* NEED_PATCH */
   );
 }
 
-var css_248z$e = ".datav-full-sreen[data-v-8b5216c8] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  transform-origin: left top;\n  z-index: 999;\n}";
-styleInject(css_248z$e);
+var css_248z$f = ".datav-full-sreen[data-v-8b5216c8] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  transform-origin: left top;\n  z-index: 999;\n}";
+styleInject(css_248z$f);
 
-script$j.render = render$j;
-script$j.__scopeId = "data-v-8b5216c8";
-script$j.__file = "src/components/FullScreen/FullSreen.vue";
+script$k.render = render$k;
+script$k.__scopeId = "data-v-8b5216c8";
+script$k.__file = "src/components/FullScreen/FullSreen.vue";
 
 function FullSreen (Vue) {
-  Vue.component(script$j.name, script$j);
+  Vue.component(script$k.name, script$k);
 }
 
 // 配合iconfont symbol
-var script$i = {
+var script$j = {
   name: "VIcon",
   props: {
     name: String,
@@ -304,34 +304,34 @@ var _defineProperty$1 = unwrapExports(defineProperty$1);
 function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$1(Object(source), !0).forEach(function (key) { _defineProperty$1(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$1(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-var _hoisted_1$e = {
+var _hoisted_1$f = {
   "class": "icon"
 };
-var _hoisted_2$a = ["href"];
-function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+var _hoisted_2$b = ["href"];
+function render$j(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     "class": "icon-wrapper",
     style: normalizeStyle(_objectSpread$1({}, $props.style))
-  }, [(openBlock(), createElementBlock("svg", _hoisted_1$e, [createElementVNode("use", {
+  }, [(openBlock(), createElementBlock("svg", _hoisted_1$f, [createElementVNode("use", {
     href: $setup.iconName
   }, null, 8
   /* PROPS */
-  , _hoisted_2$a)]))], 4
+  , _hoisted_2$b)]))], 4
   /* STYLE */
   );
 }
 
-var css_248z$d = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
-styleInject(css_248z$d);
+var css_248z$e = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
+styleInject(css_248z$e);
 
-script$i.render = render$i;
-script$i.__file = "src/components/Icon/Icon.vue";
+script$j.render = render$j;
+script$j.__file = "src/components/Icon/Icon.vue";
 
 function Icon (Vue) {
-  Vue.component(script$i.name, script$i);
+  Vue.component(script$j.name, script$j);
 }
 
-var script$h = {
+var script$i = {
   name: "SvgAnimation",
   props: {
     name: String,
@@ -349,13 +349,13 @@ var script$h = {
   }
 };
 
-var _withScopeId$4 = function _withScopeId(n) {
+var _withScopeId$5 = function _withScopeId(n) {
   return pushScopeId("data-v-5a151e4f"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$d = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"200\" viewBox=\"0 0 500 200\" data-v-5a151e4f><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"red\" transform=\"translate(0,0) rotate(30)\" data-v-5a151e4f></rect></svg></div><div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"500\" viewBox=\"0 0 200 200\" transform=\"rotate(270)\" data-v-5a151e4f><!-- 底 --><circle cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#d1d3d7\" fill=\"none\" data-v-5a151e4f></circle><!-- 实际 --><!-- 周长：2*PI*R --><!-- 2*3.14*90 = 566--><!--  --><circle class=\"circle-ring\" cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#00a5e0\" fill=\"none\" data-v-5a151e4f></circle></svg></div><div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 底 --><rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#d1d3d7\" stroke-width=\"10\" data-v-5a151e4f></rect><rect class=\"rectRing\" x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#00a5e0\" stroke-width=\"10\" data-v-5a151e4f></rect></svg></div>", 3);
+var _hoisted_1$e = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"200\" viewBox=\"0 0 500 200\" data-v-5a151e4f><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"red\" transform=\"translate(0,0) rotate(30)\" data-v-5a151e4f></rect></svg></div><div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"500\" viewBox=\"0 0 200 200\" transform=\"rotate(270)\" data-v-5a151e4f><!-- 底 --><circle cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#d1d3d7\" fill=\"none\" data-v-5a151e4f></circle><!-- 实际 --><!-- 周长：2*PI*R --><!-- 2*3.14*90 = 566--><!--  --><circle class=\"circle-ring\" cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#00a5e0\" fill=\"none\" data-v-5a151e4f></circle></svg></div><div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 底 --><rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#d1d3d7\" stroke-width=\"10\" data-v-5a151e4f></rect><rect class=\"rectRing\" x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#00a5e0\" stroke-width=\"10\" data-v-5a151e4f></rect></svg></div>", 3);
 
-var _hoisted_4$5 = /*#__PURE__*/_withScopeId$4(function () {
+var _hoisted_4$5 = /*#__PURE__*/_withScopeId$5(function () {
   return /*#__PURE__*/createElementVNode("div", {
     "class": "contatiner"
   }, [/*#__PURE__*/createCommentVNode(" 描边 "), /*#__PURE__*/createElementVNode("svg", {
@@ -370,7 +370,7 @@ var _hoisted_4$5 = /*#__PURE__*/_withScopeId$4(function () {
   );
 });
 
-var _hoisted_5$5 = /*#__PURE__*/_withScopeId$4(function () {
+var _hoisted_5$5 = /*#__PURE__*/_withScopeId$5(function () {
   return /*#__PURE__*/createElementVNode("div", {
     "class": "contatiner"
   }, [/*#__PURE__*/createCommentVNode(" 矩形周长：4r"), /*#__PURE__*/createElementVNode("svg", {
@@ -407,22 +407,22 @@ var _hoisted_8$3 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" dat
 
 var _hoisted_9$3 = /*#__PURE__*/createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 运动的矩形 --><rect x=\"0\" y=\"0\" width=\"10\" height=\"10\" fill=\"red\" data-v-5a151e4f><animateMotion id=\"forward-rect\" path=\"M10 10 L110 10 L110 110 L10 110\" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"0;backward-rect.end+0.5\" data-v-5a151e4f></animateMotion><animateMotion id=\"backward-rect\" path=\"M10 110 L110 110 L110 10 L10 10 \" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"forward-rect.end + 0.5s\" data-v-5a151e4f></animateMotion></rect><path d=\"M10 10 L110 10 L110 110 L10 110\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" data-v-5a151e4f></path></svg></div>", 1);
 
-function render$h(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", null, [_hoisted_1$d, _hoisted_4$5, _hoisted_5$5, createCommentVNode(" set "), _hoisted_6$5, createCommentVNode(" animate "), _hoisted_7$3, createCommentVNode(" 路径运动 "), _hoisted_8$3, createCommentVNode(" 翻转效果 "), _hoisted_9$3]);
+function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [_hoisted_1$e, _hoisted_4$5, _hoisted_5$5, createCommentVNode(" set "), _hoisted_6$5, createCommentVNode(" animate "), _hoisted_7$3, createCommentVNode(" 路径运动 "), _hoisted_8$3, createCommentVNode(" 翻转效果 "), _hoisted_9$3]);
 }
 
-var css_248z$c = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
-styleInject(css_248z$c);
+var css_248z$d = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
+styleInject(css_248z$d);
 
-script$h.render = render$h;
-script$h.__scopeId = "data-v-5a151e4f";
-script$h.__file = "src/components/SvgAnimation/SvgAnimation.vue";
+script$i.render = render$i;
+script$i.__scopeId = "data-v-5a151e4f";
+script$i.__file = "src/components/SvgAnimation/SvgAnimation.vue";
 
 function SvgAnimation (Vue) {
-  Vue.component(script$h.name, script$h);
+  Vue.component(script$i.name, script$i);
 }
 
-var script$g = {
+var script$h = {
 	name: "VLoading",
 	props: {
 		width: {
@@ -456,17 +456,17 @@ var script$g = {
 	},
 };
 
-var _withScopeId$3 = function _withScopeId(n) {
+var _withScopeId$4 = function _withScopeId(n) {
   return pushScopeId("data-v-416d18c9"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$c = {
+var _hoisted_1$d = {
   "class": "vdata-loading"
 };
-var _hoisted_2$9 = ["width", "height"];
+var _hoisted_2$a = ["width", "height"];
 var _hoisted_3$6 = ["stroke"];
 
-var _hoisted_4$4 = /*#__PURE__*/_withScopeId$3(function () {
+var _hoisted_4$4 = /*#__PURE__*/_withScopeId$4(function () {
   return /*#__PURE__*/createElementVNode("animateTransform", {
     attributeName: "transform",
     type: "rotate",
@@ -482,7 +482,7 @@ var _hoisted_4$4 = /*#__PURE__*/_withScopeId$3(function () {
 var _hoisted_5$4 = ["values"];
 var _hoisted_6$4 = ["stroke"];
 
-var _hoisted_7$2 = /*#__PURE__*/_withScopeId$3(function () {
+var _hoisted_7$2 = /*#__PURE__*/_withScopeId$4(function () {
   return /*#__PURE__*/createElementVNode("animateTransform", {
     attributeName: "transform",
     type: "rotate",
@@ -498,8 +498,8 @@ var _hoisted_8$2 = ["values"];
 var _hoisted_9$2 = {
   "class": "vdata-loading-content"
 };
-function render$g(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$c, [(openBlock(), createElementBlock("svg", {
+function render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$d, [(openBlock(), createElementBlock("svg", {
     width: $props.width,
     height: $props.height,
     viewBox: "0 0 50 50"
@@ -541,18 +541,18 @@ function render$g(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_6$4)], 8
   /* PROPS */
-  , _hoisted_2$9)), createElementVNode("div", _hoisted_9$2, [renderSlot(_ctx.$slots, "default")])]);
+  , _hoisted_2$a)), createElementVNode("div", _hoisted_9$2, [renderSlot(_ctx.$slots, "default")])]);
 }
 
-var css_248z$b = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
-styleInject(css_248z$b);
+var css_248z$c = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
+styleInject(css_248z$c);
 
-script$g.render = render$g;
-script$g.__scopeId = "data-v-416d18c9";
-script$g.__file = "src/components/Loading/Loading.vue";
+script$h.render = render$h;
+script$h.__scopeId = "data-v-416d18c9";
+script$h.__file = "src/components/Loading/Loading.vue";
 
 function Loading (Vue) {
-  Vue.component(script$g.name, script$g);
+  Vue.component(script$h.name, script$h);
 }
 
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
@@ -629,7 +629,7 @@ function v4(options, buf, offset) {
   return stringify(rnds);
 }
 
-var script$f = {
+var script$g = {
   name: "VFlyBox",
   props: {
     duration: {
@@ -687,19 +687,19 @@ var script$f = {
   }
 };
 
-var _withScopeId$2 = function _withScopeId(n) {
+var _withScopeId$3 = function _withScopeId(n) {
   return pushScopeId("data-v-449c7e3b"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$b = {
+var _hoisted_1$c = {
   "class": "vdata-border-flybox",
   ref: "flybox"
 };
-var _hoisted_2$8 = ["width:", "height:"];
+var _hoisted_2$9 = ["width:", "height:"];
 var _hoisted_3$5 = ["id", "d"];
 var _hoisted_4$3 = ["id"];
 
-var _hoisted_5$3 = /*#__PURE__*/_withScopeId$2(function () {
+var _hoisted_5$3 = /*#__PURE__*/_withScopeId$3(function () {
   return /*#__PURE__*/createElementVNode("stop", {
     offset: "0%",
     "stop-color": "#fff",
@@ -709,7 +709,7 @@ var _hoisted_5$3 = /*#__PURE__*/_withScopeId$2(function () {
   );
 });
 
-var _hoisted_6$3 = /*#__PURE__*/_withScopeId$2(function () {
+var _hoisted_6$3 = /*#__PURE__*/_withScopeId$3(function () {
   return /*#__PURE__*/createElementVNode("stop", {
     offset: "100%",
     "stop-color": "#fff",
@@ -728,8 +728,8 @@ var _hoisted_12$1 = ["href", "stroke", "mask"];
 var _hoisted_13$1 = {
   "class": "content"
 };
-function render$f(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$b, [(openBlock(), createElementBlock("svg", {
+function render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$c, [(openBlock(), createElementBlock("svg", {
     "width:": $setup.width,
     "height:": $setup.height
   }, [createElementVNode("defs", null, [createElementVNode("path", {
@@ -780,19 +780,19 @@ function render$f(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_12$1)], 8
   /* PROPS */
-  , _hoisted_2$8)), createElementVNode("div", _hoisted_13$1, [renderSlot(_ctx.$slots, "default")])], 512
+  , _hoisted_2$9)), createElementVNode("div", _hoisted_13$1, [renderSlot(_ctx.$slots, "default")])], 512
   /* NEED_PATCH */
   );
 }
 
-var css_248z$a = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
-styleInject(css_248z$a);
+var css_248z$b = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
+styleInject(css_248z$b);
 
-script$f.render = render$f;
-script$f.__scopeId = "data-v-449c7e3b";
-script$f.__file = "src/components/Border/FlyBox.vue";
+script$g.render = render$g;
+script$g.__scopeId = "data-v-449c7e3b";
+script$g.__file = "src/components/Border/FlyBox.vue";
 
-var script$e = {
+var script$f = {
 	name: "DoubleBox",
 	props: {
 		leftColor: {
@@ -817,14 +817,14 @@ var script$e = {
 	},
 };
 
-var _hoisted_1$a = {
+var _hoisted_1$b = {
   "class": "btnAnimation"
 };
-var _hoisted_2$7 = {
+var _hoisted_2$8 = {
   "class": "btnAnimation-box"
 };
-function render$e(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$a, [createElementVNode("span", {
+function render$f(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$b, [createElementVNode("span", {
     "class": "btnAnimation-span",
     style: normalizeStyle({
       background: "linear-gradient(to right, ".concat($props.topColor[0], ", ").concat($props.topColor[1], ")")
@@ -852,17 +852,17 @@ function render$e(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 4
   /* STYLE */
-  ), createElementVNode("div", _hoisted_2$7, [renderSlot(_ctx.$slots, "default")])]);
+  ), createElementVNode("div", _hoisted_2$8, [renderSlot(_ctx.$slots, "default")])]);
 }
 
-var css_248z$9 = ".btnAnimation[data-v-7289f2a7] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n\n.btnAnimation-box[data-v-7289f2a7] {\n  height: 100%;\n  width: 100%;\n}\n\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(1) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to right, #035f3c, #16f03a);\n  animation: animate1-7289f2a7 2s linear infinite;\n  -webkit-animation: animate1-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate1-7289f2a7 {\n  0% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n  100% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(2) {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to bottom, #035f3c, #16f03a);\n  animation: animate2-7289f2a7 2s linear infinite;\n  -webkit-animation: animate2-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate2-7289f2a7 {\n  0% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n  100% {\n    transform: translateY(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(3) {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to left, #035f3c, #16f03a);\n  animation: animate3-7289f2a7 2s linear infinite;\n  -webkit-animation: animate3-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate3-7289f2a7 {\n  0% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n  100% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(4) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to top, #035f3c, #16f03a);\n  animation: animate4-7289f2a7 2s linear infinite;\n  -webkit-animation: animate4-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate4-7289f2a7 {\n  0% {\n    transform: translateY(100%);\n    -webkit-transform: translateY(100%);\n    -moz-transform: translateY(100%);\n    -ms-transform: translateY(100%);\n    -o-transform: translateY(100%);\n  }\n  100% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n}";
-styleInject(css_248z$9);
+var css_248z$a = ".btnAnimation[data-v-7289f2a7] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n\n.btnAnimation-box[data-v-7289f2a7] {\n  height: 100%;\n  width: 100%;\n}\n\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(1) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to right, #035f3c, #16f03a);\n  animation: animate1-7289f2a7 2s linear infinite;\n  -webkit-animation: animate1-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate1-7289f2a7 {\n  0% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n  100% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(2) {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to bottom, #035f3c, #16f03a);\n  animation: animate2-7289f2a7 2s linear infinite;\n  -webkit-animation: animate2-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate2-7289f2a7 {\n  0% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n  100% {\n    transform: translateY(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(3) {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to left, #035f3c, #16f03a);\n  animation: animate3-7289f2a7 2s linear infinite;\n  -webkit-animation: animate3-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate3-7289f2a7 {\n  0% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n  100% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(4) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to top, #035f3c, #16f03a);\n  animation: animate4-7289f2a7 2s linear infinite;\n  -webkit-animation: animate4-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate4-7289f2a7 {\n  0% {\n    transform: translateY(100%);\n    -webkit-transform: translateY(100%);\n    -moz-transform: translateY(100%);\n    -ms-transform: translateY(100%);\n    -o-transform: translateY(100%);\n  }\n  100% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n}";
+styleInject(css_248z$a);
 
-script$e.render = render$e;
-script$e.__scopeId = "data-v-7289f2a7";
-script$e.__file = "src/components/Border/DoubleBox.vue";
+script$f.render = render$f;
+script$f.__scopeId = "data-v-7289f2a7";
+script$f.__file = "src/components/Border/DoubleBox.vue";
 
-var script$d = {
+var script$e = {
   name: "VBorderThree",
   data: function data() {
     var timestamp = Date.now();
@@ -888,14 +888,14 @@ var script$d = {
   }
 };
 
-var _withScopeId$1 = function _withScopeId(n) {
+var _withScopeId$2 = function _withScopeId(n) {
   return pushScopeId("data-v-3b192cab"), n = n(), popScopeId(), n;
 };
 
-var _hoisted_1$9 = ["width", "height"];
-var _hoisted_2$6 = ["id"];
+var _hoisted_1$a = ["width", "height"];
+var _hoisted_2$7 = ["id"];
 
-var _hoisted_3$4 = /*#__PURE__*/_withScopeId$1(function () {
+var _hoisted_3$4 = /*#__PURE__*/_withScopeId$2(function () {
   return /*#__PURE__*/createElementVNode("animate", {
     attributeName: "x1",
     values: "0%;100%;0%",
@@ -907,7 +907,7 @@ var _hoisted_3$4 = /*#__PURE__*/_withScopeId$1(function () {
   );
 });
 
-var _hoisted_4$2 = /*#__PURE__*/_withScopeId$1(function () {
+var _hoisted_4$2 = /*#__PURE__*/_withScopeId$2(function () {
   return /*#__PURE__*/createElementVNode("animate", {
     attributeName: "x2",
     values: "100%;0%;100%",
@@ -937,7 +937,7 @@ var _hoisted_19 = ["width", "height", "fill", "mask"];
 var _hoisted_20 = {
   "class": "border-box-content"
 };
-function render$d(_ctx, _cache, $props, $setup, $data, $options) {
+function render$e(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     "class": "dv-border-box-9",
     ref: $data.ref
@@ -980,7 +980,7 @@ function render$d(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_7)], 8
   /* PROPS */
-  , _hoisted_2$6), createElementVNode("mask", {
+  , _hoisted_2$7), createElementVNode("mask", {
     id: $data.maskId
   }, [createElementVNode("polyline", {
     stroke: "#fff",
@@ -1048,25 +1048,25 @@ function render$d(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_19)], 8
   /* PROPS */
-  , _hoisted_1$9)) : createCommentVNode("v-if", true), createElementVNode("div", _hoisted_20, [renderSlot(_ctx.$slots, "default")])], 512
+  , _hoisted_1$a)) : createCommentVNode("v-if", true), createElementVNode("div", _hoisted_20, [renderSlot(_ctx.$slots, "default")])], 512
   /* NEED_PATCH */
   );
 }
 
-var css_248z$8 = "\n.dv-border-box-9[data-v-3b192cab] {\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\theight: 100%;\n}\nsvg[data-v-3b192cab] {\r\n\tposition: absolute;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tleft: 0px;\r\n\ttop: 0px;\n}\n.border-box-content[data-v-3b192cab] {\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\theight: 100%;\n}\r\n";
-styleInject(css_248z$8);
+var css_248z$9 = "\n.dv-border-box-9[data-v-3b192cab] {\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\theight: 100%;\n}\nsvg[data-v-3b192cab] {\r\n\tposition: absolute;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tleft: 0px;\r\n\ttop: 0px;\n}\n.border-box-content[data-v-3b192cab] {\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\theight: 100%;\n}\r\n";
+styleInject(css_248z$9);
 
-script$d.render = render$d;
-script$d.__scopeId = "data-v-3b192cab";
-script$d.__file = "src/components/Border/three.vue";
+script$e.render = render$e;
+script$e.__scopeId = "data-v-3b192cab";
+script$e.__file = "src/components/Border/three.vue";
 
 function Border (Vue) {
+  Vue.component(script$g.name, script$g);
   Vue.component(script$f.name, script$f);
   Vue.component(script$e.name, script$e);
-  Vue.component(script$d.name, script$d);
 }
 
-var script$c = {
+var script$d = {
   name: "VEcharts",
   props: {
     options: Object,
@@ -1091,15 +1091,17 @@ var script$c = {
     watch(function () {
       return props.options;
     }, function () {
-      charts.setOption(props.options);
+      var _charts$value;
+
+      (_charts$value = charts.value) === null || _charts$value === void 0 ? void 0 : _charts$value.setOption(props.options);
     }, {
       deep: true
     });
 
     var onResize = function onResize() {
-      var _charts$value;
+      var _charts$value2;
 
-      (_charts$value = charts.value) === null || _charts$value === void 0 ? void 0 : _charts$value.resize();
+      (_charts$value2 = charts.value) === null || _charts$value2 === void 0 ? void 0 : _charts$value2.resize();
     };
 
     onMounted(function () {
@@ -1127,21 +1129,21 @@ var script$c = {
   }
 };
 
-var _hoisted_1$8 = {
+var _hoisted_1$9 = {
   "class": "echats",
   ref: "dom"
 };
-function render$c(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$8, null, 512
+function render$d(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$9, null, 512
   /* NEED_PATCH */
   );
 }
 
-script$c.render = render$c;
-script$c.__file = "src/components/VueEcharts/VueEcharts.vue";
+script$d.render = render$d;
+script$d.__file = "src/components/VueEcharts/VueEcharts.vue";
 
 function VueEcharts (Vue) {
-  Vue.component(script$c.name, script$c);
+  Vue.component(script$d.name, script$d);
 }
 
 var lastTime = 0;
@@ -1189,7 +1191,7 @@ if (isServer) {
   }
 }
 
-var script$b = {
+var script$c = {
 	name: "VueCountTo",
 	props: {
 		startVal: {
@@ -1388,17 +1390,17 @@ var script$b = {
 	},
 };
 
-function render$b(_ctx, _cache, $props, $setup, $data, $options) {
+function render$c(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("span", null, toDisplayString(_ctx.displayValue), 1
   /* TEXT */
   );
 }
 
-script$b.render = render$b;
-script$b.__file = "src/components/VueCountTo/VueCountTo.vue";
+script$c.render = render$c;
+script$c.__file = "src/components/VueCountTo/VueCountTo.vue";
 
 function VueCountTo (Vue) {
-  Vue.component(script$b.name, script$b);
+  Vue.component(script$c.name, script$c);
 }
 
 var asyncToGenerator = createCommonjsModule(function (module) {
@@ -5109,7 +5111,7 @@ var defaultConfig$1 = {
   duration: 2000 // 动画间隔
 
 };
-var script$a = {
+var script$b = {
   name: "BaseScrollList",
   props: {
     config: {
@@ -5395,14 +5397,14 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty$1(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
-var _hoisted_1$7 = {
+var _hoisted_1$8 = {
   "class": "base-scroll-list",
   ref: "dom"
 };
-var _hoisted_2$5 = ["align", "innerHTML"];
+var _hoisted_2$6 = ["align", "innerHTML"];
 var _hoisted_3$3 = ["align", "innerHTML"];
-function render$a(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$7, [createElementVNode("div", {
+function render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$8, [createElementVNode("div", {
     "class": "base-scroll-list-header",
     style: normalizeStyle({
       background: $setup.actualConfig.headerBg,
@@ -5421,7 +5423,7 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
       innerHTML: headerItem
     }, null, 12
     /* STYLE, PROPS */
-    , _hoisted_2$5);
+    , _hoisted_2$6);
   }), 128
   /* KEYED_FRAGMENT */
   ))], 4
@@ -5467,18 +5469,18 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   );
 }
 
-var css_248z$7 = ".base-scroll-list[data-v-69eed30f] {\n  height: 100%;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-text[data-v-69eed30f] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  box-sizing: border-box;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-header[data-v-69eed30f] {\n  display: flex;\n  font-size: 15px;\n  align-items: center;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] {\n  overflow: hidden;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] {\n  display: flex;\n  align-items: center;\n  transition: all 0.3s linear;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] .base-scroll-list-columns[data-v-69eed30f] {\n  height: 100%;\n}";
-styleInject(css_248z$7);
+var css_248z$8 = ".base-scroll-list[data-v-69eed30f] {\n  height: 100%;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-text[data-v-69eed30f] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  box-sizing: border-box;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-header[data-v-69eed30f] {\n  display: flex;\n  font-size: 15px;\n  align-items: center;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] {\n  overflow: hidden;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] {\n  display: flex;\n  align-items: center;\n  transition: all 0.3s linear;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] .base-scroll-list-columns[data-v-69eed30f] {\n  height: 100%;\n}";
+styleInject(css_248z$8);
 
-script$a.render = render$a;
-script$a.__scopeId = "data-v-69eed30f";
-script$a.__file = "src/components/BaseScrollList/BaseScrollList.vue";
+script$b.render = render$b;
+script$b.__scopeId = "data-v-69eed30f";
+script$b.__file = "src/components/BaseScrollList/BaseScrollList.vue";
 
 function BaseScrollList (Vue) {
-  Vue.component(script$a.name, script$a);
+  Vue.component(script$b.name, script$b);
 }
 
-var script$9 = {
+var script$a = {
   name: "TransformCategory",
   props: {
     data: Array,
@@ -5534,15 +5536,15 @@ var script$9 = {
   }
 };
 
-var _hoisted_1$6 = {
+var _hoisted_1$7 = {
   "class": "country-category"
 };
-var _hoisted_2$4 = ["onClick", "onMouseenter", "onMouseleave", "onMousemove"];
+var _hoisted_2$5 = ["onClick", "onMouseenter", "onMouseleave", "onMousemove"];
 var _hoisted_3$2 = {
   key: 2
 };
-function render$9(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$6, [(openBlock(true), createElementBlock(Fragment, null, renderList($props.data, function (item, index) {
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$7, [(openBlock(true), createElementBlock(Fragment, null, renderList($props.data, function (item, index) {
     return openBlock(), createElementBlock("div", {
       "class": "category",
       key: item,
@@ -5578,21 +5580,21 @@ function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ))], 40
     /* PROPS, HYDRATE_EVENTS */
-    , _hoisted_2$4);
+    , _hoisted_2$5);
   }), 128
   /* KEYED_FRAGMENT */
   ))]);
 }
 
-var css_248z$6 = ".country-category[data-v-0ce021a5] {\n  display: flex;\n  width: 100%;\n  height: 100%;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] {\n  flex: 1;\n  background: #353941;\n  font-size: 24px;\n  color: #90a0ae;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .hovered[data-v-0ce021a5] {\n  background: #505050;\n  color: #ffffff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .selected[data-v-0ce021a5] {\n  background: #8ca0ad;\n  color: #fff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] div[data-v-0ce021a5] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n}";
-styleInject(css_248z$6);
+var css_248z$7 = ".country-category[data-v-0ce021a5] {\n  display: flex;\n  width: 100%;\n  height: 100%;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] {\n  flex: 1;\n  background: #353941;\n  font-size: 24px;\n  color: #90a0ae;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .hovered[data-v-0ce021a5] {\n  background: #505050;\n  color: #ffffff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .selected[data-v-0ce021a5] {\n  background: #8ca0ad;\n  color: #fff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] div[data-v-0ce021a5] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n}";
+styleInject(css_248z$7);
 
-script$9.render = render$9;
-script$9.__scopeId = "data-v-0ce021a5";
-script$9.__file = "src/components/TransformCategory/TransformCategory.vue";
+script$a.render = render$a;
+script$a.__scopeId = "data-v-0ce021a5";
+script$a.__file = "src/components/TransformCategory/TransformCategory.vue";
 
 function TransformCategory (Vue) {
-  Vue.component(script$9.name, script$9);
+  Vue.component(script$a.name, script$a);
 }
 
 var request = function request(_ref) {
@@ -5636,7 +5638,7 @@ const defaultConfig = {
 	},
 	dataMerge: {},
 };
-var script$8 = {
+var script$9 = {
 	name: "Upload",
 	props: {
 		config: {
@@ -5718,7 +5720,7 @@ var script$8 = {
 	},
 };
 
-function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+function render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", null, [createElementVNode("input", {
     type: "file",
     onChange: _cache[0] || (_cache[0] = function () {
@@ -5729,32 +5731,52 @@ function render$8(_ctx, _cache, $props, $setup, $data, $options) {
   )]);
 }
 
-script$8.render = render$8;
-script$8.__file = "src/components/Upload/Upload.vue";
+script$9.render = render$9;
+script$9.__file = "src/components/Upload/Upload.vue";
 
 function Upload (Vue) {
-  Vue.component(script$8.name, script$8);
+  Vue.component(script$9.name, script$9);
 }
 
-var script$7 = {
+var script$8 = {
 	name: "VButton",
 	setup() {
 		return {};
 	},
 };
 
-function render$7(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", null, [createElementVNode("button", null, [renderSlot(_ctx.$slots, "default")])]);
+var _withScopeId$1 = function _withScopeId(n) {
+  return pushScopeId("data-v-4439b54f"), n = n(), popScopeId(), n;
+};
+
+var _hoisted_1$6 = {
+  "class": "btn vb"
+};
+
+var _hoisted_2$4 = /*#__PURE__*/_withScopeId$1(function () {
+  return /*#__PURE__*/createElementVNode("div", {
+    "class": "dot"
+  }, null, -1
+  /* HOISTED */
+  );
+});
+
+function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("button", _hoisted_1$6, [createElementVNode("span", null, [renderSlot(_ctx.$slots, "default")]), _hoisted_2$4]);
 }
 
-script$7.render = render$7;
-script$7.__file = "src/components/Button/Button.vue";
+var css_248z$6 = ".btn[data-v-4439b54f] {\n  vertical-align: top;\n  margin: 15px;\n  display: inline-block;\n  text-align: center;\n  width: 122px;\n  height: 44px;\n  line-height: 44px;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n.btn[data-v-4439b54f] .dot[data-v-4439b54f] {\n  content: \"\";\n  animation: atom-4439b54f 2s infinite linear;\n  position: absolute;\n  top: 0;\n  width: 32px;\n  height: 100%;\n  border-radius: 50%;\n  transition: all 300ms ease;\n}\n.btn[data-v-4439b54f] .dot[data-v-4439b54f][data-v-4439b54f]::after {\n  content: \"\";\n  position: absolute;\n  top: -6px;\n  height: 5px;\n  width: 5px;\n  background: #fa5555;\n  border-radius: 50%;\n  border: 4px solid #fa5555;\n  box-shadow: 0 0 0.7em #fff, 0 0 2em #fa5555;\n}\n\n.vb[data-v-4439b54f] {\n  position: relative;\n  width: 120px;\n  color: #fa5555;\n  height: 40px;\n  line-height: 42px;\n  border: 2px solid #fa5555;\n  border-radius: 14px;\n  text-transform: uppercase;\n}\n\n@keyframes atom-4439b54f {\n  0% {\n    transform: translateX(0) rotate(0);\n  }\n  30% {\n    transform: translateX(86px) rotate(0);\n  }\n  50% {\n    transform: translateX(86px) rotate(180deg);\n  }\n  80% {\n    transform: translateX(0) rotate(180deg);\n  }\n  100% {\n    transform: translateX(0) rotate(360deg);\n  }\n}";
+styleInject(css_248z$6);
+
+script$8.render = render$8;
+script$8.__scopeId = "data-v-4439b54f";
+script$8.__file = "src/components/Button/Button.vue";
 
 function BUtton (Vue) {
-  Vue.component(script$7.name, script$7);
+  Vue.component(script$8.name, script$8);
 }
 
-var script$6 = {
+var script$7 = {
 	name: "VSwitch",
 	props: {
 		modelValue: {
@@ -5843,7 +5865,7 @@ var _hoisted_5$1 = {
 var _hoisted_6$1 = {
   "class": "item"
 };
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+function render$7(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $setup.click && $setup.click.apply($setup, arguments);
@@ -5882,12 +5904,12 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$5 = ".ani[data-v-0051a1e2] {\n  transition: all 0.3s;\n}\n\n.box[data-v-0051a1e2] {\n  position: relative;\n  height: 100%;\n  min-height: 36px;\n  width: 76px;\n}\n\n.isRadius[data-v-0051a1e2] {\n  border-radius: 100px;\n}\n\n.one[data-v-0051a1e2] .left[data-v-0051a1e2] {\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #03a9f4;\n  border-radius: 50%;\n}\n.one[data-v-0051a1e2] .right[data-v-0051a1e2] {\n  position: absolute;\n  top: 4px;\n  left: calc(100% - 30px);\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #f44336;\n  border-radius: 50%;\n}\n\n.two[data-v-0051a1e2] .left[data-v-0051a1e2] {\n  transition: all 0.3s;\n}\n.two[data-v-0051a1e2] .left[data-v-0051a1e2] .item[data-v-0051a1e2] {\n  transition: all 0.3s;\n  position: absolute;\n  left: calc(100% - 30px);\n  top: 6px;\n  color: #fff;\n}\n.two[data-v-0051a1e2] .left[data-v-0051a1e2] .ball[data-v-0051a1e2] {\n  transition: all 0.3s;\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #fff;\n  border-radius: 50%;\n}\n.two[data-v-0051a1e2] .right[data-v-0051a1e2] {\n  transition: all 0.3s;\n}\n.two[data-v-0051a1e2] .right[data-v-0051a1e2] .item[data-v-0051a1e2] {\n  color: #fff;\n  transition: all 0.3s;\n  position: absolute;\n  left: 4px;\n  top: 6px;\n}\n.two[data-v-0051a1e2] .right[data-v-0051a1e2] .ball[data-v-0051a1e2] {\n  transition: all 0.3s;\n  position: absolute;\n  top: 4px;\n  left: calc(100% - 30px);\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #fff;\n  border-radius: 50%;\n}\n\n.three[data-v-0051a1e2] {\n  height: 36px;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] {\n  display: inline-block;\n  height: 100%;\n  width: 100%;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  perspective: 70px;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2] .item[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] .item[data-v-0051a1e2] {\n  display: inline-block;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2] .leftActive[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] .leftActive[data-v-0051a1e2] {\n  transform: rotateY(-180deg) !important;\n  background-color: #03a9f4 !important;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2] .box-block[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] .box-block[data-v-0051a1e2] {\n  position: absolute;\n  top: 4px;\n  border-radius: 2px;\n  right: 4px;\n  width: 33px;\n  height: 28px;\n  background-color: #f44336;\n  transform: rotateY(0);\n  transform-origin: 0% 50%;\n  transition: 0.6s ease all;\n  z-index: 1;\n}";
 styleInject(css_248z$5);
 
-script$6.render = render$6;
-script$6.__scopeId = "data-v-0051a1e2";
-script$6.__file = "src/components/Switch/Switch.vue";
+script$7.render = render$7;
+script$7.__scopeId = "data-v-0051a1e2";
+script$7.__file = "src/components/Switch/Switch.vue";
 
 function Switch (Vue) {
-  Vue.component(script$6.name, script$6);
+  Vue.component(script$7.name, script$7);
 }
 
 var _hoisted_1$4 = {
@@ -5927,20 +5949,20 @@ var _hoisted_5 = /*#__PURE__*/createElementVNode("path", {
 );
 
 var _hoisted_6 = [_hoisted_2$2, _hoisted_3, _hoisted_4, _hoisted_5];
-function render$5(_ctx, _cache) {
+function render$6(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$4, _hoisted_6);
 }
 
-const script$5 = {};
+const script$6 = {};
 
 
-script$5.render = render$5;
-script$5.__file = "src/components/Modal/close.vue";
+script$6.render = render$6;
+script$6.__file = "src/components/Modal/close.vue";
 
-var script$4 = {
+var script$5 = {
 	name: "VModel",
 	components: {
-		close: script$5,
+		close: script$6,
 	},
 	props: {
 		modelValue: {
@@ -5995,7 +6017,7 @@ var _hoisted_2$1 = {
   key: 0,
   "class": "content"
 };
-function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_close = resolveComponent("close");
 
   return $setup.openDom ? (openBlock(), createElementBlock("div", _hoisted_1$3, [createElementVNode("div", {
@@ -6016,15 +6038,15 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$4 = ".filterbg[data-v-47db75aa] {\n  width: 100%;\n  height: 100%;\n  background: rgba(30, 182, 254, 0.5);\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 998;\n}\n.filterbg[data-v-47db75aa] .openHeight[data-v-47db75aa] {\n  height: 76% !important;\n}\n.filterbg[data-v-47db75aa] .openWidth[data-v-47db75aa] {\n  width: 82% !important;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] {\n  overflow: hidden;\n  transition: all 0.4s;\n  width: 3px;\n  height: 0;\n  background: #061f3e;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  z-index: 999;\n  border-radius: 8px;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa] {\n  transition: all 0.2s;\n  cursor: pointer;\n  position: absolute;\n  width: 32px;\n  height: 32px;\n  top: 15px;\n  right: 18px;\n  background-size: 100%;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa][data-v-47db75aa]:hover {\n  transform: rotateZ(360deg);\n}";
 styleInject(css_248z$4);
 
-script$4.render = render$4;
-script$4.__scopeId = "data-v-47db75aa";
-script$4.__file = "src/components/Modal/Modal.vue";
+script$5.render = render$5;
+script$5.__scopeId = "data-v-47db75aa";
+script$5.__file = "src/components/Modal/Modal.vue";
 
 function Modal (Vue) {
-  Vue.component(script$4.name, script$4);
+  Vue.component(script$5.name, script$5);
 }
 
-var script$3 = {
+var script$4 = {
 	name: "VTagCloud",
 	props: {
 		tags: {
@@ -6120,7 +6142,7 @@ var script$3 = {
 
 var _hoisted_1$2 = ["width", "height"];
 var _hoisted_2 = ["x", "y", "font-size", "fill-opacity"];
-function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("svg", {
     "class": "tag-cloud",
     width: $props.options.width,
@@ -6152,15 +6174,15 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$3 = "\n.tag-cloud[data-v-b4886fa2] {\r\n\tposition: absolute;\r\n\ttop: 50%;\r\n\tleft: 50%;\r\n\ttransform: translateX(-50%) translateY(-50%);\n}\r\n";
 styleInject(css_248z$3);
 
-script$3.render = render$3;
-script$3.__scopeId = "data-v-b4886fa2";
-script$3.__file = "src/components/TagCloud/TagCloud.vue";
+script$4.render = render$4;
+script$4.__scopeId = "data-v-b4886fa2";
+script$4.__file = "src/components/TagCloud/TagCloud.vue";
 
 function TagCloud (Vue) {
-  Vue.component(script$3.name, script$3);
+  Vue.component(script$4.name, script$4);
 }
 
-var script$2 = {
+var script$3 = {
 	name: "VToolTip",
 	props: {
 		content: {
@@ -6244,7 +6266,7 @@ var script$2 = {
 };
 
 var _hoisted_1$1 = ["innerHTML"];
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     "class": "vToolTip",
     onMouseenter: _cache[0] || (_cache[0] = function () {
@@ -6270,18 +6292,18 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$2 = ".vToolTip[data-v-61e09817] .tool_tip[data-v-61e09817] {\n  background-color: rgba(0, 0, 0, 0.9);\n  padding: 4px 8px;\n  border-radius: 4px;\n  color: #fff;\n  font-size: 12px;\n  position: absolute;\n  z-index: 99999;\n  word-wrap: break-word;\n  max-width: 1000px;\n  box-sizing: border-box;\n}\n.vToolTip[data-v-61e09817] .tool_tip[data-v-61e09817]:before {\n  position: absolute;\n  content: \"\";\n  background-color: rgba(0, 0, 0, 0);\n  width: 0;\n  height: 0;\n  border-width: 5px;\n  border-style: solid;\n}\n.vToolTip[data-v-61e09817] .tool_tip_top[data-v-61e09817]:before {\n  top: 100%;\n  left: 50%;\n  transform: translate(-50%, 0);\n  -ms-transform: translate(-50%, 0);\n  -webkit-transform: translate(-50%, 0);\n  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_right[data-v-61e09817]:before {\n  top: 50%;\n  left: 0;\n  transform: translate(-100%, -50%);\n  -ms-transform: translate(-100%, -50%);\n  -webkit-transform: translate(-100%, -50%);\n  border-color: transparent rgba(0, 0, 0, 0.9) transparent transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_bottom[data-v-61e09817]:before {\n  top: 0;\n  left: 50%;\n  transform: translate(-50%, -100%);\n  -ms-transform: translate(-50%, -100%);\n  -webkit-transform: translate(-50%, -100%);\n  border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_left[data-v-61e09817]:before {\n  top: 50%;\n  left: 100%;\n  transform: translate(0, -50%);\n  -ms-transform: translate(0, -50%);\n  -webkit-transform: translate(0, -50%);\n  border-color: transparent transparent transparent rgba(0, 0, 0, 0.9);\n}";
 styleInject(css_248z$2);
 
-script$2.render = render$2;
-script$2.__scopeId = "data-v-61e09817";
-script$2.__file = "src/components/ToolTip/ToolTip.vue";
+script$3.render = render$3;
+script$3.__scopeId = "data-v-61e09817";
+script$3.__file = "src/components/ToolTip/ToolTip.vue";
 
 function ToolTip (Vue) {
-  Vue.component(script$2.name, script$2);
+  Vue.component(script$3.name, script$3);
 }
 
 function config(one, two) {
 	return Object.assign(one, two);
 }
-var script$1 = {
+var script$2 = {
 	name: "VTransForm",
 	props: {
 		modelValue: {
@@ -6341,7 +6363,7 @@ var script$1 = {
 	},
 };
 
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock(Fragment, null, [createCommentVNode(" <transform name=\"style\">\r\n\t\t<slot></slot>\r\n\t</transform> "), createElementVNode("div", null, [renderSlot(_ctx.$slots, "default")])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
@@ -6350,15 +6372,15 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$1 = ".style-enter-active[data-v-7f8b5de9],\n.style-leave-active[data-v-7f8b5de9] {\n  transition: all 0.5s ease;\n}\n\n.style-enter-from[data-v-7f8b5de9],\n.style-leave-to[data-v-7f8b5de9] {\n  opacity: 0;\n}";
 styleInject(css_248z$1);
 
-script$1.render = render$1;
-script$1.__scopeId = "data-v-7f8b5de9";
-script$1.__file = "src/components/Transform/Transform.vue";
+script$2.render = render$2;
+script$2.__scopeId = "data-v-7f8b5de9";
+script$2.__file = "src/components/Transform/Transform.vue";
 
 function Transform (Vue) {
-  Vue.component(script$1.name, script$1);
+  Vue.component(script$2.name, script$2);
 }
 
-var script = {
+var script$1 = {
   name: "vReverse",
   props: {
     modelValue: {
@@ -6393,13 +6415,13 @@ var _hoisted_1 = {
   "class": "test",
   ref: "dom"
 };
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1, [createElementVNode("div", {
     "class": "main",
     style: normalizeStyle({
       transform: $props.modelValue ? $props.active : $props.leave,
       transition: $props.transition,
-      transformOrigin: _ctx.transformOrigin
+      transformOrigin: $props.transformOrigin
     })
   }, [renderSlot(_ctx.$slots, "default")], 4
   /* STYLE */
@@ -6411,11 +6433,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z = ".test[data-v-1d03d06f] {\n  perspective: 800px;\n}";
 styleInject(css_248z);
 
-script.render = render;
-script.__scopeId = "data-v-1d03d06f";
-script.__file = "src/components/Reverse/Test.vue";
+script$1.render = render$1;
+script$1.__scopeId = "data-v-1d03d06f";
+script$1.__file = "src/components/Reverse/Test.vue";
 
 function Reverse (Vue) {
+  Vue.component(script$1.name, script$1);
+}
+
+function render(_ctx, _cache) {
+  return openBlock(), createElementBlock("div");
+}
+
+const script = {};
+
+
+script.render = render;
+script.__file = "src/components/Notice/NoticeList.vue";
+
+function Notice (Vue) {
   Vue.component(script.name, script);
 }
 
@@ -6438,6 +6474,7 @@ var component = function component(Vue) {
   Vue.use(TagCloud);
   Vue.use(Transform);
   Vue.use(Reverse);
+  Vue.use(Notice);
 };
 
 export { component as default };
