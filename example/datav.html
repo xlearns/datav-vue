@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="https://lib.baomitu.com/vue/3.2.31/vue.global.js"></script>
+    <!-- 引入iconfont -->
+    <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+    <!-- 引入echarts -->
+    <script src="https://lib.baomitu.com/echarts/5.3.0/echarts.min.js"></script>
+
+    <!-- 引用组件库 -->
+    <script src="../dist/datav.umd.js"></script>
+    <style>
+      html,
+      body,
+      div {
+        padding: 0;
+        margin: 0;
+      }
+      #app {
+        overflow: hidden;
+        box-sizing: border-box;
+        
+        margin: 0;
+        height: 100vh;
+        background-color: black;
+      }
+      .container{
+        padding: 30px;
+      }
+      .content {
+        display: flex;
+        width: 100%;
+      }
+      .echartstest {
+        flex: 1;
+        height: 500px;
+      }
+      .btn{
+        width:200px;
+        height:50px;
+        border:none;
+        border-radius: 14px;
+        background:#999;
+      }
+      .center{
+        margin:15px 0;
+      }
+      .main{
+        display: flex;
+        justify-content: space-between;
+      }
+      .table{
+        width:800px;
+        height:400px;
+      }
+      .box{
+        position: relative;
+        width: 500px;
+        height:400px;
+        /* background-color: #fff; */
+      }
+      .icon-box{
+        width:500px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <V-Full-Sreen>
+       <div class="container">
+        <button class="btn" @click="boo = !boo">test</button>
+        <div class="content">
+          <div class="echartstest">
+            <V-Fly-Box>
+              <V-Echarts
+                :options="getOptionThree()"
+                open
+                :animation="{open:true,time:1500}"
+              ></V-Echarts>
+          </V-Fly-Box>
+          </div>
+          <div class="echartstest">
+            <Double-Box >
+              <V-Echarts
+              :options="getOptionTwo()"
+              open
+              :animation="{open:true}"
+            ></V-Echarts>
+            </Double-Box>
+          </div>
+          <div class="echartstest">
+            <V-Fly-Box>
+            <V-Echarts
+              :options="getOptionTwo()"
+              open
+              :animation="{open:true,time:1000}"
+            ></V-Echarts>
+          </V-Fly-Box>
+          </div>
+          <div class="echartstest">
+            <V-Fly-Box>
+            <V-Echarts
+              :options="getOption()"
+              open
+              :animation="{open:true,time:1000}"
+            ></V-Echarts>
+          </V-Fly-Box>
+          </div>
+        </div>
+  
+        <div class="center">
+          <Transform-Category :data="['订单量','销售量','用户数','退单量']" :color="['rgb(178,209,126)','rgb(116,166,49)']"  />
+        </div>
+        <div class="main">
+          <div class="table">
+            <Base-Scroll-List :config="config" />
+          </div>
+          <div class="icon-box">
+            <V-Icon style="color:blue;width:100px;height:100px" name="icon-saoyisao"></V-Icon>
+            <V-Icon style="color:red;width:100px;height:100px;" name="icon-guanbi"></V-Icon>
+            <V-Icon style="color:yellow;width:100px;height:100px" name="icon-saoyisao"></V-Icon>
+           </div>
+
+          <div class='box' >
+            <Double-Box >
+            <V-Tag-Cloud :tags="tags" :options="options" />
+            </Double-Box >
+           </div>
+          
+         </div>
+      
+        <V-Model v-model="boo">
+            <div style="height:100%;width:100%">
+              <V-Fly-Box>
+                <V-Echarts
+                  :options="getOptionThree()"
+                  open
+                  :animation="{open:true,time:1500}"
+                ></V-Echarts>
+              </V-Fly-Box>
+            </div>
+        </V-Model>
+       </div>
+    </V-Full-Sreen>
+    </div>
+    <script>
+      function sleep(timer = 3000) {
+        return new Promise((resolve) => {
+          setTimeout(resolve, timer);
+        });
+      }
+    </script>
+    <script>
+      let { ref } = Vue;
+
+      let app = Vue.createApp({
+        setup() {
+          let EchartsData = Vue.inject("EchartsData");
+          let boo = ref(false);
+          const getOptionTwo = function () {
+            return EchartsData["pie"];
+          };
+          const getOption = function () {
+            return EchartsData["bar"];
+          };
+          const getOptionThree = function () {
+            return EchartsData["ring"];
+          };
+
+          //table 
+         let headerData = ['城市订单量','店铺数','接单骑手个',"新店铺数量","人均订单量"]
+         let headerStyle = [{color:'blue'}]
+         const headerIndexData = []
+         let data = Array.from({length:16}).map((v,i)=>{
+           if(i%2===0){
+            headerIndexData[i] = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgb(40,40,40)"><div style="width:15px;height:15px;background:rgb(72,122,72);border-radius:50%;border:1px solid #fff;" /></div>'
+           }else{
+            headerIndexData[i] = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgb(40,40,40)"><div style="width:15px;height:15px;background:rgb(38,88,104);border-radius:50%;border:1px solid #fff;" /></div>'
+           }
+           return ['同学'+i,`<div style='color:rgb(178,209,126)'>${i}</div>`,i,`<div style='color:rgb(178,209,126)'>${i}</div>`,i]
+         })
+         let aligns = ['center','center','center','center','center']
+         let headerIndexContent = ''
+          const config = {
+          headerData:headerData,
+          data:data,
+          headerIndexData,
+          headerIndexContent,
+          headerIndex:true,
+          rowNum:10,
+          rowBg:['rgb(40,40,40)','rgb(55,55,55)'],
+          headerBg:"rgb(80,80,80)",
+          headerColor:"#fff",
+          headerHeight:55,
+          headerFontSize:24,
+          rowFontSize:20,
+          rowColor:"#fff",
+          rowStyle:headerStyle,
+          // rowIndexStyle:{
+          //   color:'pink',
+          //   width:'50px'
+          // },
+          // headerIndexStyle:{
+          //    color:'yellow',
+          //    width:'50px'
+          // },
+          aligns,
+          duration:3000,
+         }
+        //  tag
+        const  tags= Array.from({length:10}).map((v,i)=>{
+          return {name:i}
+        })
+        const options =  {
+          width: 500,
+          height: 400,
+          radius: 200, // 球体半径
+          opacity: 300, // 数值越小透明度越高
+          fontSize: 600, // 数值越大字体越小[300-600]
+        }
+          return {
+            tags,
+            options,
+            config,
+            getOptionThree,
+            getOption,
+            boo,
+            getOptionTwo,
+          };
+        },
+      });
+      app.use(datav);
+      app.mount("#app");
+    </script>
+  </body>
+</html>

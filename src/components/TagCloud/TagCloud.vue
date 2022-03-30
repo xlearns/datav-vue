@@ -51,7 +51,7 @@ export default {
 		});
 		const centerX = computed(() => props.options.width / 2);
 		const centerY = computed(() => props.options.height / 2);
-		
+
 		const init = function () {
 			for (let i = 0; i < props.tags.length; i++) {
 				let tag = {};
@@ -59,9 +59,11 @@ export default {
 				let a = Math.acos(k);
 				let b = a * Math.sqrt(props.tags.length * Math.PI);
 				tag.name = props.tags[i].name;
-				tag.color = props.tags[i].tagColor;
-				tag.x = centerX.value + props.options.radius * Math.sin(a) * Math.cos(b);
-				tag.y = centerY.value + props.options.radius * Math.sin(a) * Math.sin(b);
+				tag.color = props.tags[i].tagColor ? props.tags[i].tagColor : "#fff";
+				tag.x =
+					centerX.value + props.options.radius * Math.sin(a) * Math.cos(b);
+				tag.y =
+					centerY.value + props.options.radius * Math.sin(a) * Math.sin(b);
 				tag.z = props.options.radius * Math.cos(a);
 				data.allTags.push(tag);
 			}

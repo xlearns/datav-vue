@@ -78,7 +78,9 @@ export default {
 	top: 0;
 	left: 0;
 	z-index: 998;
-
+	.content {
+		height: 100%;
+	}
 	.openHeight {
 		height: 76% !important;
 	}
@@ -102,6 +104,7 @@ export default {
 		-o-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 		.popupClose {
+			z-index: 100;
 			transition: all 0.2s;
 			cursor: pointer;
 			position: absolute;

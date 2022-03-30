@@ -6090,7 +6090,7 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   )])) : createCommentVNode("v-if", true);
 }
 
-var css_248z$4 = ".filterbg[data-v-47db75aa] {\n  width: 100%;\n  height: 100%;\n  background: rgba(30, 182, 254, 0.5);\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 998;\n}\n.filterbg[data-v-47db75aa] .openHeight[data-v-47db75aa] {\n  height: 76% !important;\n}\n.filterbg[data-v-47db75aa] .openWidth[data-v-47db75aa] {\n  width: 82% !important;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] {\n  overflow: hidden;\n  transition: all 0.4s;\n  width: 3px;\n  height: 0;\n  background: #061f3e;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  z-index: 999;\n  border-radius: 8px;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa] {\n  transition: all 0.2s;\n  cursor: pointer;\n  position: absolute;\n  width: 32px;\n  height: 32px;\n  top: 15px;\n  right: 18px;\n  background-size: 100%;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa][data-v-47db75aa]:hover {\n  transform: rotateZ(360deg);\n}";
+var css_248z$4 = ".filterbg[data-v-47db75aa] {\n  width: 100%;\n  height: 100%;\n  background: rgba(30, 182, 254, 0.5);\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 998;\n}\n.filterbg[data-v-47db75aa] .content[data-v-47db75aa] {\n  height: 100%;\n}\n.filterbg[data-v-47db75aa] .openHeight[data-v-47db75aa] {\n  height: 76% !important;\n}\n.filterbg[data-v-47db75aa] .openWidth[data-v-47db75aa] {\n  width: 82% !important;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] {\n  overflow: hidden;\n  transition: all 0.4s;\n  width: 3px;\n  height: 0;\n  background: #061f3e;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  z-index: 999;\n  border-radius: 8px;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa] {\n  z-index: 100;\n  transition: all 0.2s;\n  cursor: pointer;\n  position: absolute;\n  width: 32px;\n  height: 32px;\n  top: 15px;\n  right: 18px;\n  background-size: 100%;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa][data-v-47db75aa]:hover {\n  transform: rotateZ(360deg);\n}";
 styleInject(css_248z$4);
 
 script$5.render = render$5;
@@ -6131,7 +6131,7 @@ var script$4 = {
 		});
 		const centerX = computed(() => props.options.width / 2);
 		const centerY = computed(() => props.options.height / 2);
-		
+
 		const init = function () {
 			for (let i = 0; i < props.tags.length; i++) {
 				let tag = {};
@@ -6139,9 +6139,11 @@ var script$4 = {
 				let a = Math.acos(k);
 				let b = a * Math.sqrt(props.tags.length * Math.PI);
 				tag.name = props.tags[i].name;
-				tag.color = props.tags[i].tagColor;
-				tag.x = centerX.value + props.options.radius * Math.sin(a) * Math.cos(b);
-				tag.y = centerY.value + props.options.radius * Math.sin(a) * Math.sin(b);
+				tag.color = props.tags[i].tagColor ? props.tags[i].tagColor : "#fff";
+				tag.x =
+					centerX.value + props.options.radius * Math.sin(a) * Math.cos(b);
+				tag.y =
+					centerY.value + props.options.radius * Math.sin(a) * Math.sin(b);
 				tag.z = props.options.radius * Math.cos(a);
 				data.allTags.push(tag);
 			}
