@@ -1,4 +1,4 @@
-import { ref, openBlock, createElementBlock, pushScopeId, popScopeId, createElementVNode, onMounted, nextTick, onUnmounted, renderSlot, createCommentVNode, normalizeStyle, createStaticVNode, computed, watch, reactive, toRefs, toDisplayString, Fragment, renderList, normalizeClass, resolveComponent, createVNode } from 'vue';
+import { ref, openBlock, createElementBlock, pushScopeId, popScopeId, createElementVNode, onMounted, nextTick, onUnmounted, renderSlot, createCommentVNode, normalizeStyle, createStaticVNode, computed, watch, reactive, toRefs, toDisplayString, Fragment, renderList, normalizeClass, resolveComponent, createVNode, isRef, unref } from 'vue';
 import Echarts from 'echarts';
 import { to, timeline } from 'gsap';
 
@@ -6636,6 +6636,250 @@ var EchartsData = {
   }
 };
 
+//interval 间隔
+//option 配置
+
+function useIntervalFn(cb) {
+  var interval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1000;
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  // 指定空对象默认值
+  var _options$immediate = options.immediate,
+      immediate = _options$immediate === void 0 ? true : _options$immediate,
+      _options$immediateCal = options.immediateCallback,
+      immediateCallback = _options$immediateCal === void 0 ? false : _options$immediateCal; // 定时器对象
+
+  var timer = null; // 控制是否暂停 false：暂停; true：继续
+
+  var isActive = ref(false); // 删除
+
+  function clean() {
+    if (!timer) return;
+    clearInterval(timer);
+    timer = null;
+  } // 暂停
+
+
+  function pause() {
+    isActive.value = false;
+    clean();
+  } // 恢复
+
+
+  function resume() {
+    if (interval < 0) return;
+    isActive.value = true; // 是否立马执行函数
+
+    if (immediateCallback) cb(); //确保只有一个定时器
+
+    clean();
+    timer = setInterval(cb, unref(interval));
+  } //如果传入interval的是ref类型
+
+
+  if (isRef(interval)) {
+    var stopWatch = watch(interval, function () {
+      if (immediate) resume();
+    });
+    onUnmounted(function () {
+      stopWatch();
+    });
+  } //立即执行
+
+
+  if (immediate) resume(); //出口
+
+  return {
+    isActive: isActive,
+    pause: pause,
+    resume: resume
+  };
+}
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function resolveNestedOptions(options) {
+  //不存在初始化
+  if (options === true) return {};
+  return options;
+}
+
+function useWebSocket(url) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  // 重连 retries：从连次数。delay：间隔。delay：onFailed：连接失败钩子。
+  // autoReconnect = {retries，delay ,onFailed}  
+  var onConnected = options.onConnected,
+      onDisconnected = options.onDisconnected,
+      onError = options.onError,
+      onMessage = options.onMessage,
+      _options$immediate = options.immediate,
+      immediate = _options$immediate === void 0 ? true : _options$immediate,
+      _options$autoClose = options.autoClose,
+      autoClose = _options$autoClose === void 0 ? true : _options$autoClose,
+      _options$protocols = options.protocols,
+      protocols = _options$protocols === void 0 ? [] : _options$protocols; //数据
+
+  var data = ref(null); //连接状态
+
+  var status = ref('CONNECTING'); //ws
+
+  var wsRef = ref(); // 心跳检测
+  var heartbeatResume; // 关闭ws
+
+  var explicitlyClosed = false; // 重连次数
+
+  var retried = 0; //存放buffer数据
+
+  var bufferedData = [];
+
+  var close = function close() {
+  };
+
+  var _sendBuffer = function _sendBuffer() {
+    // 只有在open的状态才可以发送 
+    // 发送没有绑定的数据
+    if (bufferedData.length && wsRef.value && status.value === 'OPEN') {
+      var _iterator = _createForOfIteratorHelper(bufferedData),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var buffer = _step.value;
+          wsRef.value.send(buffer);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      bufferedData = [];
+    }
+  };
+
+  var send = function send(data) {
+    var useBuffer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+    // 未绑定ws【open之前】调用send
+    if (!wsRef.value || status.value !== 'OPEN') {
+      if (useBuffer) bufferedData.push(data);
+      return false;
+    } //绑定了ws【open之后】调用send
+
+
+    _sendBuffer();
+
+    wsRef.value.send(data);
+    return true;
+  };
+
+  var _init = function _init() {
+    var ws = new WebSocket(url, protocols);
+    wsRef.value = ws;
+    status.value = 'CONNECTING';
+    explicitlyClosed = false;
+
+    ws.onopen = function () {
+      var _heartbeatResume;
+
+      status.value = 'OPEN'; // connect函数钩子
+
+      onConnected === null || onConnected === void 0 ? void 0 : onConnected(ws); // 恢复 心跳检测
+
+      (_heartbeatResume = heartbeatResume) === null || _heartbeatResume === void 0 ? void 0 : _heartbeatResume();
+
+      _sendBuffer();
+    };
+
+    ws.onmessage = function (e) {
+      data.value = e.data;
+      onMessage === null || onMessage === void 0 ? void 0 : onMessage(ws, e);
+    };
+
+    ws.onclose = function (ev) {
+      status.value = 'CLOSED';
+      wsRef.value = undefined;
+      onDisconnected === null || onDisconnected === void 0 ? void 0 : onDisconnected(ws, ev);
+
+      if (!explicitlyClosed && options.autoReconnect) {
+        var _resolveNestedOptions = resolveNestedOptions(options.autoReconnect),
+            _resolveNestedOptions2 = _resolveNestedOptions.retries,
+            retries = _resolveNestedOptions2 === void 0 ? -1 : _resolveNestedOptions2,
+            _resolveNestedOptions3 = _resolveNestedOptions.delay,
+            delay = _resolveNestedOptions3 === void 0 ? 1000 : _resolveNestedOptions3,
+            onFailed = _resolveNestedOptions.onFailed;
+
+        retried += 1;
+        if (typeof retries === 'number' && (retries < 0 || retried < retries)) setTimeout(_init, delay);else if (typeof retries === 'function' && retries()) setTimeout(_init, delay);else {
+          onFailed === null || onFailed === void 0 ? void 0 : onFailed();
+        }
+      }
+    };
+
+    ws.onerror = function (e) {
+      onError === null || onError === void 0 ? void 0 : onError(ws, e);
+    };
+  }; //是否开启心跳
+
+
+  if (options.heartbeat) {
+    var _resolveNestedOptions4 = resolveNestedOptions(options.heartbeat),
+        _resolveNestedOptions5 = _resolveNestedOptions4.message,
+        message = _resolveNestedOptions5 === void 0 ? 'ping' : _resolveNestedOptions5,
+        _resolveNestedOptions6 = _resolveNestedOptions4.interval,
+        interval = _resolveNestedOptions6 === void 0 ? 1000 : _resolveNestedOptions6;
+
+    var _useIntervalFn = useIntervalFn(function () {
+      return send(message, false);
+    }, interval, {
+      immediate: false
+    });
+        _useIntervalFn.pause;
+        var resume = _useIntervalFn.resume;
+    heartbeatResume = resume;
+  } //直接运行
+
+
+  if (immediate) _init(); //自动关闭
+
+  if (autoClose) {
+    window.addEventListener("beforeunload", function () {
+    });
+    onUnmounted(function () {
+    });
+  } // 重新打开ws 【确保只能运行一个ws】 
+
+
+  var open = function open() {
+    retried = 0;
+
+    _init();
+  };
+
+  return {
+    // 数据
+    data: data,
+    // 状态
+    status: status,
+    // 关闭函数
+    close: close,
+    // 发送函数
+    send: send,
+    // 打开函数
+    open: open,
+    // ws对象
+    ws: wsRef
+  };
+}
+
+function hook (Vue) {
+  Vue.provide("useIntervalFn", useIntervalFn);
+  Vue.provide("useWebSocket", useWebSocket);
+}
+
 var component = function component(Vue) {
   Vue.use(Test);
   Vue.use(ToolTip);
@@ -6656,6 +6900,7 @@ var component = function component(Vue) {
   Vue.use(Transform);
   Vue.use(Reverse);
   Vue.use(Notice);
+  Vue.use(hook);
   Vue.provide("EchartsData", EchartsData);
 };
 

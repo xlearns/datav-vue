@@ -18,6 +18,7 @@ import Transform from "./components/Transform/index";
 import Reverse from "./components/Reverse/index";
 import Notice from "./components/Notice/index";
 import { EchartsData } from "./components/Data/index";
+import hook from "./hooks/index";
 let component = function (Vue) {
   Vue.use(Test);
   Vue.use(ToolTip);
@@ -38,6 +39,7 @@ let component = function (Vue) {
   Vue.use(Transform);
   Vue.use(Reverse);
   Vue.use(Notice);
+  Vue.use(hook)
   Vue.provide("EchartsData", EchartsData);
 };
 export default component;
