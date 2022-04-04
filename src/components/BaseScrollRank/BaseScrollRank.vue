@@ -8,9 +8,15 @@
 			<div class="BaseScollRank-item-top">
 				<div class="BaseScollRank-item-top__rank">No.{{ item.ranking }}</div>
 				<div class="BaseScollRank-item-top__name" v-html="item.name"></div>
-				<div class="BaseScollRank-item-top__value"></div>
+				<div class="BaseScollRank-item-top__value">
+					{{ item.value ? item.value : "" }}
+				</div>
 			</div>
-			<div class="BaseScollRank-item-bottom"></div>
+			<div class="BaseScollRank-item-bottom">
+				<div class="inside-column">
+					<div class="shine" />
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
