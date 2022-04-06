@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+   
+    }
+    .flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box{
+      background-color: black;
+      transition: all 0.2s;
+      overflow: hidden;
+      width:100px;
+      color:red;
+      height:300px;
+    }
+    .circle{
+      margin:0 20px ;
+      height:100px;
+      background: red;
+    }
+   
+  </style>
+</head>
+<body>
+   <div id="app">
+     <button @click="click">open</button>
+     <div class="flex">
+      <div>
+        <v-reverse v-model="status">
+          <div class="box">
+            <h1>nihao</h1>
+            <div class="circle"></div>
+          </div>
+        </v-reverse>
+
+
+        <v-reverse v-model="status"  :transition="'all 1s'" :active="'rotateY(75deg)'" :transform-Origin="'0px 100%'">
+           <img src="https://img1.baidu.com/it/u=4223976578,532532028&fm=253&fmt=auto&app=138&f=JPEG?w=443&h=240" alt="">
+        </v-reverse>
+      </div>
+     </div>
+   </div>
+   <script>
+     function sleep(timer=3000){
+       return new Promise((resolve)=>{
+         setTimeout(resolve,timer)
+       })
+     }
+   </script>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+         let status = Vue.ref(false)
+         const click = async function(){
+          status.value = !status.value 
+         }
+         return {
+          click,
+          status
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>

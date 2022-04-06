@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+    }
+    .content{
+     display: flex;
+     height:100%;
+    }
+    .left{
+      width:300px;
+      background:red;
+    }
+    .right{
+      background:#333;
+      /* flex-basis:0%; */
+      flex-grow:1;
+      /* flex-shrink: 1; */
+    }
+  </style>
+</head>
+<body>
+   <div id="app">
+    <!-- <V-Full-Sreen >123</V-Full-Sreen> -->
+    <V-Full-Sreen>
+      <div class="content">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+    </V-Full-Sreen>
+   </div>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+         let options = {width:1920,height:969}
+         return {
+          options
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>

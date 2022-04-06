@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="https://lib.baomitu.com/vue/3.2.31/vue.global.js"></script>
+    <!-- 引入iconfont -->
+    <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+    <!-- 引入echarts -->
+    <script src="https://lib.baomitu.com/echarts/5.3.0/echarts.min.js"></script>
+
+    <!-- 引用组件库 -->
+    <script src="../dist/datav.umd.js"></script>
+    <style>
+      html,
+      body,
+      div {
+        padding: 0;
+        margin: 0;
+      }
+      #app {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        background-color: black;
+      }
+      .content {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+      .echartstest {
+        flex: 1;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="boo = !boo">test</button>
+      <div class="content">
+        <div class="echartstest">
+          <V-Echarts
+            :options="getOptionThree()"
+            open
+            :animation="{open:true,time:1500}"
+          ></V-Echarts>
+        </div>
+        <div class="echartstest">
+          <V-Echarts
+            :options="getOptionTwo()"
+            open
+            :animation="{open:true}"
+          ></V-Echarts>
+        </div>
+        <div class="echartstest">
+          <V-Echarts
+            :options="getOptionTwo()"
+            open
+            :animation="{open:true,time:1000}"
+          ></V-Echarts>
+        </div>
+        <div class="echartstest">
+          <V-Echarts
+            :options="getOption()"
+            open
+            :animation="{open:true,time:1000}"
+          ></V-Echarts>
+        </div>
+      </div>
+      <V-Model v-model="boo">
+        <div>hello word</div>
+      </V-Model>
+    </div>
+    <script>
+      function sleep(timer = 3000) {
+        return new Promise((resolve) => {
+          setTimeout(resolve, timer);
+        });
+      }
+    </script>
+    <script>
+      let { ref } = Vue;
+
+      let app = Vue.createApp({
+        setup() {
+          let EchartsData = Vue.inject("EchartsData");
+          let boo = ref(false);
+          const getOptionTwo = function () {
+            return EchartsData["pie"];
+          };
+          const getOption = function () {
+            return EchartsData["bar"];
+          };
+          const getOptionThree = function () {
+            return EchartsData["ring"];
+          };
+          return {
+            getOptionThree,
+            getOption,
+            boo,
+            getOptionTwo,
+          };
+        },
+      });
+      app.use(datav);
+      app.mount("#app");
+    </script>
+  </body>
+</html>

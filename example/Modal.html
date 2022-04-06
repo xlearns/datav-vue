@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+      background: black;
+    }
+    .box{
+      display: flex;
+      color:#fff
+    }
+  </style>
+</head>
+<body>
+   <div id="app">
+     <div class='box' >
+      hello word
+        <button @click='openFN'>hello word</button>
+        <V-Model v-model="open">
+          <div style="padding:100px">hello word</div>
+        </V-Model>
+      </div>
+   </div>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+         let state = Vue.reactive({
+          open:false
+         })
+         Vue.onMounted(()=>{
+           setInterval(()=>{
+            //  state.open = !state.open
+           },2000)
+         })
+         const openFN = function(){
+           state.open  = true
+         }
+         return {
+          openFN,
+           ...Vue.toRefs(state)
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>

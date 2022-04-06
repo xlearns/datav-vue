@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引入echarts -->
+  <script src="https://lib.baomitu.com/echarts/5.3.0/echarts.min.js"></script>
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    #app{
+      display: flex;
+      justify-content: space-around;
+      height:100vh;
+      background-color: black;
+    }
+      .box{
+         width:30%;
+        height:500px;
+      }
+  </style>
+</head>
+<body>
+   <div id="app">
+      <div class="box">
+        <V-Echarts :options="getOption()" ref='dom' :type="initOptions" open></V-Echarts>
+      </div>
+
+      <div class="box">
+        <V-Echarts :options="getOptionTwo()" ref='domTwo' :type="initOptions" open></V-Echarts>
+      </div>
+      <div class="box">
+        <V-Echarts :options="getOptionThree()" ref='domThree' :type="initOptions" open></V-Echarts>
+      </div>
+   </div>
+   <script>
+     let app = Vue.createApp({
+       setup(){
+         const initOptions = {renderer: "svg"}
+         const dom  = Vue.ref()
+         const domTwo = Vue.ref()
+         const domThree = Vue.ref()
+
+         const pieCharts = Vue.ref()
+         const pieDataLen = Vue.ref()
+
+         const barCharts = Vue.ref()
+         const barDataLen = Vue.ref()
+
+         const ringCharts = Vue.ref()
+         const ringDataLen = Vue.ref()
+
+         let dataIndex = -1;
+         let dataIndexTwo = -1
+         let dataIndexThree = -1
+         const getOptionThree = function(){
+          return {
+				textStyle: {
+					fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif',
+				},
+				title: {
+					text: "Traffic Sources",
+					left: "center",
+				},
+				tooltip: {
+					trigger: "item",
+					formatter: "{a} <br/>{b} : {c} ({d}%)",
+				},
+				legend: {
+					show: true,
+					orient: "vertical",
+					left: "left",
+					data: [
+						"Direct",
+						"Email",
+						"Ad Networks",
+						"Video Ads",
+						"Search Engines",
+					],
+				},
+				series: [
+					{
+						name: "Traffic Sources",
+						type: "pie",
+						radius: ["55%",'70%'],
+						center: ["50%", "60%"],
+						data: [
+							{ value: 335, name: "Direct" },
+							{ value: 310, name: "Email" },
+							{ value: 234, name: "Ad Networks" },
+							{ value: 135, name: "Video Ads" },
+							{ value: 1548, name: "Search Engines" },
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: "rgba(0, 0, 0, 0.5)",
+							},
+						},
+					},
+				],
+			}
+         }
+         const getOptionTwo = function(){
+            return {
+				textStyle: {
+					fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif',
+				},
+				title: {
+					text: "Traffic Sources",
+					left: "center",
+				},
+				tooltip: {
+					trigger: "item",
+					formatter: "{a} <br/>{b} : {c} ({d}%)",
+				},
+				legend: {
+					show: true,
+					orient: "vertical",
+					left: "left",
+					data: [
+						"Direct",
+						"Email",
+						"Ad Networks",
+						"Video Ads",
+						"Search Engines",
+					],
+				},
+				series: [
+					{
+						name: "Traffic Sources",
+						type: "pie",
+						radius: "55%",
+						center: ["50%", "60%"],
+						data: [
+							{ value: 335, name: "Direct" },
+							{ value: 310, name: "Email" },
+							{ value: 234, name: "Ad Networks" },
+							{ value: 135, name: "Video Ads" },
+							{ value: 1548, name: "Search Engines" },
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: "rgba(0, 0, 0, 0.5)",
+							},
+						},
+					},
+				],
+			}
+         }
+         const getOption = function(){
+            return {
+              title: {
+                text: "第一个 ECharts 实例",
+              },
+              tooltip: {},
+              legend: {
+                data: ["销量"],
+              },
+              xAxis: {
+                data: ["衬衫1", "羊毛衫2", "雪纺衫3", "裤子4", "高跟鞋5", "袜子1"],
+              },
+              yAxis: {},
+              series: [
+                {
+                  name: "销量",
+                  type: "bar",
+                  data: [500, 2000, 3600, 1000, 1000, 2000],
+                  emphasis: {
+                  itemStyle: {
+                    shadowBlur: 20,
+                    shadowOffsetX: 0,
+                    shadowColor: "rgba(255, 255, 255,1)",
+                  },
+					    	},
+                },
+              ],
+            }
+         }
+         
+         const aniBar = function(timer=3000){
+           setInterval(()=>{
+            barCharts.value.dispatchAction({
+              type: "downplay",
+              seriesIndex: 0,
+              dataIndex:dataIndexTwo,
+            });
+            dataIndexTwo = (dataIndexTwo + 1) % barDataLen.value;
+            barCharts.value.dispatchAction({
+              type: "highlight",
+              seriesIndex: 0,
+              dataIndex:dataIndexTwo,
+            });
+            barCharts.value.dispatchAction({
+              type: "showTip",
+              seriesIndex: 0,
+              dataIndex:dataIndexTwo,
+            });
+           },timer)
+         }
+         const aniPie = function(timer=3000){
+           setInterval(()=>{
+            pieCharts.value.dispatchAction({
+              type: "downplay",
+              seriesIndex: 0,
+              dataIndex,
+            });
+            dataIndex = (dataIndex + 1) % pieDataLen.value;
+            pieCharts.value.dispatchAction({
+              type: "highlight",
+              seriesIndex: 0,
+              dataIndex,
+            });
+            pieCharts.value.dispatchAction({
+              type: "showTip",
+              seriesIndex: 0,
+              dataIndex,
+            });
+           },timer)
+         }
+         const aniRing = function(timer=3000){
+           setInterval(()=>{
+            ringCharts.value.dispatchAction({
+              type: "downplay",
+              seriesIndex: 0,
+              dataIndex:dataIndexThree,
+            });
+            dataIndexThree = (dataIndexThree + 1) % ringDataLen.value;
+            ringCharts.value.dispatchAction({
+              type: "highlight",
+              seriesIndex: 0,
+              dataIndex:dataIndexThree,
+            });
+            ringCharts.value.dispatchAction({
+              type: "showTip",
+              seriesIndex: 0,
+              dataIndex:dataIndexThree,
+            });
+           },timer)
+         }
+         const init = function(){
+           aniPie(1000)
+           aniBar(3000)
+           aniRing(1000)
+         }
+         Vue.onMounted(()=>{
+          pieCharts.value = dom.value.charts;
+			    pieDataLen.value = dom.value.options.series[0].data.length;
+
+          barCharts.value = domTwo.value.charts;
+			    barDataLen.value = domTwo.value.options.series[0].data.length;
+
+          ringCharts.value = domThree.value.charts;
+			    ringDataLen.value = domThree.value.options.series[0].data.length;
+          init()
+         })
+         return {
+          getOptionThree,
+          getOptionTwo,
+          getOption,
+          initOptions,
+          domTwo,
+          domThree,
+          dom
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>

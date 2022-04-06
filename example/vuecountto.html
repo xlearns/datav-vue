@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入vue -->
+  <script src='https://lib.baomitu.com/vue/3.2.31/vue.global.js'></script>
+  <!-- 引用组件库 -->
+  <script src="../dist/datav.umd.js"></script>
+  <!-- 引入iconfont -->
+  <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
+  <style>
+    html,body,div{
+     padding: 0;
+     margin:0
+    }
+    #app{
+      padding:0;
+      margin:0;
+      height:100vh;
+    }l
+    .box{
+      background: black;
+    }
+  </style>
+</head>
+<body>
+   <div id="app">
+    <Vue-Count-To :startVal="0" :endVal="2022" :duration="20000"  ref="dom" @callback="callback"></Vue-Count-To>
+    </div>
+   <script>
+     let {onMounted,ref,reactive} = Vue
+     let app = Vue.createApp({
+       setup(){
+         let dom = ref()
+         let state = reactive({
+             trigger:true
+         })
+         const callback = function(){
+           console.log('ok')
+         }
+         onMounted(()=>{
+           let _dom = dom.value
+           window.onclick=function(){
+             if(state.trigger){
+              _dom.pause()
+             }else{
+              _dom.resume()
+             }
+             state.trigger = !state.trigger
+           }
+         })
+         return {
+          callback,
+          dom
+         }
+       }
+     })
+     app.use(datav)
+     app.mount('#app')
+   </script>
+</body>
+</html>
