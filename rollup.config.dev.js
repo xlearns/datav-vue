@@ -1,18 +1,17 @@
-// 开发环境
-const path = require('path')
-const resolve = require("rollup-plugin-node-resolve")
-const commojs = require('rollup-plugin-commonjs')
-const babel = require('rollup-plugin-babel')
-const json = require('rollup-plugin-json')
-const vue = require('rollup-plugin-vue')
-const postcss = require('rollup-plugin-postcss')
+import commonjs from "@rollup/plugin-commonjs";
+import resolve from '@rollup/plugin-node-resolve';
+import postcss from "rollup-plugin-postcss";
+import {terser} from "rollup-plugin-terser";
+import json from '@rollup/plugin-json';
+import vue from 'rollup-plugin-vue'
+import babel from 'rollup-plugin-babel';
+import path from 'path';
 
 const pathFn = function(url){
   return path.resolve(__dirname,url)
 }
 
-// commonjs协议
-module.exports = {
+export default {
   input:pathFn('./src/index.js'),
   output:[
     {
@@ -40,7 +39,7 @@ module.exports = {
     resolve(
       { preferBuiltins: true,browser: true}
     ),
-    commojs(),
+    commonjs(),
     babel({
       // 不进行编译
       exclude:"node_modules/**",
