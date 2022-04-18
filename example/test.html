@@ -51,15 +51,17 @@
         </div>
         <div class="echartstest">
           <V-Echarts
-            :options="getOptionTwo()"
+            :options="pieData"
             open
+            :is-loading="isloading"
             :animation="{open:true}"
           ></V-Echarts>
         </div>
         <div class="echartstest">
           <V-Echarts
-            :options="getOptionTwo()"
+            :options="pieData"
             open
+            :is-loading="isloading"
             :animation="{open:true,time:1000}"
           ></V-Echarts>
         </div>
@@ -83,14 +85,23 @@
       }
     </script>
     <script>
-      let { ref } = Vue;
+
+      let { ref,onMounted } = Vue;
 
       let app = Vue.createApp({
         setup() {
           let EchartsData = Vue.inject("EchartsData");
           let boo = ref(false);
+          let pieData = ref({})
+          let config = {}
+          let isloading = ref(false);
           const getOptionTwo = function () {
-            return EchartsData["pie"];
+              isloading.value = true;
+              setTimeout(()=>{
+                isloading.value = false
+                pieData.value = EchartsData["pie"]
+              },2000)
+            // return EchartsData["pie"];
           };
           const getOption = function () {
             return EchartsData["bar"];
@@ -98,7 +109,14 @@
           const getOptionThree = function () {
             return EchartsData["ring"];
           };
+         
+          onMounted(()=>{
+            getOptionTwo()
+          })
           return {
+            config,
+            isloading,
+            pieData,
             getOptionThree,
             getOption,
             boo,
