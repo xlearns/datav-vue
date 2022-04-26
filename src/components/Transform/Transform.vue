@@ -14,7 +14,7 @@ function config(one, two) {
 import { onMounted, ref, watch } from "vue";
 import { to, from, timeline } from "gsap";
 export default {
-	name: "VTransForm",
+	name: "DTransForm",
 	props: {
 		modelValue: {
 			type: Boolean,

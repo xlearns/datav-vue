@@ -1,8 +1,10 @@
 import compoent from './Switch.vue'
 
-export const  DSwitch = {
+export const  DSwitch = compoent
+
+const install = {
   install(Vue) {
     Vue.component(compoent.name,compoent)
   }
 }
-export default DSwitch
+export default  install

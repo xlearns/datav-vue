@@ -1,9 +1,12 @@
 import compoent from './VueCountTo.vue'
 
 
-export const  DVueCountTo = {
+export const  DVueCountTo = compoent
+
+const install = {
   install(Vue) {
     Vue.component(compoent.name,compoent)
   }
 }
-export default DVueCountTo
+export default  install
+

@@ -1,9 +1,11 @@
-import Test from './BaseScrollRank.vue'
+import compoent from './BaseScrollRank.vue'
 
 
-export const  DBaseScrollRank  = {
+export const  DBaseScrollRank  =  compoent
+
+const install = {
   install(Vue) {
     Vue.component(compoent.name,compoent)
   }
 }
-export default DBaseScrollRank
+export default  install

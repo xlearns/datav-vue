@@ -10,7 +10,7 @@
 import { ref, onMounted, nextTick, onUnmounted } from "vue";
 import { debounce } from "../../utils";
 export default {
-	name: "VFullSreen",
+	name: "DFullScreen",
 	props: {
 		options: Object,
 	},

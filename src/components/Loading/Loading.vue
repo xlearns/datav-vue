@@ -71,7 +71,7 @@
 import { computed } from "vue";
 
 export default {
-	name: "VLoading",
+	name: "DLoading",
 	props: {
 		width: {
 			type: [Number, String],

@@ -19,7 +19,7 @@ import { sleep } from "./../../utils";
 import close from "./close.vue";
 import { ref, onMounted, onUnmounted, watch } from "vue";
 export default {
-	name: "VModel",
+	name: "DModel",
 	components: {
 		close,
 	},

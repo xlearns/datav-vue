@@ -13,7 +13,7 @@
 <script>
 // 配合iconfont symbol
 export default {
-	name: "VIcon",
+	name: "DIcon",
 	props: {
 		name: String,
 		style: Object,

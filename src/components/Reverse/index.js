@@ -1,8 +1,10 @@
 import compoent from './compoent.vue'
 
-export const  DReverse = {
+export const  DReverse = compoent
+
+const install = {
   install(Vue) {
     Vue.component(compoent.name,compoent)
   }
 }
-export default DReverse
+export default  install

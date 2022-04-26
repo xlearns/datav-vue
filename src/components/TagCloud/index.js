@@ -1,7 +1,9 @@
 import compoent from './TagCloud.vue'
-export const  DTagCloud = {
+export const  DTagCloud = compoent
+
+const install = {
   install(Vue) {
     Vue.component(compoent.name,compoent)
   }
 }
-export default DTagCloud
+export default  install

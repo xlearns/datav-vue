@@ -1,4 +1,12 @@
-import Test from './Test.vue'
-export default function(Vue) {
-  Vue.component(Test.name, Test)
+import compoent from './Test.vue'
+
+
+
+export const  DTest  = compoent
+
+const install = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default  install

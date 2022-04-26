@@ -22,7 +22,7 @@
 <script lang="ts">
 import { reactive, toRefs, ref, computed, onMounted } from "vue";
 export default {
-	name: "VTagCloud",
+	name: "DTagCloud",
 	props: {
 		tags: {
 			type: Array,

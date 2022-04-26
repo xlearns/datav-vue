@@ -106,7 +106,7 @@ const defaultConfig = {
 };
 
 export default {
-	name: "BaseScrollList",
+	name: "DBaseScrollList",
 	props: {
 		config: {
 			type: Object,

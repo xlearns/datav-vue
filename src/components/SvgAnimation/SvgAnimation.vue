@@ -230,7 +230,7 @@ import { onMounted } from "vue";
 
 // 配合iconfont symbol
 export default {
-	name: "SvgAnimation",
+	name: "DSvgAnimation",
 	props: {
 		name: String,
 		style: Object,

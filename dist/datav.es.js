@@ -40,7 +40,7 @@ function formatNumber(num, decimals, decimal, separator, prefix, suffix) {
 }
 
 var script$l = {
-	name: "VFullSreen",
+	name: "DFullScreen",
 	props: {
 		options: Object,
 	},
@@ -187,14 +187,15 @@ script$l.render = render$l;
 script$l.__scopeId = "data-v-8b5216c8";
 script$l.__file = "src/components/FullScreen/FullSreen.vue";
 
-var DFullSreen = {
+var DFullScreen = script$l;
+var install$i = {
   install: function install(Vue) {
     Vue.component(script$l.name, script$l);
   }
 };
 
 var script$k = {
-	name: "VLoading",
+	name: "DLoading",
 	props: {
 		width: {
 			type: [Number, String],
@@ -322,7 +323,8 @@ script$k.render = render$k;
 script$k.__scopeId = "data-v-416d18c9";
 script$k.__file = "src/components/Loading/Loading.vue";
 
-var DLoading = {
+var DLoading = script$k;
+var install$h = {
   install: function install(Vue) {
     Vue.component(script$k.name, script$k);
   }
@@ -4047,7 +4049,7 @@ var defaultConfig$1 = {
 
 };
 var script$j = {
-  name: "BaseScrollList",
+  name: "DBaseScrollList",
   props: {
     config: {
       type: Object,
@@ -4432,7 +4434,8 @@ script$j.render = render$j;
 script$j.__scopeId = "data-v-69eed30f";
 script$j.__file = "src/components/BaseScrollList/BaseScrollList.vue";
 
-var DBaseScrollList = {
+var DBaseScrollList = script$j;
+var install$g = {
   install: function install(Vue) {
     Vue.component(script$j.name, script$j);
   }
@@ -4513,7 +4516,7 @@ function v4(options, buf, offset) {
 }
 
 var script$i = {
-  name: "VFlyBox",
+  name: "DFlyBox",
   props: {
     duration: {
       type: [Number, String],
@@ -4943,7 +4946,8 @@ script$g.render = render$g;
 script$g.__scopeId = "data-v-3b192cab";
 script$g.__file = "src/components/Border/three.vue";
 
-var DFlyBox = {
+var DFlyBox = script$i;
+var install$f = {
   install: function install(Vue) {
     Vue.component(script$i.name, script$i);
     Vue.component(script$h.name, script$h);
@@ -4952,7 +4956,7 @@ var DFlyBox = {
 };
 
 var script$f = {
-	name: "VButton",
+	name: "DButton",
 	setup() {
 		return {};
 	},
@@ -4985,9 +4989,12 @@ script$f.render = render$f;
 script$f.__scopeId = "data-v-4439b54f";
 script$f.__file = "src/components/Button/Button.vue";
 
-function BUtton (Vue) {
-  Vue.component(script$f.name, script$f);
-}
+var DButton = script$f;
+var install$e = {
+  install: function install(Vue) {
+    Vue.component(script$f.name, script$f);
+  }
+};
 
 var EchartsData = {
   bar: {
@@ -5115,7 +5122,7 @@ var EchartsData = {
 
 // 配合iconfont symbol
 var script$e = {
-  name: "VIcon",
+  name: "DIcon",
   props: {
     name: String,
     style: Object,
@@ -5160,7 +5167,8 @@ styleInject(css_248z$9);
 script$e.render = render$e;
 script$e.__file = "src/components/Icon/Icon.vue";
 
-var DIcon = {
+var DIcon = script$e;
+var install$d = {
   install: function install(Vue) {
     Vue.component(script$e.name, script$e);
   }
@@ -5214,7 +5222,7 @@ script$d.render = render$d;
 script$d.__file = "src/components/Modal/close.vue";
 
 var script$c = {
-	name: "VModel",
+	name: "DModel",
 	components: {
 		close: script$d,
 	},
@@ -5296,7 +5304,8 @@ script$c.render = render$c;
 script$c.__scopeId = "data-v-47db75aa";
 script$c.__file = "src/components/Modal/Modal.vue";
 
-var DModal = {
+var DModal = script$c;
+var install$c = {
   install: function install(Vue) {
     Vue.component(script$c.name, script$c);
   }
@@ -5312,14 +5321,15 @@ const script$b = {};
 script$b.render = render$b;
 script$b.__file = "src/components/Notice/NoticeList.vue";
 
-var DNoticeList = {
+var DNoticeList = script$b;
+var install$b = {
   install: function install(Vue) {
     Vue.component(script$b.name, script$b);
   }
 };
 
 var script$a = {
-  name: "vReverse",
+  name: "DReverse",
   props: {
     modelValue: {
       type: Boolean
@@ -5375,14 +5385,15 @@ script$a.render = render$a;
 script$a.__scopeId = "data-v-681fe668";
 script$a.__file = "src/components/Reverse/compoent.vue";
 
-var DReverse = {
+var DReverse = script$a;
+var install$a = {
   install: function install(Vue) {
     Vue.component(script$a.name, script$a);
   }
 };
 
 var script$9 = {
-  name: "SvgAnimation",
+  name: "DSvgAnimation",
   props: {
     name: String,
     style: Object,
@@ -5468,14 +5479,15 @@ script$9.render = render$9;
 script$9.__scopeId = "data-v-5a151e4f";
 script$9.__file = "src/components/SvgAnimation/SvgAnimation.vue";
 
-var DSvgAnimation = {
+var DSvgAnimation = script$9;
+var install$9 = {
   install: function install(Vue) {
     Vue.component(script$9.name, script$9);
   }
 };
 
 var script$8 = {
-	name: "VSwitch",
+	name: "DSwitch",
 	props: {
 		modelValue: {
 			default: true,
@@ -5606,14 +5618,15 @@ script$8.render = render$8;
 script$8.__scopeId = "data-v-0051a1e2";
 script$8.__file = "src/components/Switch/Switch.vue";
 
-var DSwitch = {
+var DSwitch = script$8;
+var install$8 = {
   install: function install(Vue) {
     Vue.component(script$8.name, script$8);
   }
 };
 
 var script$7 = {
-	name: "VTagCloud",
+	name: "DTagCloud",
 	props: {
 		tags: {
 			type: Array,
@@ -5746,14 +5759,15 @@ script$7.render = render$7;
 script$7.__scopeId = "data-v-b4886fa2";
 script$7.__file = "src/components/TagCloud/TagCloud.vue";
 
-var DTagCloud = {
+var DTagCloud = script$7;
+var install$7 = {
   install: function install(Vue) {
     Vue.component(script$7.name, script$7);
   }
 };
 
 var script$6 = {
-	name: "VToolTip",
+	name: "DToolTip",
 	props: {
 		content: {
 			type: String,
@@ -5866,7 +5880,8 @@ script$6.render = render$6;
 script$6.__scopeId = "data-v-61e09817";
 script$6.__file = "src/components/ToolTip/ToolTip.vue";
 
-var DToolTip = {
+var DToolTip = script$6;
+var install$6 = {
   install: function install(Vue) {
     Vue.component(script$6.name, script$6);
   }
@@ -5876,7 +5891,7 @@ function config(one, two) {
 	return Object.assign(one, two);
 }
 var script$5 = {
-	name: "VTransForm",
+	name: "DTransForm",
 	props: {
 		modelValue: {
 			type: Boolean,
@@ -5948,14 +5963,15 @@ script$5.render = render$5;
 script$5.__scopeId = "data-v-7f8b5de9";
 script$5.__file = "src/components/Transform/Transform.vue";
 
-var DTransform = {
+var DTransform = script$5;
+var install$5 = {
   install: function install(Vue) {
     Vue.component(script$5.name, script$5);
   }
 };
 
 var script$4 = {
-  name: "TransformCategory",
+  name: "DTransformCategory",
   props: {
     data: Array,
     color: {
@@ -6067,7 +6083,8 @@ script$4.render = render$4;
 script$4.__scopeId = "data-v-0ce021a5";
 script$4.__file = "src/components/TransformCategory/TransformCategory.vue";
 
-var DTransformCategory = {
+var DTransformCategory = script$4;
+var install$4 = {
   install: function install(Vue) {
     Vue.component(script$4.name, script$4);
   }
@@ -6119,7 +6136,7 @@ if (isServer) {
 }
 
 var script$3 = {
-	name: "VueCountTo",
+	name: "DVueCountTo",
 	props: {
 		startVal: {
 			type: Number,
@@ -6326,14 +6343,15 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
 script$3.render = render$3;
 script$3.__file = "src/components/VueCountTo/VueCountTo.vue";
 
-var DVueCountTo = {
+var DVueCountTo = script$3;
+var install$3 = {
   install: function install(Vue) {
     Vue.component(script$3.name, script$3);
   }
 };
 
 var script$2 = {
-  name: "VEcharts",
+  name: "DVueEcharts",
   props: {
     options: Object,
     // 主题
@@ -6463,14 +6481,15 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
 script$2.render = render$2;
 script$2.__file = "src/components/VueEcharts/VueEcharts.vue";
 
-var DVueEcharts = {
+var DVueEcharts = script$2;
+var install$2 = {
   install: function install(Vue) {
     Vue.component(script$2.name, script$2);
   }
 };
 
 var script$1 = {
-  name: "ComTest",
+  name: "DTest",
   setup: function setup() {
     var a = ref("test");
     return {
@@ -6523,9 +6542,11 @@ script$1.render = render$1;
 script$1.__scopeId = "data-v-7cc4288f";
 script$1.__file = "src/components/Test/Test.vue";
 
-function Test (Vue) {
-  Vue.component(script$1.name, script$1);
-}
+var install$1 = {
+  install: function install(Vue) {
+    Vue.component(script$1.name, script$1);
+  }
+};
 
 var request = function request(_ref) {
   var url = _ref.url,
@@ -6913,27 +6934,27 @@ function hook (Vue) {
 }
 
 var install = function install(Vue) {
-  Vue.use(Test);
-  Vue.use(DToolTip);
-  Vue.use(DFullSreen);
-  Vue.use(DIcon);
-  Vue.use(DSvgAnimation);
-  Vue.use(DLoading);
-  Vue.use(DFlyBox);
-  Vue.use(DVueEcharts);
-  Vue.use(DVueCountTo);
-  Vue.use(DBaseScrollList);
-  Vue.use(DTransformCategory);
+  Vue.use(install$1);
+  Vue.use(install$6);
+  Vue.use(install$i);
+  Vue.use(install$d);
+  Vue.use(install$9);
+  Vue.use(install$h);
+  Vue.use(install$f);
+  Vue.use(install$2);
+  Vue.use(install$3);
+  Vue.use(install$g);
+  Vue.use(install$4);
   Vue.use(Upload);
-  Vue.use(BUtton);
-  Vue.use(DSwitch);
-  Vue.use(DModal);
-  Vue.use(DTagCloud);
-  Vue.use(DTransform);
-  Vue.use(DReverse);
-  Vue.use(DNoticeList);
+  Vue.use(install$e);
+  Vue.use(install$8);
+  Vue.use(install$c);
+  Vue.use(install$7);
+  Vue.use(install$5);
+  Vue.use(install$a);
+  Vue.use(install$b);
   Vue.use(hook);
   Vue.provide("EchartsData", EchartsData);
 };
 
-export { DBaseScrollList, DFlyBox, DFullSreen, DIcon, DLoading, DModal, DNoticeList, DReverse, DSvgAnimation, DSwitch, DTagCloud, DToolTip, DTransform, DTransformCategory, DVueCountTo, DVueEcharts, EchartsData, install };
+export { DBaseScrollList, DButton, DFlyBox, DFullScreen, DIcon, DLoading, DModal, DNoticeList, DReverse, DSvgAnimation, DSwitch, DTagCloud, DToolTip, DTransform, DTransformCategory, DVueCountTo, DVueEcharts, EchartsData, install };

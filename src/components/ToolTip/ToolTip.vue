@@ -20,7 +20,7 @@
 <script lang="ts">
 import { ref, watch, nextTick } from "vue";
 export default {
-	name: "VToolTip",
+	name: "DToolTip",
 	props: {
 		content: {
 			type: String,

@@ -7,7 +7,7 @@
 
 <script lang="ts">
 export default {
-	name: "VButton",
+	name: "DButton",
 	setup() {
 		return {};
 	},

@@ -26,7 +26,7 @@
 <script lang="ts">
 import { computed } from "vue";
 export default {
-	name: "VSwitch",
+	name: "DSwitch",
 	props: {
 		modelValue: {
 			default: true,

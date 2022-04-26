@@ -14,7 +14,7 @@ import {
 import { formatNumber } from "./../../utils/index.js";
 
 export default {
-	name: "VueCountTo",
+	name: "DVueCountTo",
 	props: {
 		startVal: {
 			type: Number,

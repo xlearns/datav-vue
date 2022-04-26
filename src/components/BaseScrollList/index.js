@@ -1,9 +1,10 @@
 import compoent from './BaseScrollList.vue'
 
-export const  DBaseScrollList  = {
+export const  DBaseScrollList  = compoent
+
+const install = {
   install(Vue) {
- 
     Vue.component(compoent.name,compoent)
   }
 }
-export default DBaseScrollList
+export default  install

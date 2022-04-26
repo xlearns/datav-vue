@@ -24,7 +24,7 @@
 <script>
 import { ref } from "vue";
 export default {
-	name: "ComTest",
+	name: "DTest",
 	setup() {
 		let a = ref("test");
 		return {

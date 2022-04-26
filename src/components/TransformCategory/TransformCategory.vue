@@ -31,7 +31,7 @@
 <script>
 import { ref, onMounted, onUnmounted } from "vue";
 export default {
-	name: "TransformCategory",
+	name: "DTransformCategory",
 	props: {
 		data: Array,
 		color: {

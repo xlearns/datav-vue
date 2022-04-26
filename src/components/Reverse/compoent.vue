@@ -16,7 +16,7 @@
 <script>
 import { ref, watch } from "vue";
 export default {
-	name: "vReverse",
+	name: "DReverse",
 	props: {
 		modelValue: {
 			type: Boolean,
