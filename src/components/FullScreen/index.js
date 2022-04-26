@@ -1,5 +1,8 @@
 import compoent from './FullSreen.vue'
 
-export default function(Vue){
-  Vue.component(compoent.name,compoent)
+export const  DFullSreen  = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DFullSreen

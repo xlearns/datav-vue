@@ -1,22 +1,3 @@
-export * from './components/FullScreen/index';
-export * from './components/Loading/index';
-export * from './components/BaseScrollList/index';
-export * from './components/Border/index';
-export * from './components/Button/index';
-export * from './components/Data/index';
-export * from './components/Icon/index';
-export * from './components/Modal/index';
-export * from './components/Notice/index';
-export * from './components/NoticeBar/index';
-export * from './components/Reverse/index';
-export * from './components/SvgAnimation/index';
-export * from './components/Switch/index';
-export * from './components/TagCloud/index';
-export * from './components/ToolTip/index';
-export * from './components/Transform/index';
-export * from './components/TransformCategory/index';
-export * from './components/VueCountTo/index';
-export * from './components/VueEcharts/index';
 import Test from "./components/Test/index";
 import FullSreen from "./components/FullScreen/index";
 import Icon from "./components/Icon/index";
@@ -39,7 +20,8 @@ import Notice from "./components/Notice/index";
 import { EchartsData } from "./components/Data/index";
 import hook from "./hooks/index";
 
-export const install = function(Vue){
+// 全局安装
+let component = function (Vue) {
   Vue.use(Test);
   Vue.use(ToolTip);
   Vue.use(FullSreen);
@@ -61,4 +43,25 @@ export const install = function(Vue){
   Vue.use(Notice);
   Vue.use(hook)
   Vue.provide("EchartsData", EchartsData);
-}
+};
+export const DToolTip = ToolTip;
+export const DTest = Test
+export const DBorder = Border
+export const DLoading = Loading
+export const DSvgAnimation = SvgAnimation
+export const DIcon = Icon
+export const DFullSreen = FullSreen
+export const DVueCountTo = VueCountTo;
+export const DBaseScrollList = BaseScrollList;
+export const DTransformCategory = TransformCategory;
+export const DButton = BUtton;
+export const DSwitch = Switch;
+export const DTagCloud = TagCloud;
+export const DModal = Modal;
+export const Dhook = hook;
+export const DEchartsData = EchartsData;
+export const DNotice  = Notice;
+export const DReverse = Reverse;
+export const DTransform = Transform;
+export const DVueEcharts  = VueEcharts;
+export default component;

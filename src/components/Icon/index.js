@@ -1,5 +1,8 @@
 import compoent from './Icon.vue'
 
-export default function(Vue){
-  Vue.component(compoent.name,compoent)
+export const  DIcon  = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DIcon

@@ -1,4 +1,8 @@
-import Test from './Modal.vue'
-export default function(Vue) {
-  Vue.component(Test.name, Test)
+import compoent from './Modal.vue'
+
+export const  DModal  = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DModal

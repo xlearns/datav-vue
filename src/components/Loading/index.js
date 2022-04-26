@@ -1,5 +1,8 @@
 import compoent from './Loading.vue'
 
-export default function(Vue){
-  Vue.component(compoent.name,compoent)
+export const  DLoading  = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DLoading

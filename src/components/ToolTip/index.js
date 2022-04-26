@@ -1,4 +1,9 @@
-import Test from './ToolTip.vue'
-export default function(Vue) {
-  Vue.component(Test.name, Test)
+import compoent from './ToolTip.vue'
+
+
+export const  DToolTip = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DToolTip

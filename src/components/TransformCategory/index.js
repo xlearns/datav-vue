@@ -1,4 +1,8 @@
-import Test from './TransformCategory.vue'
-export default function(Vue) {
-  Vue.component(Test.name, Test)
+import compoent from './TransformCategory.vue'
+
+export const  DTransformCategory = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DTransformCategory

@@ -40,42 +40,9 @@
   </head>
   <body>
     <div id="app">
-      <button @click="boo = !boo">test</button>
-      <div class="content">
-        <div class="echartstest">
-          <V-Echarts
-            :options="getOptionThree()"
-            open
-            :animation="{open:true,time:1500}"
-          ></V-Echarts>
-        </div>
-        <div class="echartstest">
-          <V-Echarts
-            :options="pieData"
-            open
-            :is-loading="isloading"
-            :animation="{open:true}"
-          ></V-Echarts>
-        </div>
-        <div class="echartstest">
-          <V-Echarts
-            :options="pieData"
-            open
-            :is-loading="isloading"
-            :animation="{open:true,time:1000}"
-          ></V-Echarts>
-        </div>
-        <div class="echartstest">
-          <V-Echarts
-            :options="getOption()"
-            open
-            :animation="{open:true,time:1000}"
-          ></V-Echarts>
-        </div>
-      </div>
-      <V-Model v-model="boo">
-        <div>hello word</div>
-      </V-Model>
+      <Double-Box style="width:200px;height:200px;" :left-color='leftColor' :right-color='leftColor'>
+        <span style="color:#fff">hello word</span>
+      </Double-Box>
     </div>
     <script>
       function sleep(timer = 3000) {
@@ -85,46 +52,14 @@
       }
     </script>
     <script>
-
-      let { ref,onMounted } = Vue;
-
+      let { ref } = Vue;
       let app = Vue.createApp({
         setup() {
-          let EchartsData = Vue.inject("EchartsData");
-          let boo = ref(false);
-          let pieData = ref({})
-          let config = {}
-          let isloading = ref(false);
-          const getOptionTwo = function () {
-              isloading.value = true;
-              setTimeout(()=>{
-                isloading.value = false
-                pieData.value = EchartsData["pie"]
-              },2000)
-            // return EchartsData["pie"];
-          };
-          const getOption = function () {
-            return EchartsData["bar"];
-          };
-          const getOptionThree = function () {
-            return EchartsData["ring"];
-          };
-         
-          onMounted(()=>{
-            getOptionTwo()
-          })
-          return {
-            config,
-            isloading,
-            pieData,
-            getOptionThree,
-            getOption,
-            boo,
-            getOptionTwo,
-          };
+     
         },
       });
-      app.use(datav);
+  
+      app.use(datav.DFlyBox)
       app.mount("#app");
     </script>
   </body>

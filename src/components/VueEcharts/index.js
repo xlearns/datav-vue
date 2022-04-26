@@ -1,4 +1,9 @@
-import VueEcharts from './VueEcharts.vue'
-export default function(Vue) {
-  Vue.component(VueEcharts.name, VueEcharts)
+import compoent from './VueEcharts.vue'
+
+
+export const  DVueEcharts = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DVueEcharts

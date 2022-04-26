@@ -1,4 +1,8 @@
-import Test from './Transform.vue'
-export default function(Vue) {
-  Vue.component(Test.name, Test)
+import compoent from './Transform.vue'
+
+export const  DTransform = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DTransform

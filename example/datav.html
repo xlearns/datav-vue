@@ -7,6 +7,8 @@
     <title>Document</title>
     <!-- 引入vue -->
     <script src="https://lib.baomitu.com/vue/3.2.31/vue.global.js"></script>
+    <!-- <script src="https://lib.baomitu.com/vue/3.0.0/vue.global.js"></script> -->
+
     <!-- 引入iconfont -->
     <script src="http://at.alicdn.com/t/font_3188555_87dvlqjwtlj.js"></script>
     <!-- 引入echarts -->
@@ -90,7 +92,7 @@
               <V-Echarts
               :options="getOptionTwo()"
               open
-              :animation="{open:true}"
+              :animation="{open:true,showTip:true}"
             ></V-Echarts>
             </Double-Box>
           </div>
@@ -158,10 +160,10 @@
     </script>
     <script>
       let { ref } = Vue;
-
+      let {EchartsData} = datav
+      console.log(datav)
       let app = Vue.createApp({
         setup() {
-          let EchartsData = Vue.inject("EchartsData");
           let boo = ref(false);
           const getOptionTwo = function () {
             return EchartsData["pie"];

@@ -141,7 +141,7 @@ export default {
 			// 获取居中方式
 			const _aligns = cloneDeep(config.aligns);
 
-			if (config.headerData.length <= 0) return;
+			if (_headerData.length <= 0) return;
 			if (config.headerIndex) {
 				_headerData.unshift(config.headerIndexContent);
 				_headerStyle.unshift(config.headerIndexStyle);
@@ -163,7 +163,7 @@ export default {
 			}
 			headerDataVal.value = _headerData;
 			headerStyleVal.value = _headerStyle;
-			// columnWidths.value = _columnWidths;
+			columnWidths.value = _columnWidths;
 			rowStyle.value = _rowStyle;
 			aligns.value = _aligns;
 
@@ -281,6 +281,7 @@ export default {
 
 			const _actualConfig = assign(defaultConfig, props.config);
 			rowsData.value = _actualConfig.data || [];
+
 			handleHeader(_actualConfig);
 			handleRows(_actualConfig);
 

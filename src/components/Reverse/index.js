@@ -1,4 +1,8 @@
-import Test from './Test.vue'
-export default function(Vue) {
-  Vue.component(Test.name, Test)
+import compoent from './compoent.vue'
+
+export const  DReverse = {
+  install(Vue) {
+    Vue.component(compoent.name,compoent)
+  }
 }
+export default DReverse
