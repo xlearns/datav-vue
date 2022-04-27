@@ -147,17 +147,24 @@
   	},
   };
 
-  var _hoisted_1$h = {
+  var _withId$f = vue.withScopeId("data-v-8b5216c8");
+
+  vue.pushScopeId("data-v-8b5216c8");
+
+  var _hoisted_1$f = {
     ref: "dom",
     "class": "datav-full-sreen"
   };
-  function render$l(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$h, [$setup.ready ? vue.renderSlot(_ctx.$slots, "default", {
+
+  vue.popScopeId();
+
+  var render$l = _withId$f(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$f, [_ctx.ready ? vue.renderSlot(_ctx.$slots, "default", {
       key: 0
     }) : vue.createCommentVNode("v-if", true)], 512
     /* NEED_PATCH */
     );
-  }
+  });
 
   function styleInject(css, ref) {
     if ( ref === void 0 ) ref = {};
@@ -234,93 +241,86 @@
   	},
   };
 
-  var _withScopeId$6 = function _withScopeId(n) {
-    return vue.pushScopeId("data-v-416d18c9"), n = n(), vue.popScopeId(), n;
-  };
+  var _withId$e = vue.withScopeId("data-v-416d18c9");
 
-  var _hoisted_1$g = {
+  vue.pushScopeId("data-v-416d18c9");
+
+  var _hoisted_1$e = {
     "class": "vdata-loading"
   };
-  var _hoisted_2$c = ["width", "height"];
-  var _hoisted_3$7 = ["stroke"];
 
-  var _hoisted_4$5 = /*#__PURE__*/_withScopeId$6(function () {
-    return /*#__PURE__*/vue.createElementVNode("animateTransform", {
-      attributeName: "transform",
-      type: "rotate",
-      from: "0 25 25",
-      to: "360 25 25",
-      dur: "1.5s",
-      repeatCount: "indefinite"
-    }, null, -1
-    /* HOISTED */
-    );
-  });
+  var _hoisted_2$a = vue.createVNode("animateTransform", {
+    attributeName: "transform",
+    type: "rotate",
+    from: "0 25 25",
+    to: "360 25 25",
+    dur: "1.5s",
+    repeatCount: "indefinite"
+  }, null, -1
+  /* HOISTED */
+  );
 
-  var _hoisted_5$5 = ["values"];
-  var _hoisted_6$5 = ["stroke"];
+  var _hoisted_3$5 = vue.createVNode("animateTransform", {
+    attributeName: "transform",
+    type: "rotate",
+    values: "360 25 25;0 25 25",
+    dur: "1.5s",
+    repeatCount: "indefinite"
+  }, null, -1
+  /* HOISTED */
+  );
 
-  var _hoisted_7$3 = /*#__PURE__*/_withScopeId$6(function () {
-    return /*#__PURE__*/vue.createElementVNode("animateTransform", {
-      attributeName: "transform",
-      type: "rotate",
-      values: "360 25 25;0 25 25",
-      dur: "1.5s",
-      repeatCount: "indefinite"
-    }, null, -1
-    /* HOISTED */
-    );
-  });
-
-  var _hoisted_8$3 = ["values"];
-  var _hoisted_9$3 = {
+  var _hoisted_4$4 = {
     "class": "vdata-loading-content"
   };
-  function render$k(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$g, [(vue.openBlock(), vue.createElementBlock("svg", {
-      width: $props.width,
-      height: $props.height,
+
+  vue.popScopeId();
+
+  var render$k = _withId$e(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$e, [(vue.openBlock(), vue.createBlock("svg", {
+      width: _ctx.width,
+      height: _ctx.height,
       viewBox: "0 0 50 50"
-    }, [vue.createCommentVNode(" \r\n\t\t\t\t2*3.14*22\r\n\t\t\t\tstroke-dasharray=\"34 34\" 切等比例4块 2*3.14*22/4\r\n\t\t\t\tstroke-linecap=\"round\" 圆角\r\n\t\t\t\t "), vue.createElementVNode("circle", {
+    }, [vue.createCommentVNode(" \r\n\t\t\t\t2*3.14*22\r\n\t\t\t\tstroke-dasharray=\"34 34\" 切等比例4块 2*3.14*22/4\r\n\t\t\t\tstroke-linecap=\"round\" 圆角\r\n\t\t\t\t "), vue.createVNode("circle", {
       cx: "25",
       cy: "25",
       r: "22",
       fill: "none",
-      stroke: $props.insideColor,
+      stroke: _ctx.insideColor,
       "stroke-width": "3",
       "stroke-dasharray": "34 34",
       "stroke-linecap": "round"
-    }, [vue.createCommentVNode(" 过渡动画 "), vue.createCommentVNode(" from(度数,圆心坐标.x,圆心坐标.y) "), vue.createCommentVNode(" from='' to=''可以用values='a,b,c;a,b,c'替换 "), _hoisted_4$5, vue.createElementVNode("animate", {
+    }, [vue.createCommentVNode(" 过渡动画 "), vue.createCommentVNode(" from(度数,圆心坐标.x,圆心坐标.y) "), vue.createCommentVNode(" from='' to=''可以用values='a,b,c;a,b,c'替换 "), _hoisted_2$a, vue.createVNode("animate", {
       attributeName: "stroke",
-      values: $setup.outsideColorAimation,
+      values: _ctx.outsideColorAimation,
       dur: "3s",
       repeatCount: "indefinite"
     }, null, 8
     /* PROPS */
-    , _hoisted_5$5)], 8
+    , ["values"])], 8
     /* PROPS */
-    , _hoisted_3$7), vue.createElementVNode("circle", {
+    , ["stroke"]), vue.createVNode("circle", {
       cx: "25",
       cy: "25",
       r: "12",
       fill: "none",
-      stroke: $props.outsideColor,
+      stroke: _ctx.outsideColor,
       "stroke-width": "3",
       "stroke-linecap": "round",
       "stroke-dasharray": "19 19"
-    }, [_hoisted_7$3, vue.createElementVNode("animate", {
+    }, [_hoisted_3$5, vue.createVNode("animate", {
       attributeName: "stroke",
-      values: $setup.insideColorAimation,
+      values: _ctx.insideColorAimation,
       dur: "3s",
       repeatCount: "indefinite"
     }, null, 8
     /* PROPS */
-    , _hoisted_8$3)], 8
+    , ["values"])], 8
     /* PROPS */
-    , _hoisted_6$5)], 8
+    , ["stroke"])], 8
     /* PROPS */
-    , _hoisted_2$c)), vue.createElementVNode("div", _hoisted_9$3, [vue.renderSlot(_ctx.$slots, "default")])]);
-  }
+    , ["width", "height"])), vue.createVNode("div", _hoisted_4$4, [vue.renderSlot(_ctx.$slots, "default")])]);
+  });
 
   var css_248z$f = "\n.vdata-loading[data-v-416d18c9] {\r\n\ttext-align: center;\n}\r\n";
   styleInject(css_248z$f);
@@ -4361,64 +4361,69 @@
 
   function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$1(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$1(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
-  var _hoisted_1$f = {
+  var _withId$d = vue.withScopeId("data-v-69eed30f");
+
+  vue.pushScopeId("data-v-69eed30f");
+
+  var _hoisted_1$d = {
     "class": "base-scroll-list",
     ref: "dom"
   };
-  var _hoisted_2$b = ["align", "innerHTML"];
-  var _hoisted_3$6 = ["align", "innerHTML"];
-  function render$j(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$f, [vue.createElementVNode("div", {
+
+  vue.popScopeId();
+
+  var render$j = _withId$d(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$d, [vue.createVNode("div", {
       "class": "base-scroll-list-header",
-      style: vue.normalizeStyle({
-        background: $setup.actualConfig.headerBg,
-        height: "".concat($setup.actualConfig.headerHeight, "px"),
-        fontSize: "".concat($setup.actualConfig.headerFontSize, "px"),
-        color: $setup.actualConfig.headerColor
-      })
-    }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($setup.headerDataVal, function (headerItem, i) {
-      return vue.openBlock(), vue.createElementBlock("div", {
+      style: {
+        background: _ctx.actualConfig.headerBg,
+        height: "".concat(_ctx.actualConfig.headerHeight, "px"),
+        fontSize: "".concat(_ctx.actualConfig.headerFontSize, "px"),
+        color: _ctx.actualConfig.headerColor
+      }
+    }, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList(_ctx.headerDataVal, function (headerItem, i) {
+      return vue.openBlock(), vue.createBlock("div", {
         "class": "header-item base-scroll-list-text",
         key: headerItem + i,
-        style: vue.normalizeStyle(_objectSpread$1(_objectSpread$1({}, $setup.headerStyleVal[i]), {}, {
-          width: "".concat($setup.columnWidths[i], "px")
-        })),
-        align: $setup.aligns[i],
+        style: _objectSpread$1(_objectSpread$1({}, _ctx.headerStyleVal[i]), {}, {
+          width: "".concat(_ctx.columnWidths[i], "px")
+        }),
+        align: _ctx.aligns[i],
         innerHTML: headerItem
       }, null, 12
       /* STYLE, PROPS */
-      , _hoisted_2$b);
+      , ["align", "innerHTML"]);
     }), 128
     /* KEYED_FRAGMENT */
     ))], 4
     /* STYLE */
-    ), vue.createElementVNode("div", {
+    ), vue.createVNode("div", {
       "class": "base-scroll-list-rows-wrapper",
-      style: vue.normalizeStyle({
-        height: "".concat($setup.domHeight - $setup.actualConfig.headerHeight, "px")
-      })
-    }, [vue.createCommentVNode(" key必须是rowData.rowIndex既然唯一性否则会出现渲染错乱 "), (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($setup.currentRowsData, function (rowData, index) {
-      return vue.openBlock(), vue.createElementBlock("div", {
+      style: {
+        height: "".concat(_ctx.domHeight - _ctx.actualConfig.headerHeight, "px")
+      }
+    }, [vue.createCommentVNode(" key必须是rowData.rowIndex既然唯一性否则会出现渲染错乱 "), (vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList(_ctx.currentRowsData, function (rowData, index) {
+      return vue.openBlock(), vue.createBlock("div", {
         "class": "base-scroll-list-rows",
-        style: vue.normalizeStyle({
-          height: "".concat($setup.rowHeights[index], "px"),
-          lineHeight: "".concat($setup.rowHeights[index], "px"),
-          background: rowData.rowIndex % 2 ? $setup.rowBg[1] : $setup.rowBg[0],
-          fontSize: "".concat($setup.actualConfig.rowFontSize, "px"),
-          color: $setup.actualConfig.rowColor
-        }),
+        style: {
+          height: "".concat(_ctx.rowHeights[index], "px"),
+          lineHeight: "".concat(_ctx.rowHeights[index], "px"),
+          background: rowData.rowIndex % 2 ? _ctx.rowBg[1] : _ctx.rowBg[0],
+          fontSize: "".concat(_ctx.actualConfig.rowFontSize, "px"),
+          color: _ctx.actualConfig.rowColor
+        },
         key: rowData
-      }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(rowData.data, function (colData, colIndex) {
-        return vue.openBlock(), vue.createElementBlock("div", {
+      }, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList(rowData.data, function (colData, colIndex) {
+        return vue.openBlock(), vue.createBlock("div", {
           "class": "base-scroll-list-columns base-scroll-list-text",
-          style: vue.normalizeStyle(_objectSpread$1({
-            width: "".concat($setup.columnWidths[colIndex], "px")
-          }, $setup.rowStyle[colIndex])),
-          align: $setup.aligns[colIndex],
+          style: _objectSpread$1({
+            width: "".concat(_ctx.columnWidths[colIndex], "px")
+          }, _ctx.rowStyle[colIndex]),
+          align: _ctx.aligns[colIndex],
           innerHTML: colData
         }, null, 12
         /* STYLE, PROPS */
-        , _hoisted_3$6);
+        , ["align", "innerHTML"]);
       }), 256
       /* UNKEYED_FRAGMENT */
       ))], 4
@@ -4431,9 +4436,9 @@
     )], 512
     /* NEED_PATCH */
     );
-  }
+  });
 
-  var css_248z$e = ".base-scroll-list[data-v-69eed30f] {\n  height: 100%;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-text[data-v-69eed30f] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  box-sizing: border-box;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-header[data-v-69eed30f] {\n  display: flex;\n  font-size: 15px;\n  align-items: center;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] {\n  overflow: hidden;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] {\n  display: flex;\n  align-items: center;\n  transition: all 0.3s linear;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper[data-v-69eed30f] .base-scroll-list-rows[data-v-69eed30f] .base-scroll-list-columns[data-v-69eed30f] {\n  height: 100%;\n}";
+  var css_248z$e = ".base-scroll-list[data-v-69eed30f] {\n  height: 100%;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-text {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  box-sizing: border-box;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-header {\n  display: flex;\n  font-size: 15px;\n  align-items: center;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper {\n  overflow: hidden;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper .base-scroll-list-rows {\n  display: flex;\n  align-items: center;\n  transition: all 0.3s linear;\n}\n.base-scroll-list[data-v-69eed30f] .base-scroll-list-rows-wrapper .base-scroll-list-rows .base-scroll-list-columns {\n  height: 100%;\n}";
   styleInject(css_248z$e);
 
   script$j.render = render$j;
@@ -4579,105 +4584,95 @@
     }
   };
 
-  var _withScopeId$5 = function _withScopeId(n) {
-    return vue.pushScopeId("data-v-449c7e3b"), n = n(), vue.popScopeId(), n;
-  };
+  var _withId$c = vue.withScopeId("data-v-449c7e3b");
 
-  var _hoisted_1$e = {
+  vue.pushScopeId("data-v-449c7e3b");
+
+  var _hoisted_1$c = {
     "class": "vdata-border-flybox",
     ref: "flybox"
   };
-  var _hoisted_2$a = ["width:", "height:"];
-  var _hoisted_3$5 = ["id", "d"];
-  var _hoisted_4$4 = ["id"];
 
-  var _hoisted_5$4 = /*#__PURE__*/_withScopeId$5(function () {
-    return /*#__PURE__*/vue.createElementVNode("stop", {
-      offset: "0%",
-      "stop-color": "#fff",
-      "stop-opacity": "1"
-    }, null, -1
-    /* HOISTED */
-    );
-  });
+  var _hoisted_2$9 = vue.createVNode("stop", {
+    offset: "0%",
+    "stop-color": "#fff",
+    "stop-opacity": "1"
+  }, null, -1
+  /* HOISTED */
+  );
 
-  var _hoisted_6$4 = /*#__PURE__*/_withScopeId$5(function () {
-    return /*#__PURE__*/vue.createElementVNode("stop", {
-      offset: "100%",
-      "stop-color": "#fff",
-      "stop-opacity": "0"
-    }, null, -1
-    /* HOISTED */
-    );
-  });
+  var _hoisted_3$4 = vue.createVNode("stop", {
+    offset: "100%",
+    "stop-color": "#fff",
+    "stop-opacity": "0"
+  }, null, -1
+  /* HOISTED */
+  );
 
-  var _hoisted_7$2 = [_hoisted_5$4, _hoisted_6$4];
-  var _hoisted_8$2 = ["id"];
-  var _hoisted_9$2 = ["r", "fill"];
-  var _hoisted_10$1 = ["path", "dur"];
-  var _hoisted_11$1 = ["href", "stroke"];
-  var _hoisted_12$1 = ["href", "stroke", "mask"];
-  var _hoisted_13$1 = {
+  var _hoisted_4$3 = {
     "class": "content"
   };
-  function render$i(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$e, [(vue.openBlock(), vue.createElementBlock("svg", {
-      "width:": $setup.width,
-      "height:": $setup.height
-    }, [vue.createElementVNode("defs", null, [vue.createElementVNode("path", {
-      id: $setup.borderid,
+
+  vue.popScopeId();
+
+  var render$i = _withId$c(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$c, [(vue.openBlock(), vue.createBlock("svg", {
+      "width:": _ctx.width,
+      "height:": _ctx.height
+    }, [vue.createVNode("defs", null, [vue.createVNode("path", {
+      id: _ctx.borderid,
       fill: "none",
-      d: $setup.path
+      d: _ctx.path
     }, null, 8
     /* PROPS */
-    , _hoisted_3$5), vue.createElementVNode("radialGradient", {
-      id: $setup.radialGradientId,
+    , ["id", "d"]), vue.createVNode("radialGradient", {
+      id: _ctx.radialGradientId,
       r: "50%",
       cx: "50%",
       cy: "50%",
       fx: "100%",
       fy: "50%"
-    }, _hoisted_7$2, 8
+    }, [_hoisted_2$9, _hoisted_3$4], 8
     /* PROPS */
-    , _hoisted_4$4), vue.createElementVNode("mask", {
-      id: $setup.maskid
-    }, [vue.createElementVNode("circle", {
-      r: $props.starLength,
+    , ["id"]), vue.createVNode("mask", {
+      id: _ctx.maskid
+    }, [vue.createVNode("circle", {
+      r: _ctx.starLength,
       cx: "0",
       cy: "0",
-      fill: "url(#".concat($setup.radialGradientId, ")")
-    }, [vue.createElementVNode("animateMotion", {
-      path: $setup.path,
-      dur: $setup.dur,
+      fill: "url(#".concat(_ctx.radialGradientId, ")")
+    }, [vue.createVNode("animateMotion", {
+      path: _ctx.path,
+      dur: _ctx.dur,
       repeatCount: "indefinite",
       rotate: "auto"
     }, null, 8
     /* PROPS */
-    , _hoisted_10$1)], 8
+    , ["path", "dur"])], 8
     /* PROPS */
-    , _hoisted_9$2)], 8
+    , ["r", "fill"])], 8
     /* PROPS */
-    , _hoisted_8$2)]), vue.createCommentVNode(" 背景 "), vue.createElementVNode("use", {
-      href: "#".concat($setup.borderid),
+    , ["id"])]), vue.createCommentVNode(" 背景 "), vue.createVNode("use", {
+      href: "#".concat(_ctx.borderid),
       "stroke-width": "1",
-      stroke: $props.lineColor
+      stroke: _ctx.lineColor
     }, null, 8
     /* PROPS */
-    , _hoisted_11$1), vue.createCommentVNode(" 实际 "), vue.createElementVNode("use", {
-      href: "#".concat($setup.borderid),
+    , ["href", "stroke"]), vue.createCommentVNode(" 实际 "), vue.createVNode("use", {
+      href: "#".concat(_ctx.borderid),
       "stroke-width": "3",
-      stroke: $props.starColor,
-      mask: "url(#".concat($setup.maskid, ")")
+      stroke: _ctx.starColor,
+      mask: "url(#".concat(_ctx.maskid, ")")
     }, null, 8
     /* PROPS */
-    , _hoisted_12$1)], 8
+    , ["href", "stroke", "mask"])], 8
     /* PROPS */
-    , _hoisted_2$a)), vue.createElementVNode("div", _hoisted_13$1, [vue.renderSlot(_ctx.$slots, "default")])], 512
+    , ["width:", "height:"])), vue.createVNode("div", _hoisted_4$3, [vue.renderSlot(_ctx.$slots, "default")])], 512
     /* NEED_PATCH */
     );
-  }
+  });
 
-  var css_248z$d = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content[data-v-449c7e3b] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
+  var css_248z$d = ".vdata-border-flybox[data-v-449c7e3b] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.vdata-border-flybox[data-v-449c7e3b] svg {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n.vdata-border-flybox[data-v-449c7e3b] .content {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
   styleInject(css_248z$d);
 
   script$i.render = render$i;
@@ -4709,45 +4704,52 @@
   	},
   };
 
-  var _hoisted_1$d = {
+  var _withId$b = vue.withScopeId("data-v-7289f2a7");
+
+  vue.pushScopeId("data-v-7289f2a7");
+
+  var _hoisted_1$b = {
     "class": "btnAnimation"
   };
-  var _hoisted_2$9 = {
+  var _hoisted_2$8 = {
     "class": "btnAnimation-box"
   };
-  function render$h(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$d, [vue.createElementVNode("span", {
-      "class": "btnAnimation-span",
-      style: vue.normalizeStyle({
-        background: "linear-gradient(to right, ".concat($props.topColor[0], ", ").concat($props.topColor[1], ")")
-      })
-    }, null, 4
-    /* STYLE */
-    ), vue.createElementVNode("span", {
-      "class": "btnAnimation-span",
-      style: vue.normalizeStyle({
-        background: "linear-gradient(to right, ".concat($props.rightColor[0], ", ").concat($props.rightColor[1], ")")
-      })
-    }, null, 4
-    /* STYLE */
-    ), vue.createElementVNode("span", {
-      "class": "btnAnimation-span",
-      style: vue.normalizeStyle({
-        background: "linear-gradient(to right, ".concat($props.bottomColor[0], ", ").concat($props.bottomColor[1], ")")
-      })
-    }, null, 4
-    /* STYLE */
-    ), vue.createElementVNode("span", {
-      "class": "btnAnimation-span",
-      style: vue.normalizeStyle({
-        background: "linear-gradient(to right, ".concat($props.leftColor[0], ", ").concat($props.leftColor[1], ")")
-      })
-    }, null, 4
-    /* STYLE */
-    ), vue.createElementVNode("div", _hoisted_2$9, [vue.renderSlot(_ctx.$slots, "default")])]);
-  }
 
-  var css_248z$c = ".btnAnimation[data-v-7289f2a7] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n\n.btnAnimation-box[data-v-7289f2a7] {\n  height: 100%;\n  width: 100%;\n}\n\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(1) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to right, #035f3c, #16f03a);\n  animation: animate1-7289f2a7 2s linear infinite;\n  -webkit-animation: animate1-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate1-7289f2a7 {\n  0% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n  100% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(2) {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to bottom, #035f3c, #16f03a);\n  animation: animate2-7289f2a7 2s linear infinite;\n  -webkit-animation: animate2-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate2-7289f2a7 {\n  0% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n  100% {\n    transform: translateY(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(3) {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to left, #035f3c, #16f03a);\n  animation: animate3-7289f2a7 2s linear infinite;\n  -webkit-animation: animate3-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate3-7289f2a7 {\n  0% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n  100% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(4) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to top, #035f3c, #16f03a);\n  animation: animate4-7289f2a7 2s linear infinite;\n  -webkit-animation: animate4-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate4-7289f2a7 {\n  0% {\n    transform: translateY(100%);\n    -webkit-transform: translateY(100%);\n    -moz-transform: translateY(100%);\n    -ms-transform: translateY(100%);\n    -o-transform: translateY(100%);\n  }\n  100% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n}";
+  vue.popScopeId();
+
+  var render$h = _withId$b(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$b, [vue.createVNode("span", {
+      "class": "btnAnimation-span",
+      style: {
+        background: "linear-gradient(to right, ".concat(_ctx.topColor[0], ", ").concat(_ctx.topColor[1], ")")
+      }
+    }, null, 4
+    /* STYLE */
+    ), vue.createVNode("span", {
+      "class": "btnAnimation-span",
+      style: {
+        background: "linear-gradient(to right, ".concat(_ctx.rightColor[0], ", ").concat(_ctx.rightColor[1], ")")
+      }
+    }, null, 4
+    /* STYLE */
+    ), vue.createVNode("span", {
+      "class": "btnAnimation-span",
+      style: {
+        background: "linear-gradient(to right, ".concat(_ctx.bottomColor[0], ", ").concat(_ctx.bottomColor[1], ")")
+      }
+    }, null, 4
+    /* STYLE */
+    ), vue.createVNode("span", {
+      "class": "btnAnimation-span",
+      style: {
+        background: "linear-gradient(to right, ".concat(_ctx.leftColor[0], ", ").concat(_ctx.leftColor[1], ")")
+      }
+    }, null, 4
+    /* STYLE */
+    ), vue.createVNode("div", _hoisted_2$8, [vue.renderSlot(_ctx.$slots, "default")])]);
+  });
+
+  var css_248z$c = ".btnAnimation[data-v-7289f2a7] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n\n.btnAnimation-box[data-v-7289f2a7] {\n  height: 100%;\n  width: 100%;\n}\n\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(1) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to right, #035f3c, #16f03a);\n  animation: animate1-data-v-7289f2a7 2s linear infinite;\n  -webkit-animation: animate1-data-v-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate1-data-v-7289f2a7 {\n  0% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n  100% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(2) {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to bottom, #035f3c, #16f03a);\n  animation: animate2-data-v-7289f2a7 2s linear infinite;\n  -webkit-animation: animate2-data-v-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate2-data-v-7289f2a7 {\n  0% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n  100% {\n    transform: translateY(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(3) {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(to left, #035f3c, #16f03a);\n  animation: animate3-data-v-7289f2a7 2s linear infinite;\n  -webkit-animation: animate3-data-v-7289f2a7 2s linear infinite;\n}\n\n@keyframes animate3-data-v-7289f2a7 {\n  0% {\n    transform: translateX(100%);\n    -webkit-transform: translateX(100%);\n    -moz-transform: translateX(100%);\n    -ms-transform: translateX(100%);\n    -o-transform: translateX(100%);\n  }\n  100% {\n    transform: translateX(-100%);\n    -webkit-transform: translateX(-100%);\n    -moz-transform: translateX(-100%);\n    -ms-transform: translateX(-100%);\n    -o-transform: translateX(-100%);\n  }\n}\n.btnAnimation .btnAnimation-span[data-v-7289f2a7]:nth-child(4) {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 2px;\n  height: 100%;\n  background: linear-gradient(to top, #035f3c, #16f03a);\n  animation: animate4-data-v-7289f2a7 2s linear infinite;\n  -webkit-animation: animate4-data-v-7289f2a7 2s linear infinite;\n  animation-delay: 1s;\n}\n\n@keyframes animate4-data-v-7289f2a7 {\n  0% {\n    transform: translateY(100%);\n    -webkit-transform: translateY(100%);\n    -moz-transform: translateY(100%);\n    -ms-transform: translateY(100%);\n    -o-transform: translateY(100%);\n  }\n  100% {\n    transform: translateY(-100%);\n    -webkit-transform: translateY(-100%);\n    -moz-transform: translateY(-100%);\n    -ms-transform: translateY(-100%);\n    -o-transform: translateY(-100%);\n  }\n}";
   styleInject(css_248z$c);
 
   script$h.render = render$h;
@@ -4780,170 +4782,151 @@
     }
   };
 
-  var _withScopeId$4 = function _withScopeId(n) {
-    return vue.pushScopeId("data-v-3b192cab"), n = n(), vue.popScopeId(), n;
-  };
+  var _withId$a = vue.withScopeId("data-v-3b192cab");
 
-  var _hoisted_1$c = ["width", "height"];
-  var _hoisted_2$8 = ["id"];
+  vue.pushScopeId("data-v-3b192cab");
 
-  var _hoisted_3$4 = /*#__PURE__*/_withScopeId$4(function () {
-    return /*#__PURE__*/vue.createElementVNode("animate", {
-      attributeName: "x1",
-      values: "0%;100%;0%",
-      dur: "10s",
-      begin: "0s",
-      repeatCount: "indefinite"
-    }, null, -1
-    /* HOISTED */
-    );
-  });
+  var _hoisted_1$a = vue.createVNode("animate", {
+    attributeName: "x1",
+    values: "0%;100%;0%",
+    dur: "10s",
+    begin: "0s",
+    repeatCount: "indefinite"
+  }, null, -1
+  /* HOISTED */
+  );
 
-  var _hoisted_4$3 = /*#__PURE__*/_withScopeId$4(function () {
-    return /*#__PURE__*/vue.createElementVNode("animate", {
-      attributeName: "x2",
-      values: "100%;0%;100%",
-      dur: "10s",
-      begin: "0s",
-      repeatCount: "indefinite"
-    }, null, -1
-    /* HOISTED */
-    );
-  });
+  var _hoisted_2$7 = vue.createVNode("animate", {
+    attributeName: "x2",
+    values: "100%;0%;100%",
+    dur: "10s",
+    begin: "0s",
+    repeatCount: "indefinite"
+  }, null, -1
+  /* HOISTED */
+  );
 
-  var _hoisted_5$3 = ["stop-color"];
-  var _hoisted_6$3 = ["values"];
-  var _hoisted_7$1 = ["stop-color"];
-  var _hoisted_8$1 = ["values"];
-  var _hoisted_9$1 = ["id"];
-  var _hoisted_10 = ["points"];
-  var _hoisted_11 = ["points"];
-  var _hoisted_12 = ["points"];
-  var _hoisted_13 = ["points"];
-  var _hoisted_14 = ["points"];
-  var _hoisted_15 = ["points"];
-  var _hoisted_16 = ["points"];
-  var _hoisted_17 = ["points"];
-  var _hoisted_18 = ["points"];
-  var _hoisted_19 = ["width", "height", "fill", "mask"];
-  var _hoisted_20 = {
+  var _hoisted_3$3 = {
     "class": "border-box-content"
   };
-  function render$g(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", {
+
+  vue.popScopeId();
+
+  var render$g = _withId$a(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", {
       "class": "dv-border-box-9",
-      ref: $data.ref
-    }, [$data.svgStatus ? (vue.openBlock(), vue.createElementBlock("svg", {
+      ref: _ctx.ref
+    }, [_ctx.svgStatus ? (vue.openBlock(), vue.createBlock("svg", {
       key: 0,
       "class": "dv-svg-container",
-      width: $data.width,
-      height: $data.height
-    }, [vue.createElementVNode("defs", null, [vue.createElementVNode("linearGradient", {
-      id: $data.gradientId,
+      width: _ctx.width,
+      height: _ctx.height
+    }, [vue.createVNode("defs", null, [vue.createVNode("linearGradient", {
+      id: _ctx.gradientId,
       x1: "0%",
       y1: "0%",
       x2: "100%",
       y2: "100%"
-    }, [_hoisted_3$4, _hoisted_4$3, vue.createElementVNode("stop", {
+    }, [_hoisted_1$a, _hoisted_2$7, vue.createVNode("stop", {
       offset: "0%",
-      "stop-color": $data.mergedColor[0]
-    }, [vue.createElementVNode("animate", {
+      "stop-color": _ctx.mergedColor[0]
+    }, [vue.createVNode("animate", {
       attributeName: "stop-color",
-      values: "".concat($data.mergedColor[0], ";").concat($data.mergedColor[1], ";").concat($data.mergedColor[0]),
+      values: "".concat(_ctx.mergedColor[0], ";").concat(_ctx.mergedColor[1], ";").concat(_ctx.mergedColor[0]),
       dur: "10s",
       begin: "0s",
       repeatCount: "indefinite"
     }, null, 8
     /* PROPS */
-    , _hoisted_6$3)], 8
+    , ["values"])], 8
     /* PROPS */
-    , _hoisted_5$3), vue.createElementVNode("stop", {
+    , ["stop-color"]), vue.createVNode("stop", {
       offset: "100%",
-      "stop-color": $data.mergedColor[1]
-    }, [vue.createElementVNode("animate", {
+      "stop-color": _ctx.mergedColor[1]
+    }, [vue.createVNode("animate", {
       attributeName: "stop-color",
-      values: "".concat($data.mergedColor[1], ";").concat($data.mergedColor[0], ";").concat($data.mergedColor[1]),
+      values: "".concat(_ctx.mergedColor[1], ";").concat(_ctx.mergedColor[0], ";").concat(_ctx.mergedColor[1]),
       dur: "10s",
       begin: "0s",
       repeatCount: "indefinite"
     }, null, 8
     /* PROPS */
-    , _hoisted_8$1)], 8
+    , ["values"])], 8
     /* PROPS */
-    , _hoisted_7$1)], 8
+    , ["stop-color"])], 8
     /* PROPS */
-    , _hoisted_2$8), vue.createElementVNode("mask", {
-      id: $data.maskId
-    }, [vue.createElementVNode("polyline", {
+    , ["id"]), vue.createVNode("mask", {
+      id: _ctx.maskId
+    }, [vue.createVNode("polyline", {
       stroke: "#fff",
       "stroke-width": "3",
       fill: "transparent",
-      points: "8, ".concat($data.height * 0.4, " 8, 3, ").concat($data.width * 0.4 + 7, ", 3")
+      points: "8, ".concat(_ctx.height * 0.4, " 8, 3, ").concat(_ctx.width * 0.4 + 7, ", 3")
     }, null, 8
     /* PROPS */
-    , _hoisted_10), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       fill: "#fff",
-      points: "8, ".concat($data.height * 0.15, " 8, 3, ").concat($data.width * 0.1 + 7, ", 3\n              ").concat($data.width * 0.1, ", 8 14, 8 14, ").concat($data.height * 0.15 - 7, "\n            ")
+      points: "8, ".concat(_ctx.height * 0.15, " 8, 3, ").concat(_ctx.width * 0.1 + 7, ", 3\n              ").concat(_ctx.width * 0.1, ", 8 14, 8 14, ").concat(_ctx.height * 0.15 - 7, "\n            ")
     }, null, 8
     /* PROPS */
-    , _hoisted_11), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       stroke: "#fff",
       "stroke-width": "3",
       fill: "transparent",
-      points: "".concat($data.width * 0.5, ", 3 ").concat($data.width - 3, ", 3, ").concat($data.width - 3, ", ").concat($data.height * 0.25)
+      points: "".concat(_ctx.width * 0.5, ", 3 ").concat(_ctx.width - 3, ", 3, ").concat(_ctx.width - 3, ", ").concat(_ctx.height * 0.25)
     }, null, 8
     /* PROPS */
-    , _hoisted_12), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       fill: "#fff",
-      points: "\n              ".concat($data.width * 0.52, ", 3 ").concat($data.width * 0.58, ", 3\n              ").concat($data.width * 0.58 - 7, ", 9 ").concat($data.width * 0.52 + 7, ", 9\n            ")
+      points: "\n              ".concat(_ctx.width * 0.52, ", 3 ").concat(_ctx.width * 0.58, ", 3\n              ").concat(_ctx.width * 0.58 - 7, ", 9 ").concat(_ctx.width * 0.52 + 7, ", 9\n            ")
     }, null, 8
     /* PROPS */
-    , _hoisted_13), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       fill: "#fff",
-      points: "\n              ".concat($data.width * 0.9, ", 3 ").concat($data.width - 3, ", 3 ").concat($data.width - 3, ", ").concat($data.height * 0.1, "\n              ").concat($data.width - 9, ", ").concat($data.height * 0.1 - 7, " ").concat($data.width - 9, ", 9 ").concat($data.width * 0.9 + 7, ", 9\n            ")
+      points: "\n              ".concat(_ctx.width * 0.9, ", 3 ").concat(_ctx.width - 3, ", 3 ").concat(_ctx.width - 3, ", ").concat(_ctx.height * 0.1, "\n              ").concat(_ctx.width - 9, ", ").concat(_ctx.height * 0.1 - 7, " ").concat(_ctx.width - 9, ", 9 ").concat(_ctx.width * 0.9 + 7, ", 9\n            ")
     }, null, 8
     /* PROPS */
-    , _hoisted_14), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       stroke: "#fff",
       "stroke-width": "3",
       fill: "transparent",
-      points: "8, ".concat($data.height * 0.5, " 8, ").concat($data.height - 3, " ").concat($data.width * 0.3 + 7, ", ").concat($data.height - 3)
+      points: "8, ".concat(_ctx.height * 0.5, " 8, ").concat(_ctx.height - 3, " ").concat(_ctx.width * 0.3 + 7, ", ").concat(_ctx.height - 3)
     }, null, 8
     /* PROPS */
-    , _hoisted_15), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       fill: "#fff",
-      points: "\n              8, ".concat($data.height * 0.55, " 8, ").concat($data.height * 0.7, "\n              2, ").concat($data.height * 0.7 - 7, " 2, ").concat($data.height * 0.55 + 7, "\n            ")
+      points: "\n              8, ".concat(_ctx.height * 0.55, " 8, ").concat(_ctx.height * 0.7, "\n              2, ").concat(_ctx.height * 0.7 - 7, " 2, ").concat(_ctx.height * 0.55 + 7, "\n            ")
     }, null, 8
     /* PROPS */
-    , _hoisted_16), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       stroke: "#fff",
       "stroke-width": "3",
       fill: "transparent",
-      points: "".concat($data.width * 0.35, ", ").concat($data.height - 3, " ").concat($data.width - 3, ", ").concat($data.height - 3, " ").concat($data.width - 3, ", ").concat($data.height * 0.35)
+      points: "".concat(_ctx.width * 0.35, ", ").concat(_ctx.height - 3, " ").concat(_ctx.width - 3, ", ").concat(_ctx.height - 3, " ").concat(_ctx.width - 3, ", ").concat(_ctx.height * 0.35)
     }, null, 8
     /* PROPS */
-    , _hoisted_17), vue.createElementVNode("polyline", {
+    , ["points"]), vue.createVNode("polyline", {
       fill: "#fff",
-      points: "\n              ".concat($data.width * 0.92, ", ").concat($data.height - 3, " ").concat($data.width - 3, ", ").concat($data.height - 3, " ").concat($data.width - 3, ", ").concat($data.height * 0.8, "\n              ").concat($data.width - 9, ", ").concat($data.height * 0.8 + 7, " ").concat($data.width - 9, ", ").concat($data.height - 9, " ").concat($data.width * 0.92 + 7, ", ").concat($data.height - 9, "\n            ")
+      points: "\n              ".concat(_ctx.width * 0.92, ", ").concat(_ctx.height - 3, " ").concat(_ctx.width - 3, ", ").concat(_ctx.height - 3, " ").concat(_ctx.width - 3, ", ").concat(_ctx.height * 0.8, "\n              ").concat(_ctx.width - 9, ", ").concat(_ctx.height * 0.8 + 7, " ").concat(_ctx.width - 9, ", ").concat(_ctx.height - 9, " ").concat(_ctx.width * 0.92 + 7, ", ").concat(_ctx.height - 9, "\n            ")
     }, null, 8
     /* PROPS */
-    , _hoisted_18)], 8
+    , ["points"])], 8
     /* PROPS */
-    , _hoisted_9$1)]), vue.createElementVNode("rect", {
+    , ["id"])]), vue.createVNode("rect", {
       x: "0",
       y: "0",
-      width: $data.width,
-      height: $data.height,
-      fill: "url(#".concat($data.gradientId, ")"),
-      mask: "url(#".concat($data.maskId, ")")
+      width: _ctx.width,
+      height: _ctx.height,
+      fill: "url(#".concat(_ctx.gradientId, ")"),
+      mask: "url(#".concat(_ctx.maskId, ")")
     }, null, 8
     /* PROPS */
-    , _hoisted_19)], 8
+    , ["width", "height", "fill", "mask"])], 8
     /* PROPS */
-    , _hoisted_1$c)) : vue.createCommentVNode("v-if", true), vue.createElementVNode("div", _hoisted_20, [vue.renderSlot(_ctx.$slots, "default")])], 512
+    , ["width", "height"])) : vue.createCommentVNode("v-if", true), vue.createVNode("div", _hoisted_3$3, [vue.renderSlot(_ctx.$slots, "default")])], 512
     /* NEED_PATCH */
     );
-  }
+  });
 
   var css_248z$b = "\n.dv-border-box-9[data-v-3b192cab] {\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\theight: 100%;\n}\nsvg[data-v-3b192cab] {\r\n\tposition: absolute;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tleft: 0px;\r\n\ttop: 0px;\n}\n.border-box-content[data-v-3b192cab] {\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\theight: 100%;\n}\r\n";
   styleInject(css_248z$b);
@@ -4968,27 +4951,27 @@
   	},
   };
 
-  var _withScopeId$3 = function _withScopeId(n) {
-    return vue.pushScopeId("data-v-4439b54f"), n = n(), vue.popScopeId(), n;
-  };
+  var _withId$9 = vue.withScopeId("data-v-4439b54f");
 
-  var _hoisted_1$b = {
+  vue.pushScopeId("data-v-4439b54f");
+
+  var _hoisted_1$9 = {
     "class": "btn vb"
   };
 
-  var _hoisted_2$7 = /*#__PURE__*/_withScopeId$3(function () {
-    return /*#__PURE__*/vue.createElementVNode("div", {
-      "class": "dot"
-    }, null, -1
-    /* HOISTED */
-    );
+  var _hoisted_2$6 = vue.createVNode("div", {
+    "class": "dot"
+  }, null, -1
+  /* HOISTED */
+  );
+
+  vue.popScopeId();
+
+  var render$f = _withId$9(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("button", _hoisted_1$9, [vue.createVNode("span", null, [vue.renderSlot(_ctx.$slots, "default")]), _hoisted_2$6]);
   });
 
-  function render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("button", _hoisted_1$b, [vue.createElementVNode("span", null, [vue.renderSlot(_ctx.$slots, "default")]), _hoisted_2$7]);
-  }
-
-  var css_248z$a = ".btn[data-v-4439b54f] {\n  vertical-align: top;\n  margin: 15px;\n  display: inline-block;\n  text-align: center;\n  width: 122px;\n  height: 44px;\n  line-height: 44px;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n.btn[data-v-4439b54f] .dot[data-v-4439b54f] {\n  content: \"\";\n  animation: atom-4439b54f 2s infinite linear;\n  position: absolute;\n  top: 0;\n  width: 32px;\n  height: 100%;\n  border-radius: 50%;\n  transition: all 300ms ease;\n}\n.btn[data-v-4439b54f] .dot[data-v-4439b54f][data-v-4439b54f]::after {\n  content: \"\";\n  position: absolute;\n  top: -6px;\n  height: 5px;\n  width: 5px;\n  background: #fa5555;\n  border-radius: 50%;\n  border: 4px solid #fa5555;\n  box-shadow: 0 0 0.7em #fff, 0 0 2em #fa5555;\n}\n\n.vb[data-v-4439b54f] {\n  position: relative;\n  width: 120px;\n  color: #fa5555;\n  height: 40px;\n  line-height: 42px;\n  border: 2px solid #fa5555;\n  border-radius: 14px;\n  text-transform: uppercase;\n}\n\n@keyframes atom-4439b54f {\n  0% {\n    transform: translateX(0) rotate(0);\n  }\n  30% {\n    transform: translateX(86px) rotate(0);\n  }\n  50% {\n    transform: translateX(86px) rotate(180deg);\n  }\n  80% {\n    transform: translateX(0) rotate(180deg);\n  }\n  100% {\n    transform: translateX(0) rotate(360deg);\n  }\n}";
+  var css_248z$a = ".btn[data-v-4439b54f] {\n  vertical-align: top;\n  margin: 15px;\n  display: inline-block;\n  text-align: center;\n  width: 122px;\n  height: 44px;\n  line-height: 44px;\n  border-radius: 4px;\n  color: #fff;\n  cursor: pointer;\n}\n.btn[data-v-4439b54f] .dot {\n  content: \"\";\n  animation: atom-data-v-4439b54f 2s infinite linear;\n  position: absolute;\n  top: 0;\n  width: 32px;\n  height: 100%;\n  border-radius: 50%;\n  transition: all 300ms ease;\n}\n.btn[data-v-4439b54f] .dot::after {\n  content: \"\";\n  position: absolute;\n  top: -6px;\n  height: 5px;\n  width: 5px;\n  background: #fa5555;\n  border-radius: 50%;\n  border: 4px solid #fa5555;\n  box-shadow: 0 0 0.7em #fff, 0 0 2em #fa5555;\n}\n\n.vb[data-v-4439b54f] {\n  position: relative;\n  width: 120px;\n  color: #fa5555;\n  height: 40px;\n  line-height: 42px;\n  border: 2px solid #fa5555;\n  border-radius: 14px;\n  text-transform: uppercase;\n}\n\n@keyframes atom-data-v-4439b54f {\n  0% {\n    transform: translateX(0) rotate(0);\n  }\n  30% {\n    transform: translateX(86px) rotate(0);\n  }\n  50% {\n    transform: translateX(86px) rotate(180deg);\n  }\n  80% {\n    transform: translateX(0) rotate(180deg);\n  }\n  100% {\n    transform: translateX(0) rotate(360deg);\n  }\n}";
   styleInject(css_248z$a);
 
   script$f.render = render$f;
@@ -5150,24 +5133,23 @@
   function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-  var _hoisted_1$a = {
+  var _hoisted_1$8 = {
     "class": "icon"
   };
-  var _hoisted_2$6 = ["href"];
-  function render$e(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", {
+  function render$e(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", {
       "class": "icon-wrapper",
-      style: vue.normalizeStyle(_objectSpread({}, $props.style))
-    }, [(vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$a, [vue.createElementVNode("use", {
-      href: $setup.iconName
+      style: _objectSpread({}, _ctx.style)
+    }, [(vue.openBlock(), vue.createBlock("svg", _hoisted_1$8, [vue.createVNode("use", {
+      href: _ctx.iconName
     }, null, 8
     /* PROPS */
-    , _hoisted_2$6)]))], 4
+    , ["href"])]))], 4
     /* STYLE */
     );
   }
 
-  var css_248z$9 = "\n.icon-wrapper {\r\n\tdisplay: inline-block;\n}\n.icon {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
+  var css_248z$9 = "\n.icon-wrapper[data-v-38d2d0ef] {\r\n\tdisplay: inline-block;\n}\n.icon[data-v-38d2d0ef] {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tvertical-align: -0.15em;\r\n\tfill: currentColor;\r\n\toverflow: hidden;\n}\r\n";
   styleInject(css_248z$9);
 
   script$e.render = render$e;
@@ -5180,11 +5162,11 @@
     }
   };
 
-  var _hoisted_1$9 = {
+  var _hoisted_1$7 = {
     viewBox: "0 0 1024 1024"
   };
 
-  var _hoisted_2$5 = /*#__PURE__*/vue.createElementVNode("path", {
+  var _hoisted_2$5 = vue.createVNode("path", {
     d: "M499.2 951.466667c-234.666667 0-426.666667-192-426.666667-426.666667 0-17.066667 0-38.4 4.266667-55.466667 4.266667-12.8 12.8-17.066667 25.6-17.066666 12.8 4.266667 17.066667 12.8 17.066667 25.6-4.266667 12.8-4.266667 29.866667-4.266667 46.933333 0 213.333333 170.666667 384 384 384s384-170.666667 384-384-170.666667-384-384-384c-25.6 0-46.933333 4.266667-72.533333 8.533333-12.8 0-21.333333-4.266667-25.6-17.066666 0-12.8 4.266667-21.333333 17.066666-25.6 25.6-4.266667 51.2-8.533333 81.066667-8.533334 234.666667 0 426.666667 192 426.666667 426.666667s-192 426.666667-426.666667 426.666667z",
     fill: "#7162AD",
     "p-id": "2204"
@@ -5192,7 +5174,7 @@
   /* HOISTED */
   );
 
-  var _hoisted_3$3 = /*#__PURE__*/vue.createElementVNode("path", {
+  var _hoisted_3$2 = vue.createVNode("path", {
     d: "M119.466667 418.133333h-8.533334c-8.533333-4.266667-17.066667-17.066667-12.8-29.866666 42.666667-119.466667 128-213.333333 238.933334-256 12.8-4.266667 21.333333 0 25.6 12.8 4.266667 12.8 0 21.333333-12.8 25.6C256 213.333333 174.933333 298.666667 140.8 405.333333c-4.266667 8.533333-12.8 12.8-21.333333 12.8z",
     fill: "#A495FC",
     "p-id": "2205"
@@ -5200,7 +5182,7 @@
   /* HOISTED */
   );
 
-  var _hoisted_4$2 = /*#__PURE__*/vue.createElementVNode("path", {
+  var _hoisted_4$2 = vue.createVNode("path", {
     d: "M392.533333 657.066667c-4.266667 0-12.8 0-17.066666-4.266667-8.533333-8.533333-8.533333-21.333333 0-29.866667l213.333333-213.333333c8.533333-8.533333 21.333333-8.533333 29.866667 0s8.533333 21.333333 0 29.866667l-213.333334 213.333333c0 4.266667-8.533333 4.266667-12.8 4.266667z",
     fill: "#7162AD",
     "p-id": "2206"
@@ -5208,7 +5190,7 @@
   /* HOISTED */
   );
 
-  var _hoisted_5$2 = /*#__PURE__*/vue.createElementVNode("path", {
+  var _hoisted_5$2 = vue.createVNode("path", {
     d: "M605.866667 657.066667c-4.266667 0-12.8 0-17.066667-4.266667l-213.333333-213.333333c-8.533333-8.533333-8.533333-21.333333 0-29.866667s21.333333-8.533333 29.866666 0l213.333334 213.333333c8.533333 8.533333 8.533333 21.333333 0 29.866667 0 4.266667-8.533333 4.266667-12.8 4.266667z",
     fill: "#7162AD",
     "p-id": "2207"
@@ -5216,9 +5198,8 @@
   /* HOISTED */
   );
 
-  var _hoisted_6$2 = [_hoisted_2$5, _hoisted_3$3, _hoisted_4$2, _hoisted_5$2];
   function render$d(_ctx, _cache) {
-    return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$9, _hoisted_6$2);
+    return vue.openBlock(), vue.createBlock("svg", _hoisted_1$7, [_hoisted_2$5, _hoisted_3$2, _hoisted_4$2, _hoisted_5$2]);
   }
 
   const script$d = {};
@@ -5277,7 +5258,11 @@
   	},
   };
 
-  var _hoisted_1$8 = {
+  var _withId$8 = vue.withScopeId("data-v-47db75aa");
+
+  vue.pushScopeId("data-v-47db75aa");
+
+  var _hoisted_1$6 = {
     key: 0,
     "class": "filterbg"
   };
@@ -5285,25 +5270,28 @@
     key: 0,
     "class": "content"
   };
-  function render$c(_ctx, _cache, $props, $setup, $data, $options) {
+
+  vue.popScopeId();
+
+  var render$c = _withId$8(function render(_ctx, _cache) {
     var _component_close = vue.resolveComponent("close");
 
-    return $setup.openDom ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$8, [vue.createElementVNode("div", {
-      "class": vue.normalizeClass(["popup", {
-        openHeight: $setup.openHeight,
-        openWidth: $setup.openWidth
-      }])
-    }, [$setup.ready ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$4, [vue.createElementVNode("div", {
+    return _ctx.openDom ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$6, [vue.createVNode("div", {
+      "class": ["popup", {
+        openHeight: _ctx.openHeight,
+        openWidth: _ctx.openWidth
+      }]
+    }, [_ctx.ready ? (vue.openBlock(), vue.createBlock("div", _hoisted_2$4, [vue.createVNode("div", {
       "class": "popupClose",
-      onClick: _cache[0] || (_cache[0] = function () {
-        return $setup.close && $setup.close.apply($setup, arguments);
+      onClick: _cache[1] || (_cache[1] = function ($event) {
+        return _ctx.close($event);
       })
     }, [vue.createVNode(_component_close)]), vue.renderSlot(_ctx.$slots, "default")])) : vue.createCommentVNode("v-if", true)], 2
     /* CLASS */
     )])) : vue.createCommentVNode("v-if", true);
-  }
+  });
 
-  var css_248z$8 = ".filterbg[data-v-47db75aa] {\n  width: 100%;\n  height: 100%;\n  background: rgba(30, 182, 254, 0.5);\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 998;\n}\n.filterbg[data-v-47db75aa] .content[data-v-47db75aa] {\n  height: 100%;\n}\n.filterbg[data-v-47db75aa] .openHeight[data-v-47db75aa] {\n  height: 76% !important;\n}\n.filterbg[data-v-47db75aa] .openWidth[data-v-47db75aa] {\n  width: 82% !important;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] {\n  overflow: hidden;\n  transition: all 0.4s;\n  width: 3px;\n  height: 0;\n  background: #061f3e;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  z-index: 999;\n  border-radius: 8px;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa] {\n  z-index: 100;\n  transition: all 0.2s;\n  cursor: pointer;\n  position: absolute;\n  width: 32px;\n  height: 32px;\n  top: 15px;\n  right: 18px;\n  background-size: 100%;\n}\n.filterbg[data-v-47db75aa] .popup[data-v-47db75aa] .popupClose[data-v-47db75aa][data-v-47db75aa]:hover {\n  transform: rotateZ(360deg);\n}";
+  var css_248z$8 = ".filterbg[data-v-47db75aa] {\n  width: 100%;\n  height: 100%;\n  background: rgba(30, 182, 254, 0.5);\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 998;\n}\n.filterbg[data-v-47db75aa] .content {\n  height: 100%;\n}\n.filterbg[data-v-47db75aa] .openHeight {\n  height: 76% !important;\n}\n.filterbg[data-v-47db75aa] .openWidth {\n  width: 82% !important;\n}\n.filterbg[data-v-47db75aa] .popup {\n  overflow: hidden;\n  transition: all 0.4s;\n  width: 3px;\n  height: 0;\n  background: #061f3e;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  z-index: 999;\n  border-radius: 8px;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n}\n.filterbg[data-v-47db75aa] .popup .popupClose {\n  z-index: 100;\n  transition: all 0.2s;\n  cursor: pointer;\n  position: absolute;\n  width: 32px;\n  height: 32px;\n  top: 15px;\n  right: 18px;\n  background-size: 100%;\n}\n.filterbg[data-v-47db75aa] .popup .popupClose:hover {\n  transform: rotateZ(360deg);\n}";
   styleInject(css_248z$8);
 
   script$c.render = render$c;
@@ -5318,7 +5306,7 @@
   };
 
   function render$b(_ctx, _cache) {
-    return vue.openBlock(), vue.createElementBlock("div");
+    return vue.openBlock(), vue.createBlock("div");
   }
 
   const script$b = {};
@@ -5365,24 +5353,31 @@
     }
   };
 
-  var _hoisted_1$7 = {
+  var _withId$7 = vue.withScopeId("data-v-681fe668");
+
+  vue.pushScopeId("data-v-681fe668");
+
+  var _hoisted_1$5 = {
     "class": "test",
     ref: "dom"
   };
-  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$7, [vue.createElementVNode("div", {
+
+  vue.popScopeId();
+
+  var render$a = _withId$7(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$5, [vue.createVNode("div", {
       "class": "main",
-      style: vue.normalizeStyle({
-        transform: $props.modelValue ? $props.active : $props.leave,
-        transition: $props.transition,
-        transformOrigin: $props.transformOrigin
-      })
+      style: {
+        transform: _ctx.modelValue ? _ctx.active : _ctx.leave,
+        transition: _ctx.transition,
+        transformOrigin: _ctx.transformOrigin
+      }
     }, [vue.renderSlot(_ctx.$slots, "default")], 4
     /* STYLE */
     )], 512
     /* NEED_PATCH */
     );
-  }
+  });
 
   var css_248z$7 = ".test[data-v-681fe668] {\n  perspective: 800px;\n}";
   styleInject(css_248z$7);
@@ -5416,69 +5411,159 @@
     }
   };
 
-  var _withScopeId$2 = function _withScopeId(n) {
-    return vue.pushScopeId("data-v-5a151e4f"), n = n(), vue.popScopeId(), n;
-  };
+  var _withId$6 = vue.withScopeId("data-v-5a151e4f");
 
-  var _hoisted_1$6 = /*#__PURE__*/vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"200\" viewBox=\"0 0 500 200\" data-v-5a151e4f><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"red\" transform=\"translate(0,0) rotate(30)\" data-v-5a151e4f></rect></svg></div><div class=\"contatiner\" data-v-5a151e4f><svg width=\"500\" height=\"500\" viewBox=\"0 0 200 200\" transform=\"rotate(270)\" data-v-5a151e4f><!-- 底 --><circle cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#d1d3d7\" fill=\"none\" data-v-5a151e4f></circle><!-- 实际 --><!-- 周长：2*PI*R --><!-- 2*3.14*90 = 566--><!--  --><circle class=\"circle-ring\" cx=\"100\" cy=\"100\" r=\"90\" stroke-width=\"10\" stroke=\"#00a5e0\" fill=\"none\" data-v-5a151e4f></circle></svg></div><div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 底 --><rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#d1d3d7\" stroke-width=\"10\" data-v-5a151e4f></rect><rect class=\"rectRing\" x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#00a5e0\" stroke-width=\"10\" data-v-5a151e4f></rect></svg></div>", 3);
+  vue.pushScopeId("data-v-5a151e4f");
 
-  var _hoisted_4$1 = /*#__PURE__*/_withScopeId$2(function () {
-    return /*#__PURE__*/vue.createElementVNode("div", {
-      "class": "contatiner"
-    }, [/*#__PURE__*/vue.createCommentVNode(" 描边 "), /*#__PURE__*/vue.createElementVNode("svg", {
-      viewBox: "0 0 1024 1024"
-    }, [/*#__PURE__*/vue.createElementVNode("path", {
-      "class": "logo",
-      d: "M850.346667 155.008a42.666667 42.666667 0 0 0-22.741334-23.509333c-8.704-3.754667-85.717333-33.322667-200.32 39.168H396.714667c-114.773333-72.618667-191.701333-42.922667-200.32-39.168a42.88 42.88 0 0 0-22.741334 23.466666c-26.197333 66.218667-18.048 136.448-7.850666 176.896C134.272 374.016 128 413.098667 128 469.333333c0 177.877333 127.104 227.882667 226.730667 246.272a189.568 189.568 0 0 0-13.013334 46.549334A44.373333 44.373333 0 0 0 341.333333 768v38.613333c-19.498667-4.138667-41.002667-11.946667-55.168-26.112C238.08 732.416 188.330667 682.666667 128 682.666667v85.333333c25.002667 0 65.365333 40.362667 97.834667 72.832 51.029333 51.029333 129.066667 55.253333 153.386666 55.253333 3.114667 0 5.376-0.085333 6.528-0.128A42.666667 42.666667 0 0 0 426.666667 853.333333v-82.090666c4.266667-24.746667 20.224-49.621333 27.946666-56.362667a42.666667 42.666667 0 0 0-23.125333-74.581333C293.333333 624.554667 213.333333 591.488 213.333333 469.333333c0-53.12 5.632-70.741333 31.573334-99.285333 11.008-12.117333 14.08-29.568 7.978666-44.8-4.821333-11.904-18.773333-65.450667-6.485333-117.546667 20.650667-1.578667 59.904 4.565333 113.706667 40.96C367.104 253.44 375.466667 256 384 256h256a42.666667 42.666667 0 0 0 23.936-7.338667c54.016-36.522667 92.970667-41.770667 113.664-41.130666 12.330667 52.224-1.578667 105.770667-6.4 117.674666a42.666667 42.666667 0 0 0 8.021333 44.928C805.077333 398.464 810.666667 416.085333 810.666667 469.333333c0 122.581333-79.957333 155.52-218.069334 170.922667a42.666667 42.666667 0 0 0-23.125333 74.709333c19.797333 17.066667 27.861333 32.469333 27.861333 53.034667v128h85.333334v-128c0-20.437333-3.925333-38.101333-9.770667-53.12C769.92 695.765333 896 643.712 896 469.333333c0-56.362667-6.272-95.530667-37.76-137.514666 10.197333-40.405333 18.261333-110.506667-7.893333-176.810667z",
-      fill: "",
-      "p-id": "3769"
-    })])], -1
-    /* HOISTED */
-    );
+  var _hoisted_1$4 = vue.createVNode("div", {
+    "class": "contatiner"
+  }, [vue.createVNode("svg", {
+    width: "500",
+    height: "200",
+    viewBox: "0 0 500 200"
+  }, [vue.createVNode("rect", {
+    x: "0",
+    y: "0",
+    width: "100",
+    height: "50",
+    fill: "red",
+    transform: "translate(0,0) rotate(30)"
+  })])], -1
+  /* HOISTED */
+  );
+
+  var _hoisted_2$3 = vue.createVNode("div", {
+    "class": "contatiner"
+  }, [vue.createVNode("svg", {
+    width: "500",
+    height: "500",
+    viewBox: "0 0 200 200",
+    transform: "rotate(270)"
+  }, [vue.createCommentVNode(" 底 "), vue.createVNode("circle", {
+    cx: "100",
+    cy: "100",
+    r: "90",
+    "stroke-width": "10",
+    stroke: "#d1d3d7",
+    fill: "none"
+  }), vue.createCommentVNode(" 实际 "), vue.createCommentVNode(" 周长：2*PI*R "), vue.createCommentVNode(" 2*3.14*90 = 566"), vue.createCommentVNode("  "), vue.createVNode("circle", {
+    "class": "circle-ring",
+    cx: "100",
+    cy: "100",
+    r: "90",
+    "stroke-width": "10",
+    stroke: "#00a5e0",
+    fill: "none"
+  })])], -1
+  /* HOISTED */
+  );
+
+  var _hoisted_3$1 = vue.createVNode("div", {
+    "class": "contatiner"
+  }, [vue.createCommentVNode(" 矩形周长：4r"), vue.createVNode("svg", {
+    width: "500px",
+    height: "500px",
+    viewBox: "0 0 200 200"
+  }, [vue.createCommentVNode(" 底 "), vue.createVNode("rect", {
+    x: "0",
+    y: "0",
+    width: "200",
+    height: "200",
+    fill: "none",
+    stroke: "#d1d3d7",
+    "stroke-width": "10"
+  }), vue.createVNode("rect", {
+    "class": "rectRing",
+    x: "0",
+    y: "0",
+    width: "200",
+    height: "200",
+    fill: "none",
+    stroke: "#00a5e0",
+    "stroke-width": "10"
+  })])], -1
+  /* HOISTED */
+  );
+
+  var _hoisted_4$1 = vue.createVNode("div", {
+    "class": "contatiner"
+  }, [vue.createCommentVNode(" 描边 "), vue.createVNode("svg", {
+    viewBox: "0 0 1024 1024"
+  }, [vue.createVNode("path", {
+    "class": "logo",
+    d: "M850.346667 155.008a42.666667 42.666667 0 0 0-22.741334-23.509333c-8.704-3.754667-85.717333-33.322667-200.32 39.168H396.714667c-114.773333-72.618667-191.701333-42.922667-200.32-39.168a42.88 42.88 0 0 0-22.741334 23.466666c-26.197333 66.218667-18.048 136.448-7.850666 176.896C134.272 374.016 128 413.098667 128 469.333333c0 177.877333 127.104 227.882667 226.730667 246.272a189.568 189.568 0 0 0-13.013334 46.549334A44.373333 44.373333 0 0 0 341.333333 768v38.613333c-19.498667-4.138667-41.002667-11.946667-55.168-26.112C238.08 732.416 188.330667 682.666667 128 682.666667v85.333333c25.002667 0 65.365333 40.362667 97.834667 72.832 51.029333 51.029333 129.066667 55.253333 153.386666 55.253333 3.114667 0 5.376-0.085333 6.528-0.128A42.666667 42.666667 0 0 0 426.666667 853.333333v-82.090666c4.266667-24.746667 20.224-49.621333 27.946666-56.362667a42.666667 42.666667 0 0 0-23.125333-74.581333C293.333333 624.554667 213.333333 591.488 213.333333 469.333333c0-53.12 5.632-70.741333 31.573334-99.285333 11.008-12.117333 14.08-29.568 7.978666-44.8-4.821333-11.904-18.773333-65.450667-6.485333-117.546667 20.650667-1.578667 59.904 4.565333 113.706667 40.96C367.104 253.44 375.466667 256 384 256h256a42.666667 42.666667 0 0 0 23.936-7.338667c54.016-36.522667 92.970667-41.770667 113.664-41.130666 12.330667 52.224-1.578667 105.770667-6.4 117.674666a42.666667 42.666667 0 0 0 8.021333 44.928C805.077333 398.464 810.666667 416.085333 810.666667 469.333333c0 122.581333-79.957333 155.52-218.069334 170.922667a42.666667 42.666667 0 0 0-23.125333 74.709333c19.797333 17.066667 27.861333 32.469333 27.861333 53.034667v128h85.333334v-128c0-20.437333-3.925333-38.101333-9.770667-53.12C769.92 695.765333 896 643.712 896 469.333333c0-56.362667-6.272-95.530667-37.76-137.514666 10.197333-40.405333 18.261333-110.506667-7.893333-176.810667z",
+    fill: "",
+    "p-id": "3769"
+  })])], -1
+  /* HOISTED */
+  );
+
+  var _hoisted_5$1 = vue.createVNode("div", {
+    "class": "contatiner"
+  }, [vue.createCommentVNode(" 矩形周长：4r"), vue.createVNode("svg", {
+    width: "500px",
+    height: "500px",
+    viewBox: "0 0 200 200"
+  }, [vue.createCommentVNode(" 底 "), vue.createVNode("rect", {
+    x: "0",
+    y: "0",
+    width: "200",
+    height: "200",
+    fill: "none",
+    stroke: "#d1d3d7",
+    "stroke-width": "10"
+  }), vue.createVNode("rect", {
+    "class": "rectRingFly",
+    x: "0",
+    y: "0",
+    width: "200",
+    height: "200",
+    fill: "none",
+    stroke: "#00a5e0",
+    "stroke-width": "10"
+  })])], -1
+  /* HOISTED */
+  );
+
+  var _hoisted_6$1 = vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"200px\" height=\"200px\" data-v-5a151e4f><!-- set 延迟设置不会补间--><rect x=\"0\" y=\"0\" fill=\"red\" width=\"100\" height=\"50\" data-v-5a151e4f><set attributeName=\"x\" to=\"10\" begin=\"1s\" data-v-5a151e4f></set><set attributeName=\"x\" to=\"20\" begin=\"2s\" data-v-5a151e4f></set><set attributeName=\"x\" to=\"30\" begin=\"3s\" data-v-5a151e4f></set><set attributeName=\"fill\" to=\"blue\" begin=\"4s\" data-v-5a151e4f></set></rect></svg></div>");
+
+  var _hoisted_7 = vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"200px\" height=\"200px\" data-v-5a151e4f><!-- animate 延迟设置不会补间--><!-- &lt;rect x=&quot;0&quot; y=&quot;0&quot; fill=&quot;blue&quot; width=&quot;100&quot; height=&quot;50&quot;&gt;&lt;/rect&gt; --><circle cx=\"0\" cy=\"0\" r=\"30\" fill=\"blue\" stroke=\"black\" stroke-width=\"1\" data-v-5a151e4f><animate repeatCount=\"1\" attributeName=\"cx\" attributeType=\"XML\" from=\"0\" to=\"100\" dur=\"2s\" fill=\"freeze\" data-v-5a151e4f></animate><animate repeatCount=\"1\" attributeName=\"cy\" attributeType=\"XML\" from=\"0\" to=\"100\" dur=\"2s\" fill=\"freeze\" data-v-5a151e4f></animate><animateTransform attributeName=\"transform\" attributeType=\"XML\" begin=\"0\" dur=\"3s\" type=\"scale\" from=\"1\" to=\"4\" fill=\"freeze\" repeatCount=\"1\" data-v-5a151e4f></animateTransform></circle></svg></div>");
+
+  var _hoisted_8 = vue.createVNode("div", {
+    "class": "contatiner"
+  }, [vue.createCommentVNode(" 矩形周长：4r"), vue.createVNode("svg", {
+    width: "500px",
+    height: "500px",
+    viewBox: "0 0 200 200"
+  }, [vue.createCommentVNode(" 运动的矩形 "), vue.createVNode("rect", {
+    x: "0",
+    y: "0",
+    width: "10",
+    height: "10",
+    fill: "red"
+  }, [vue.createVNode("animateMotion", {
+    path: "M10 10 L110 10 L110 110 L10 110 Z",
+    dur: "5s",
+    rotate: "0",
+    repeatCount: "indefinite"
+  })]), vue.createVNode("path", {
+    d: "M10 10 L110 10 L110 110 L10 110 Z",
+    fill: "none",
+    stroke: "black",
+    "stroke-width": "3"
+  })])], -1
+  /* HOISTED */
+  );
+
+  var _hoisted_9 = vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 运动的矩形 --><rect x=\"0\" y=\"0\" width=\"10\" height=\"10\" fill=\"red\" data-v-5a151e4f><animateMotion id=\"forward-rect\" path=\"M10 10 L110 10 L110 110 L10 110\" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"0;backward-rect.end+0.5\" data-v-5a151e4f></animateMotion><animateMotion id=\"backward-rect\" path=\"M10 110 L110 110 L110 10 L10 10 \" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"forward-rect.end + 0.5s\" data-v-5a151e4f></animateMotion></rect><path d=\"M10 10 L110 10 L110 110 L10 110\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" data-v-5a151e4f></path></svg></div>");
+
+  vue.popScopeId();
+
+  var render$9 = _withId$6(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", null, [_hoisted_1$4, _hoisted_2$3, _hoisted_3$1, _hoisted_4$1, _hoisted_5$1, vue.createCommentVNode(" set "), _hoisted_6$1, vue.createCommentVNode(" animate "), _hoisted_7, vue.createCommentVNode(" 路径运动 "), _hoisted_8, vue.createCommentVNode(" 翻转效果 "), _hoisted_9]);
   });
 
-  var _hoisted_5$1 = /*#__PURE__*/_withScopeId$2(function () {
-    return /*#__PURE__*/vue.createElementVNode("div", {
-      "class": "contatiner"
-    }, [/*#__PURE__*/vue.createCommentVNode(" 矩形周长：4r"), /*#__PURE__*/vue.createElementVNode("svg", {
-      width: "500px",
-      height: "500px",
-      viewBox: "0 0 200 200"
-    }, [/*#__PURE__*/vue.createCommentVNode(" 底 "), /*#__PURE__*/vue.createElementVNode("rect", {
-      x: "0",
-      y: "0",
-      width: "200",
-      height: "200",
-      fill: "none",
-      stroke: "#d1d3d7",
-      "stroke-width": "10"
-    }), /*#__PURE__*/vue.createElementVNode("rect", {
-      "class": "rectRingFly",
-      x: "0",
-      y: "0",
-      width: "200",
-      height: "200",
-      fill: "none",
-      stroke: "#00a5e0",
-      "stroke-width": "10"
-    })])], -1
-    /* HOISTED */
-    );
-  });
-
-  var _hoisted_6$1 = /*#__PURE__*/vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"200px\" height=\"200px\" data-v-5a151e4f><!-- set 延迟设置不会补间--><rect x=\"0\" y=\"0\" fill=\"red\" width=\"100\" height=\"50\" data-v-5a151e4f><set attributeName=\"x\" to=\"10\" begin=\"1s\" data-v-5a151e4f></set><set attributeName=\"x\" to=\"20\" begin=\"2s\" data-v-5a151e4f></set><set attributeName=\"x\" to=\"30\" begin=\"3s\" data-v-5a151e4f></set><set attributeName=\"fill\" to=\"blue\" begin=\"4s\" data-v-5a151e4f></set></rect></svg></div>", 1);
-
-  var _hoisted_7 = /*#__PURE__*/vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><svg width=\"200px\" height=\"200px\" data-v-5a151e4f><!-- animate 延迟设置不会补间--><!-- &lt;rect x=&quot;0&quot; y=&quot;0&quot; fill=&quot;blue&quot; width=&quot;100&quot; height=&quot;50&quot;&gt;&lt;/rect&gt; --><circle cx=\"0\" cy=\"0\" r=\"30\" fill=\"blue\" stroke=\"black\" stroke-width=\"1\" data-v-5a151e4f><animate repeatCount=\"1\" attributeName=\"cx\" attributeType=\"XML\" from=\"0\" to=\"100\" dur=\"2s\" fill=\"freeze\" data-v-5a151e4f></animate><animate repeatCount=\"1\" attributeName=\"cy\" attributeType=\"XML\" from=\"0\" to=\"100\" dur=\"2s\" fill=\"freeze\" data-v-5a151e4f></animate><animateTransform attributeName=\"transform\" attributeType=\"XML\" begin=\"0\" dur=\"3s\" type=\"scale\" from=\"1\" to=\"4\" fill=\"freeze\" repeatCount=\"1\" data-v-5a151e4f></animateTransform></circle></svg></div>", 1);
-
-  var _hoisted_8 = /*#__PURE__*/vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 运动的矩形 --><rect x=\"0\" y=\"0\" width=\"10\" height=\"10\" fill=\"red\" data-v-5a151e4f><animateMotion path=\"M10 10 L110 10 L110 110 L10 110 Z\" dur=\"5s\" rotate=\"0\" repeatCount=\"indefinite\" data-v-5a151e4f></animateMotion></rect><path d=\"M10 10 L110 10 L110 110 L10 110 Z\" fill=\"none\" stroke=\"black\" stroke-width=\"3\" data-v-5a151e4f></path></svg></div>", 1);
-
-  var _hoisted_9 = /*#__PURE__*/vue.createStaticVNode("<div class=\"contatiner\" data-v-5a151e4f><!-- 矩形周长：4r--><svg width=\"500px\" height=\"500px\" viewBox=\"0 0 200 200\" data-v-5a151e4f><!-- 运动的矩形 --><rect x=\"0\" y=\"0\" width=\"10\" height=\"10\" fill=\"red\" data-v-5a151e4f><animateMotion id=\"forward-rect\" path=\"M10 10 L110 10 L110 110 L10 110\" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"0;backward-rect.end+0.5\" data-v-5a151e4f></animateMotion><animateMotion id=\"backward-rect\" path=\"M10 110 L110 110 L110 10 L10 10 \" dur=\"2s\" rotate=\"0\" fill=\"freeze\" begin=\"forward-rect.end + 0.5s\" data-v-5a151e4f></animateMotion></rect><path d=\"M10 10 L110 10 L110 110 L10 110\" fill=\"none\" stroke=\"black\" stroke-width=\"1\" data-v-5a151e4f></path></svg></div>", 1);
-
-  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", null, [_hoisted_1$6, _hoisted_4$1, _hoisted_5$1, vue.createCommentVNode(" set "), _hoisted_6$1, vue.createCommentVNode(" animate "), _hoisted_7, vue.createCommentVNode(" 路径运动 "), _hoisted_8, vue.createCommentVNode(" 翻转效果 "), _hoisted_9]);
-  }
-
-  var css_248z$6 = ".contatiner[data-v-5a151e4f] svg[data-v-5a151e4f] {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
+  var css_248z$6 = ".contatiner[data-v-5a151e4f] svg {\n  border: 1px solid #000;\n}\n\n.circle-ring[data-v-5a151e4f] {\n  stroke-dasharray: 566 566;\n  animation: circle-ring-data-v-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-data-v-5a151e4f {\n  from {\n    stroke-dasharray: 0 566;\n  }\n  to {\n    stroke-dasharray: 566 566;\n  }\n}\n.rectRing[data-v-5a151e4f] {\n  stroke-dasharray: 800 800;\n  animation: circle-ring-data-v-5a151e4f 5s linear infinite;\n}\n\n@keyframes circle-ring-data-v-5a151e4f {\n  from {\n    stroke-dasharray: 0 800;\n  }\n  to {\n    stroke-dasharray: 800 800;\n  }\n}\n.logo[data-v-5a151e4f] {\n  fill: none;\n  stroke: #333;\n  stroke-width: 5;\n  animation: logoAnimation-data-v-5a151e4f 10s linear forwards;\n}\n\n@keyframes logoAnimation-data-v-5a151e4f {\n  0% {\n    stroke-dasharray: 5430;\n    stroke-dashoffset: 5430;\n  }\n  50% {\n    stroke-dasharray: 5430;\n    fill: none;\n    stroke-dashoffset: 0;\n  }\n  75% {\n    fill: red;\n  }\n  100% {\n    fill: blue;\n  }\n}\n.rectRingFly[data-v-5a151e4f] {\n  stroke-dasharray: 100 800;\n  animation: rectRingFly-data-v-5a151e4f 5s linear infinite;\n}\n\n@keyframes rectRingFly-data-v-5a151e4f {\n  from {\n    stroke-dashoffset: 800;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n}";
   styleInject(css_248z$6);
 
   script$9.render = render$9;
@@ -5552,23 +5637,21 @@
   	},
   };
 
-  var _withScopeId$1 = function _withScopeId(n) {
-    return vue.pushScopeId("data-v-0051a1e2"), n = n(), vue.popScopeId(), n;
-  };
+  var _withId$5 = vue.withScopeId("data-v-0051a1e2");
 
-  var _hoisted_1$5 = {
+  vue.pushScopeId("data-v-0051a1e2");
+
+  var _hoisted_1$3 = {
     "class": "item"
   };
 
-  var _hoisted_2$3 = /*#__PURE__*/_withScopeId$1(function () {
-    return /*#__PURE__*/vue.createElementVNode("span", {
-      "class": "ball"
-    }, null, -1
-    /* HOISTED */
-    );
-  });
+  var _hoisted_2$2 = vue.createVNode("span", {
+    "class": "ball"
+  }, null, -1
+  /* HOISTED */
+  );
 
-  var _hoisted_3$2 = {
+  var _hoisted_3 = {
     key: 0
   };
   var _hoisted_4 = {
@@ -5581,43 +5664,46 @@
   var _hoisted_6 = {
     "class": "item"
   };
-  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", {
-      onClick: _cache[0] || (_cache[0] = function () {
-        return $setup.click && $setup.click.apply($setup, arguments);
+
+  vue.popScopeId();
+
+  var render$8 = _withId$5(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", {
+      onClick: _cache[1] || (_cache[1] = function ($event) {
+        return _ctx.click($event);
       }),
-      "class": vue.normalizeClass([$setup.classComputed, "box"]),
-      style: vue.normalizeStyle({
-        backgroundColor: $props.modelValue ? $props.leftColor : $props.rightColor
-      })
-    }, [$props.type == 2 ? (vue.openBlock(), vue.createElementBlock("div", {
+      "class": [_ctx.classComputed, "box"],
+      style: {
+        backgroundColor: _ctx.modelValue ? _ctx.leftColor : _ctx.rightColor
+      }
+    }, [_ctx.type == 2 ? (vue.openBlock(), vue.createBlock("div", {
       key: 0,
-      "class": vue.normalizeClass([$props.modelValue ? 'left' : 'right'])
-    }, [vue.createElementVNode("div", _hoisted_1$5, vue.toDisplayString($props.modelValue ? $props.leftValue : $props.rightValue), 1
+      "class": [_ctx.modelValue ? 'left' : 'right']
+    }, [vue.createVNode("div", _hoisted_1$3, vue.toDisplayString(_ctx.modelValue ? _ctx.leftValue : _ctx.rightValue), 1
     /* TEXT */
-    ), _hoisted_2$3], 2
+    ), _hoisted_2$2], 2
     /* CLASS */
-    )) : (vue.openBlock(), vue.createElementBlock("div", {
+    )) : (vue.openBlock(), vue.createBlock("div", {
       key: 1,
-      "class": vue.normalizeClass([[$props.modelValue ? 'left' : 'right'], "ani"])
-    }, [$props.type == 1 ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_3$2, vue.toDisplayString($props.modelValue ? $props.leftValue : $props.rightValue), 1
+      "class": [[_ctx.modelValue ? 'left' : 'right'], "ani"]
+    }, [_ctx.type == 1 ? (vue.openBlock(), vue.createBlock("span", _hoisted_3, vue.toDisplayString(_ctx.modelValue ? _ctx.leftValue : _ctx.rightValue), 1
     /* TEXT */
-    )) : (vue.openBlock(), vue.createElementBlock("span", _hoisted_4, [vue.createElementVNode("span", _hoisted_5, vue.toDisplayString($props.leftValue), 1
+    )) : (vue.openBlock(), vue.createBlock("span", _hoisted_4, [vue.createVNode("span", _hoisted_5, vue.toDisplayString(_ctx.leftValue), 1
     /* TEXT */
-    ), vue.createElementVNode("span", {
-      "class": vue.normalizeClass(["box-block ani", [$props.modelValue ? 'leftActive' : 'rightActive']])
+    ), vue.createVNode("span", {
+      "class": ["box-block ani", [_ctx.modelValue ? 'leftActive' : 'rightActive']]
     }, null, 2
     /* CLASS */
-    ), vue.createElementVNode("span", _hoisted_6, vue.toDisplayString($props.rightValue), 1
+    ), vue.createVNode("span", _hoisted_6, vue.toDisplayString(_ctx.rightValue), 1
     /* TEXT */
     )]))], 2
     /* CLASS */
     ))], 6
     /* CLASS, STYLE */
     );
-  }
+  });
 
-  var css_248z$5 = ".ani[data-v-0051a1e2] {\n  transition: all 0.3s;\n}\n\n.box[data-v-0051a1e2] {\n  position: relative;\n  height: 100%;\n  min-height: 36px;\n  width: 76px;\n}\n\n.isRadius[data-v-0051a1e2] {\n  border-radius: 100px;\n}\n\n.one[data-v-0051a1e2] .left[data-v-0051a1e2] {\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #03a9f4;\n  border-radius: 50%;\n}\n.one[data-v-0051a1e2] .right[data-v-0051a1e2] {\n  position: absolute;\n  top: 4px;\n  left: calc(100% - 30px);\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #f44336;\n  border-radius: 50%;\n}\n\n.two[data-v-0051a1e2] .left[data-v-0051a1e2] {\n  transition: all 0.3s;\n}\n.two[data-v-0051a1e2] .left[data-v-0051a1e2] .item[data-v-0051a1e2] {\n  transition: all 0.3s;\n  position: absolute;\n  left: calc(100% - 30px);\n  top: 6px;\n  color: #fff;\n}\n.two[data-v-0051a1e2] .left[data-v-0051a1e2] .ball[data-v-0051a1e2] {\n  transition: all 0.3s;\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #fff;\n  border-radius: 50%;\n}\n.two[data-v-0051a1e2] .right[data-v-0051a1e2] {\n  transition: all 0.3s;\n}\n.two[data-v-0051a1e2] .right[data-v-0051a1e2] .item[data-v-0051a1e2] {\n  color: #fff;\n  transition: all 0.3s;\n  position: absolute;\n  left: 4px;\n  top: 6px;\n}\n.two[data-v-0051a1e2] .right[data-v-0051a1e2] .ball[data-v-0051a1e2] {\n  transition: all 0.3s;\n  position: absolute;\n  top: 4px;\n  left: calc(100% - 30px);\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #fff;\n  border-radius: 50%;\n}\n\n.three[data-v-0051a1e2] {\n  height: 36px;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] {\n  display: inline-block;\n  height: 100%;\n  width: 100%;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  perspective: 70px;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2] .item[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] .item[data-v-0051a1e2] {\n  display: inline-block;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2] .leftActive[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] .leftActive[data-v-0051a1e2] {\n  transform: rotateY(-180deg) !important;\n  background-color: #03a9f4 !important;\n}\n.three[data-v-0051a1e2] .left[data-v-0051a1e2] .content[data-v-0051a1e2] .box-block[data-v-0051a1e2],\n.three[data-v-0051a1e2] .right[data-v-0051a1e2] .content[data-v-0051a1e2] .box-block[data-v-0051a1e2] {\n  position: absolute;\n  top: 4px;\n  border-radius: 2px;\n  right: 4px;\n  width: 33px;\n  height: 28px;\n  background-color: #f44336;\n  transform: rotateY(0);\n  transform-origin: 0% 50%;\n  transition: 0.6s ease all;\n  z-index: 1;\n}";
+  var css_248z$5 = ".ani[data-v-0051a1e2] {\n  transition: all 0.3s;\n}\n\n.box[data-v-0051a1e2] {\n  position: relative;\n  height: 100%;\n  min-height: 36px;\n  width: 76px;\n}\n\n.isRadius[data-v-0051a1e2] {\n  border-radius: 100px;\n}\n\n.one[data-v-0051a1e2] .left {\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #03a9f4;\n  border-radius: 50%;\n}\n.one[data-v-0051a1e2] .right {\n  position: absolute;\n  top: 4px;\n  left: calc(100% - 30px);\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #f44336;\n  border-radius: 50%;\n}\n\n.two[data-v-0051a1e2] .left {\n  transition: all 0.3s;\n}\n.two[data-v-0051a1e2] .left .item {\n  transition: all 0.3s;\n  position: absolute;\n  left: calc(100% - 30px);\n  top: 6px;\n  color: #fff;\n}\n.two[data-v-0051a1e2] .left .ball {\n  transition: all 0.3s;\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #fff;\n  border-radius: 50%;\n}\n.two[data-v-0051a1e2] .right {\n  transition: all 0.3s;\n}\n.two[data-v-0051a1e2] .right .item {\n  color: #fff;\n  transition: all 0.3s;\n  position: absolute;\n  left: 4px;\n  top: 6px;\n}\n.two[data-v-0051a1e2] .right .ball {\n  transition: all 0.3s;\n  position: absolute;\n  top: 4px;\n  left: calc(100% - 30px);\n  width: 20px;\n  height: 10px;\n  color: #fff;\n  font-size: 10px;\n  font-weight: bold;\n  text-align: center;\n  line-height: 1;\n  padding: 9px 4px;\n  background-color: #fff;\n  border-radius: 50%;\n}\n\n.three[data-v-0051a1e2] {\n  height: 36px;\n}\n.three[data-v-0051a1e2] .left,\n.three[data-v-0051a1e2] .right {\n  display: inline-block;\n  height: 100%;\n  width: 100%;\n}\n.three[data-v-0051a1e2] .left .content,\n.three[data-v-0051a1e2] .right .content {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  perspective: 70px;\n}\n.three[data-v-0051a1e2] .left .content .item,\n.three[data-v-0051a1e2] .right .content .item {\n  display: inline-block;\n}\n.three[data-v-0051a1e2] .left .content .leftActive,\n.three[data-v-0051a1e2] .right .content .leftActive {\n  transform: rotateY(-180deg) !important;\n  background-color: #03a9f4 !important;\n}\n.three[data-v-0051a1e2] .left .content .box-block,\n.three[data-v-0051a1e2] .right .content .box-block {\n  position: absolute;\n  top: 4px;\n  border-radius: 2px;\n  right: 4px;\n  width: 33px;\n  height: 28px;\n  background-color: #f44336;\n  transform: rotateY(0);\n  transform-origin: 0% 50%;\n  transition: 0.6s ease all;\n  z-index: 1;\n}";
   styleInject(css_248z$5);
 
   script$8.render = render$8;
@@ -5727,36 +5813,36 @@
   	},
   };
 
-  var _hoisted_1$4 = ["width", "height"];
-  var _hoisted_2$2 = ["x", "y", "font-size", "fill-opacity"];
-  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("svg", {
+  var _withId$4 = vue.withScopeId("data-v-b4886fa2");
+
+  var render$7 = _withId$4(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("svg", {
       "class": "tag-cloud",
-      width: $props.options.width,
-      height: $props.options.height,
-      onMousemove: _cache[0] || (_cache[0] = function ($event) {
-        return $setup.listener($event);
+      width: _ctx.options.width,
+      height: _ctx.options.height,
+      onMousemove: _cache[1] || (_cache[1] = function ($event) {
+        return _ctx.listener($event);
       })
-    }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.allTags, function (tag, index) {
-      return vue.openBlock(), vue.createElementBlock("a", {
+    }, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList(_ctx.allTags, function (tag, index) {
+      return vue.openBlock(), vue.createBlock("a", {
         key: index
-      }, [vue.createElementVNode("text", {
+      }, [vue.createVNode("text", {
         x: tag.x,
         y: tag.y,
-        "font-size": 20 * ($props.options.fontSize / ($props.options.fontSize - tag.z)),
-        "fill-opacity": ($props.options.opacity + tag.z) / 600,
-        style: vue.normalizeStyle({
+        "font-size": 20 * (_ctx.options.fontSize / (_ctx.options.fontSize - tag.z)),
+        "fill-opacity": (_ctx.options.opacity + tag.z) / 600,
+        style: {
           fill: tag.color
-        })
+        }
       }, vue.toDisplayString(tag.name), 13
       /* TEXT, STYLE, PROPS */
-      , _hoisted_2$2)]);
+      , ["x", "y", "font-size", "fill-opacity"])]);
     }), 128
     /* KEYED_FRAGMENT */
     ))], 40
     /* PROPS, HYDRATE_EVENTS */
-    , _hoisted_1$4);
-  }
+    , ["width", "height"]);
+  });
 
   var css_248z$4 = "\n.tag-cloud[data-v-b4886fa2] {\r\n\tposition: absolute;\r\n\ttop: 50%;\r\n\tleft: 50%;\r\n\ttransform: translateX(-50%) translateY(-50%);\n}\r\n";
   styleInject(css_248z$4);
@@ -5855,31 +5941,32 @@
   	},
   };
 
-  var _hoisted_1$3 = ["innerHTML"];
-  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", {
+  var _withId$3 = vue.withScopeId("data-v-61e09817");
+
+  var render$6 = _withId$3(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", {
       "class": "vToolTip",
-      onMouseenter: _cache[0] || (_cache[0] = function () {
-        return $setup.mouseenter && $setup.mouseenter.apply($setup, arguments);
+      onMouseenter: _cache[1] || (_cache[1] = function ($event) {
+        return _ctx.mouseenter($event);
       }),
-      onMouseleave: _cache[1] || (_cache[1] = function () {
-        return $setup.mouseleave && $setup.mouseleave.apply($setup, arguments);
+      onMouseleave: _cache[2] || (_cache[2] = function ($event) {
+        return _ctx.mouseleave($event);
       }),
       ref: "dom"
-    }, [$setup.show ? (vue.openBlock(), vue.createElementBlock("div", {
+    }, [_ctx.show ? (vue.openBlock(), vue.createBlock("div", {
       key: 0,
-      style: vue.normalizeStyle($setup.style),
-      "class": vue.normalizeClass(["tool_tip", "tool_tip_".concat($props.placement)]),
+      style: _ctx.style,
+      "class": ["tool_tip", "tool_tip_".concat(_ctx.placement)],
       ref: "BoxDom",
-      innerHTML: $props.content
+      innerHTML: _ctx.content
     }, null, 14
     /* CLASS, STYLE, PROPS */
-    , _hoisted_1$3)) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default")], 544
+    , ["innerHTML"])) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default")], 544
     /* HYDRATE_EVENTS, NEED_PATCH */
     );
-  }
+  });
 
-  var css_248z$3 = ".vToolTip[data-v-61e09817] .tool_tip[data-v-61e09817] {\n  background-color: rgba(0, 0, 0, 0.9);\n  padding: 4px 8px;\n  border-radius: 4px;\n  color: #fff;\n  font-size: 12px;\n  position: absolute;\n  z-index: 99999;\n  word-wrap: break-word;\n  max-width: 1000px;\n  box-sizing: border-box;\n}\n.vToolTip[data-v-61e09817] .tool_tip[data-v-61e09817]:before {\n  position: absolute;\n  content: \"\";\n  background-color: rgba(0, 0, 0, 0);\n  width: 0;\n  height: 0;\n  border-width: 5px;\n  border-style: solid;\n}\n.vToolTip[data-v-61e09817] .tool_tip_top[data-v-61e09817]:before {\n  top: 100%;\n  left: 50%;\n  transform: translate(-50%, 0);\n  -ms-transform: translate(-50%, 0);\n  -webkit-transform: translate(-50%, 0);\n  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_right[data-v-61e09817]:before {\n  top: 50%;\n  left: 0;\n  transform: translate(-100%, -50%);\n  -ms-transform: translate(-100%, -50%);\n  -webkit-transform: translate(-100%, -50%);\n  border-color: transparent rgba(0, 0, 0, 0.9) transparent transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_bottom[data-v-61e09817]:before {\n  top: 0;\n  left: 50%;\n  transform: translate(-50%, -100%);\n  -ms-transform: translate(-50%, -100%);\n  -webkit-transform: translate(-50%, -100%);\n  border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_left[data-v-61e09817]:before {\n  top: 50%;\n  left: 100%;\n  transform: translate(0, -50%);\n  -ms-transform: translate(0, -50%);\n  -webkit-transform: translate(0, -50%);\n  border-color: transparent transparent transparent rgba(0, 0, 0, 0.9);\n}";
+  var css_248z$3 = ".vToolTip[data-v-61e09817] .tool_tip {\n  background-color: rgba(0, 0, 0, 0.9);\n  padding: 4px 8px;\n  border-radius: 4px;\n  color: #fff;\n  font-size: 12px;\n  position: absolute;\n  z-index: 99999;\n  word-wrap: break-word;\n  max-width: 1000px;\n  box-sizing: border-box;\n}\n.vToolTip[data-v-61e09817] .tool_tip:before {\n  position: absolute;\n  content: \"\";\n  background-color: rgba(0, 0, 0, 0);\n  width: 0;\n  height: 0;\n  border-width: 5px;\n  border-style: solid;\n}\n.vToolTip[data-v-61e09817] .tool_tip_top:before {\n  top: 100%;\n  left: 50%;\n  transform: translate(-50%, 0);\n  -ms-transform: translate(-50%, 0);\n  -webkit-transform: translate(-50%, 0);\n  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_right:before {\n  top: 50%;\n  left: 0;\n  transform: translate(-100%, -50%);\n  -ms-transform: translate(-100%, -50%);\n  -webkit-transform: translate(-100%, -50%);\n  border-color: transparent rgba(0, 0, 0, 0.9) transparent transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_bottom:before {\n  top: 0;\n  left: 50%;\n  transform: translate(-50%, -100%);\n  -ms-transform: translate(-50%, -100%);\n  -webkit-transform: translate(-50%, -100%);\n  border-color: transparent transparent rgba(0, 0, 0, 0.9) transparent;\n}\n.vToolTip[data-v-61e09817] .tool_tip_left:before {\n  top: 50%;\n  left: 100%;\n  transform: translate(0, -50%);\n  -ms-transform: translate(0, -50%);\n  -webkit-transform: translate(0, -50%);\n  border-color: transparent transparent transparent rgba(0, 0, 0, 0.9);\n}";
   styleInject(css_248z$3);
 
   script$6.render = render$6;
@@ -5956,11 +6043,13 @@
   	},
   };
 
-  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createCommentVNode(" <transform name=\"style\">\r\n\t\t<slot></slot>\r\n\t</transform> "), vue.createElementVNode("div", null, [vue.renderSlot(_ctx.$slots, "default")])], 2112
-    /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  var _withId$2 = vue.withScopeId("data-v-7f8b5de9");
+
+  var render$5 = _withId$2(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock(vue.Fragment, null, [vue.createCommentVNode(" <transform name=\"style\">\r\n\t\t<slot></slot>\r\n\t</transform> "), vue.createVNode("div", null, [vue.renderSlot(_ctx.$slots, "default")])], 64
+    /* STABLE_FRAGMENT */
     );
-  }
+  });
 
   var css_248z$2 = ".style-enter-active[data-v-7f8b5de9],\n.style-leave-active[data-v-7f8b5de9] {\n  transition: all 0.5s ease;\n}\n\n.style-enter-from[data-v-7f8b5de9],\n.style-leave-to[data-v-7f8b5de9] {\n  opacity: 0;\n}";
   styleInject(css_248z$2);
@@ -6032,57 +6121,63 @@
     }
   };
 
+  var _withId$1 = vue.withScopeId("data-v-0ce021a5");
+
+  vue.pushScopeId("data-v-0ce021a5");
+
   var _hoisted_1$2 = {
     "class": "country-category"
   };
-  var _hoisted_2$1 = ["onClick", "onMouseenter", "onMouseleave", "onMousemove"];
-  var _hoisted_3$1 = {
+  var _hoisted_2$1 = {
     key: 2
   };
-  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$2, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($props.data, function (item, index) {
-      return vue.openBlock(), vue.createElementBlock("div", {
+
+  vue.popScopeId();
+
+  var render$4 = _withId$1(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$2, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList(_ctx.data, function (item, index) {
+      return vue.openBlock(), vue.createBlock("div", {
         "class": "category",
         key: item,
         onClick: function onClick($event) {
-          return $setup.onClick(index);
+          return _ctx.onClick(index);
         },
         onMouseenter: function onMouseenter($event) {
-          return $setup.onMounseEnter(index);
+          return _ctx.onMounseEnter(index);
         },
         onMouseleave: function onMouseleave($event) {
-          return $setup.onMounseLeave(index);
+          return _ctx.onMounseLeave(index);
         },
         onMousemove: function onMousemove($event) {
-          return $setup.onMounseEnter(index);
+          return _ctx.onMounseEnter(index);
         }
-      }, [index === $setup.selected ? (vue.openBlock(), vue.createElementBlock("div", {
+      }, [index === _ctx.selected ? (vue.openBlock(), vue.createBlock("div", {
         key: 0,
         "class": "selected",
-        style: vue.normalizeStyle({
-          background: $props.color[0]
-        })
+        style: {
+          background: _ctx.color[0]
+        }
       }, vue.toDisplayString(item), 5
       /* TEXT, STYLE */
-      )) : index === $setup.hover ? (vue.openBlock(), vue.createElementBlock("div", {
+      )) : index === _ctx.hover ? (vue.openBlock(), vue.createBlock("div", {
         key: 1,
         "class": "hovered",
-        style: vue.normalizeStyle({
-          background: $props.color[1]
-        })
+        style: {
+          background: _ctx.color[1]
+        }
       }, vue.toDisplayString(item), 5
       /* TEXT, STYLE */
-      )) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$1, vue.toDisplayString(item), 1
+      )) : (vue.openBlock(), vue.createBlock("div", _hoisted_2$1, vue.toDisplayString(item), 1
       /* TEXT */
       ))], 40
       /* PROPS, HYDRATE_EVENTS */
-      , _hoisted_2$1);
+      , ["onClick", "onMouseenter", "onMouseleave", "onMousemove"]);
     }), 128
     /* KEYED_FRAGMENT */
     ))]);
-  }
+  });
 
-  var css_248z$1 = ".country-category[data-v-0ce021a5] {\n  display: flex;\n  width: 100%;\n  height: 100%;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] {\n  flex: 1;\n  background: rgb(53, 57, 65);\n  font-size: 24px;\n  color: rgb(144, 160, 174);\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .hovered[data-v-0ce021a5] {\n  background: rgb(80, 80, 80);\n  color: #ffffff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] .selected[data-v-0ce021a5] {\n  background: rgb(140, 160, 173);\n  color: #fff;\n}\n.country-category[data-v-0ce021a5] .category[data-v-0ce021a5] div[data-v-0ce021a5] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n}";
+  var css_248z$1 = ".country-category[data-v-0ce021a5] {\n  display: flex;\n  width: 100%;\n  height: 100%;\n}\n.country-category[data-v-0ce021a5] .category {\n  flex: 1;\n  background: rgb(53, 57, 65);\n  font-size: 24px;\n  color: rgb(144, 160, 174);\n}\n.country-category[data-v-0ce021a5] .category .hovered {\n  background: rgb(80, 80, 80);\n  color: #ffffff;\n}\n.country-category[data-v-0ce021a5] .category .selected {\n  background: rgb(140, 160, 173);\n  color: #fff;\n}\n.country-category[data-v-0ce021a5] .category div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n}";
   styleInject(css_248z$1);
 
   script$4.render = render$4;
@@ -6340,8 +6435,8 @@
   	},
   };
 
-  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("span", null, vue.toDisplayString(_ctx.displayValue), 1
+  function render$3(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("span", null, vue.toDisplayString(_ctx.displayValue), 1
     /* TEXT */
     );
   }
@@ -6478,8 +6573,8 @@
     "class": "echats",
     ref: "dom"
   };
-  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, null, 512
+  function render$2(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1$1, null, 512
     /* NEED_PATCH */
     );
   }
@@ -6504,42 +6599,41 @@
     }
   };
 
-  var _withScopeId = function _withScopeId(n) {
-    return vue.pushScopeId("data-v-7cc4288f"), n = n(), vue.popScopeId(), n;
-  };
+  var _withId = vue.withScopeId("data-v-7cc4288f");
+
+  vue.pushScopeId("data-v-7cc4288f");
 
   var _hoisted_1 = {
     "class": "test"
   };
 
-  var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
-    return /*#__PURE__*/vue.createElementVNode("svg", {
-      width: "20px",
-      height: "20px",
-      viewBox: "0 0 100 100"
-    }, [/*#__PURE__*/vue.createElementVNode("line", {
-      x1: "0",
-      y1: "50",
-      x2: "100",
-      y2: "50",
-      "stroke-width": "8",
-      stroke: "currentColor"
-    }), /*#__PURE__*/vue.createElementVNode("line", {
-      x1: "50",
-      y1: "0",
-      x2: "50",
-      y2: "100",
-      "stroke-width": "8",
-      stroke: "currentColor"
-    })], -1
-    /* HOISTED */
-    );
-  });
+  var _hoisted_2 = vue.createVNode("svg", {
+    width: "20px",
+    height: "20px",
+    viewBox: "0 0 100 100"
+  }, [vue.createVNode("line", {
+    x1: "0",
+    y1: "50",
+    x2: "100",
+    y2: "50",
+    "stroke-width": "8",
+    stroke: "currentColor"
+  }), vue.createVNode("line", {
+    x1: "50",
+    y1: "0",
+    x2: "50",
+    y2: "100",
+    "stroke-width": "8",
+    stroke: "currentColor"
+  })], -1
+  /* HOISTED */
+  );
 
-  var _hoisted_3 = [_hoisted_2];
-  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1, _hoisted_3);
-  }
+  vue.popScopeId();
+
+  var render$1 = _withId(function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", _hoisted_1, [_hoisted_2]);
+  });
 
   var css_248z = ".test[data-v-7cc4288f] {\n  color: yellow;\n}";
   styleInject(css_248z);
@@ -6677,11 +6771,11 @@
   	},
   };
 
-  function render(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", null, [vue.createElementVNode("input", {
+  function render(_ctx, _cache) {
+    return vue.openBlock(), vue.createBlock("div", null, [vue.createVNode("input", {
       type: "file",
-      onChange: _cache[0] || (_cache[0] = function () {
-        return $setup.handleFileChange && $setup.handleFileChange.apply($setup, arguments);
+      onChange: _cache[1] || (_cache[1] = function ($event) {
+        return _ctx.handleFileChange($event);
       })
     }, null, 32
     /* HYDRATE_EVENTS */
